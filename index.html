@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宏信联诚认证技术知识库</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" data-route="home" aria-label="回到首页">
+          <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+          <span>
+            <strong>宏信联诚认证</strong>
+            <small>认证技术管理体系 | Certification Technology System</small>
+          </span>
+        </a>
+        <nav class="primary-nav" aria-label="主导航">
+          <a href="#home" data-route="home">首页</a>
+          <a href="#standards" data-route="standards">标准法规库</a>
+          <a href="#audit" data-route="audit">作业指导书</a>
+          <a href="#tools" data-route="tools">审核工具箱</a>
+          <a href="#specialties" data-route="specialties">专业小类</a>
+          <a href="#cases" data-route="cases">更新动态</a>
+        </nav>
+        <div class="top-actions">
+          <button class="lang-button" type="button">中</button>
+          <button class="login-button" type="button">登录</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="view active" id="home-view" aria-labelledby="home-title">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow">
+                <span></span>
+                认证技术知识门户
+              </div>
+              <h1 id="home-title">以专业技术<br />铸就公信认证</h1>
+              <p>
+                构建覆盖标准理解、审核方法、专业能力、卷宗审定与认证决定的技术管理体系，
+                让经验沉淀为可检索、可追溯、可复用的机构能力。
+              </p>
+              <div class="search-panel" role="search">
+                <span class="search-icon" aria-hidden="true"></span>
+                <input
+                  type="search"
+                  aria-label="知识库检索"
+                  placeholder="搜索 ISO 标准、审核规则、CNAS 证据、专业代码..."
+                />
+                <button type="button">开始检索</button>
+              </div>
+              <div class="metrics" aria-label="知识库指标">
+                <div>
+                  <strong>625+</strong>
+                  <span>专业小类</span>
+                </div>
+                <div>
+                  <strong>47</strong>
+                  <span>审定规则</span>
+                </div>
+                <div>
+                  <strong>2026</strong>
+                  <span>标准跟踪</span>
+                </div>
+              </div>
+            </div>
+
+            <aside class="knowledge-map" aria-labelledby="map-title">
+              <h2 id="map-title">Knowledge Architecture</h2>
+              <p>
+                Versioned standards, audit evidence and expert judgement connected as usable
+                certification intelligence.
+              </p>
+              <div class="map-kicker">STANDARDS / EVIDENCE / REVIEW / DECISION</div>
+              <div class="visual-picture" aria-hidden="true">
+                <span class="paper-layer layer-back"></span>
+                <span class="paper-layer layer-mid"></span>
+                <span class="paper-layer layer-front"></span>
+                <span class="paper-line line-a"></span>
+                <span class="paper-line line-b"></span>
+                <span class="paper-line line-c"></span>
+                <span class="scope-lens"></span>
+                <span class="scope-handle"></span>
+                <span class="tile tile-a"></span>
+                <span class="tile tile-b"></span>
+                <span class="tile tile-c"></span>
+                <span class="check-card"><b></b></span>
+                <span class="red-pin pin-a"></span>
+                <span class="red-pin pin-b"></span>
+                <span class="red-pin pin-c"></span>
+              </div>
+              <div class="index-chip"><span></span>Live index: ISO 9001 · 14001 · 45001 · CNAS</div>
+            </aside>
+          </div>
+
+          <section class="home-columns" aria-label="首页知识区">
+            <div class="core-area">
+              <h2>核心知识工作区</h2>
+              <div class="module-grid">
+                <button class="module-card" data-route="rules" type="button">
+                  <span class="module-mark"></span>
+                  <strong>认证规则库</strong>
+                  <small>认证方案、审核人日、抽样逻辑与证后规则。</small>
+                </button>
+                <button class="module-card" data-route="specialties" type="button">
+                  <span class="module-mark"></span>
+                  <strong>技术领域分析</strong>
+                  <small>认证领域、行业场景、专业边界与风险特征。</small>
+                </button>
+                <button class="module-card" data-route="audit" type="button">
+                  <span class="module-mark"></span>
+                  <strong>审核作业指导</strong>
+                  <small>不同领域、行业和专业场景下的审核指导。</small>
+                </button>
+              </div>
+            </div>
+            <div class="updates">
+              <h2>最新技术更新</h2>
+              <a href="#standards" data-route="standards"><span>ISO 14001:2026</span> 修订影响跟踪已更新</a>
+              <a href="#rules" data-route="rules"><span>CNAS 卷宗审定</span> 证据矩阵进入试点</a>
+              <a href="#specialties" data-route="specialties"><span>QMS 技术分析</span> 技术领域模板已整合</a>
+            </div>
+          </section>
+
+          <section class="architecture" aria-labelledby="architecture-title">
+            <div>
+              <h2 id="architecture-title">八项技术底盘</h2>
+              <p>用统一入口管理内部制度、技术规则、专业分析、审核方法、培训课程和案例经验。</p>
+            </div>
+            <div class="architecture-grid" id="architecture-grid"></div>
+          </section>
+        </section>
+
+        <section class="view" id="workspace-view" aria-live="polite"></section>
+
+        <section class="view" id="book-view" aria-labelledby="book-title">
+          <div class="book-layout">
+            <aside class="book-toc">
+              <img src="assets/hxlc-logo.png" alt="" />
+              <strong>机械加工企业 QMS 审核作业指导书</strong>
+              <a href="#book-process">1. 行业过程</a>
+              <a href="#book-risk">2. 关键风险</a>
+              <a href="#book-evidence">3. 审核证据</a>
+              <a href="#book-nc">4. 常见不符合</a>
+              <a href="#book-decision">5. 审定关注</a>
+            </aside>
+            <article class="book-content">
+              <div class="doc-meta">
+                <span>编号：HXLC-WI-Q-1701</span>
+                <span>版本：V0.1 原型</span>
+                <span>责任部门：技术委员会</span>
+              </div>
+              <h1 id="book-title">机械加工企业 QMS 审核作业指导书</h1>
+              <p class="lead">
+                该页面示范未来知识库的“电子书式”阅读形态：标准要求、行业风险、审核路径、
+                证据样例和认证决定关注点在同一页面内串联，方便审核员现场前准备和技术人员复核。
+              </p>
+              <section id="book-process">
+                <h2>1. 行业过程</h2>
+                <p>
+                  典型过程包括合同评审、图纸与工艺策划、原材料采购、机加工、热处理或表面处理外包、
+                  过程检验、成品检验、包装交付和售后响应。
+                </p>
+              </section>
+              <section id="book-risk">
+                <h2>2. 关键风险</h2>
+                <div class="risk-table">
+                  <span>图纸版本失控</span><span>重点核查变更记录、作业现场图纸有效性和顾客确认。</span>
+                  <span>外包过程弱控制</span><span>重点核查供方评价、外包技术要求、验收准则和追溯记录。</span>
+                  <span>检验能力不足</span><span>重点核查量具校准、检验规范、抽样准则和不合格处置。</span>
+                </div>
+              </section>
+              <section id="book-evidence">
+                <h2>3. 审核证据</h2>
+                <p>
+                  建议围绕订单、图纸、工艺卡、设备点检、首检记录、巡检记录、终检报告、
+                  不合格品处理单和顾客反馈形成贯穿式审核轨迹。
+                </p>
+              </section>
+              <section id="book-nc">
+                <h2>4. 常见不符合</h2>
+                <ul>
+                  <li>现场使用的作业指导书与受控清单版本不一致。</li>
+                  <li>关键量具超过校准有效期仍用于成品判定。</li>
+                  <li>外包热处理未保留技术要求传递和验收证据。</li>
+                </ul>
+              </section>
+              <section id="book-decision">
+                <h2>5. 审定关注</h2>
+                <p>
+                  认证决定人员应重点复核认证范围表述是否覆盖实际产品和过程，审核组专业能力是否匹配，
+                  关键过程证据是否充分，以及不符合关闭证据是否能证明原因分析和纠正措施有效。
+                </p>
+              </section>
+            </article>
+            <aside class="book-side">
+              <h3>关联资源</h3>
+              <a href="#standards" data-route="standards">GB/T 19001-2016 条款</a>
+              <a href="#specialties" data-route="specialties">Q17 机械加工技术领域分析</a>
+              <a href="#rules" data-route="rules">认证决定复核规则</a>
+              <h3>状态</h3>
+              <p>适用：质量管理体系</p>
+              <p>密级：内部</p>
+              <p>更新：2026-08-06</p>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/guidance-catalog.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
