@@ -104,10 +104,10 @@ const modules = [
   {
     id: "standards",
     no: "07",
-    title: "标准文件库",
-    summary: "认证依据标准、认可准则、应用说明、标准转换和条款解释文件。",
+    title: "标准规范库",
+    summary: "ISO、GB/T、CNAS、CCAA 及行业标准的受控版本、条款解释和引用关系资料库。",
     hero:
-      "以受控方式管理 ISO、GB/T、CNAS、CCAA 等标准文件，形成标准理解和转换应用能力。",
+      "以受控方式管理认证依据标准、认可准则、应用说明和条款解释，支撑审核、复核和认证决定中的技术判断。",
     sections: [
       ["标准清单", "ISO、GB/T、GB、行业标准、团体标准和认证依据版本台账。"],
       ["CNAS 要求", "认可规则、认可准则、应用说明、转换安排和见证评审关注点。"],
@@ -116,7 +116,7 @@ const modules = [
       ["修订影响", "新标准发布后的认证方案、模板、培训和证书转换影响分析。"],
       ["引用关系", "把标准条款与审核检查表、作业指导书和培训教材建立关联。"],
     ],
-    tags: ["ISO", "GB/T", "CNAS", "CCAA", "标准转换"],
+    tags: ["认证认可", "CNAS", "CCAA", "审核法规", "属地法规"],
   },
   {
     id: "cases",
@@ -479,6 +479,142 @@ function renderArchitecture() {
     .join("");
 }
 
+const regulationFrameworks = [
+  {
+    code: "00",
+    title: "控制文件",
+    range: "5-8",
+    note: "管法规库本身，不算外部法规",
+    focus: ["法规库管理规则", "版本与有效性控制", "修订影响评估", "引用与废止机制"],
+    examples: "法规入库、更新、作废、引用、责任人和复核频次。",
+  },
+  {
+    code: "01",
+    title: "认证监管",
+    range: "20-28",
+    note: "认证认可条例、认证机构管理、证书标志、信息报送与年度报告",
+    focus: ["认证认可监管", "机构资质", "证书标志", "信息报送"],
+    examples: "认证认可条例、认证机构管理办法、认证证书和认证标志管理办法、认证认可业务信息报送要求。",
+  },
+  {
+    code: "02",
+    title: "认可与技术规范",
+    range: "35-50",
+    note: "CNAS、CCAA、GB/T 27021、Global ACI/IAF/ILAC",
+    focus: ["认可规则", "审核与认证规范", "人员注册规范", "国际互认文件"],
+    examples: "CNAS-CC01、CNAS-SC 系列、CCAA 文件、IAF MD 系列、ILAC/IAF 相关要求。",
+  },
+  {
+    code: "03",
+    title: "审核通用法规",
+    range: "55-75",
+    note: "45001、14001、9001、22000、27001 等审核常用法规",
+    focus: ["质量通用法规", "环境合规要求", "职业健康安全", "食品与信息安全"],
+    examples: "产品质量、计量、环评排污、安全生产、职业病防治、食品安全、网络安全等常用依据。",
+  },
+  {
+    code: "04",
+    title: "重点行业扩展法规",
+    range: "15-25",
+    note: "只按高频客户行业扩展",
+    focus: ["建设工程", "化工与危化", "食品与冷链", "医疗器械与电子信息"],
+    examples: "围绕常审客户行业维护，不追求全行业覆盖，重点解决审核证据和风险判断。",
+  },
+  {
+    code: "05",
+    title: "地方属地法规",
+    range: "10-20",
+    note: "只维护常审地区的高频地方规则",
+    focus: ["重点省市规则", "园区与监管口径", "地方排污与安全要求", "属地更新提醒"],
+    examples: "北京、天津、河北、山东、江苏等常审区域的高频地方要求和监管口径。",
+  },
+];
+
+function renderRegulationWorkspace() {
+  if (typeof window.renderHxlcRegulationWorkspace === "function") {
+    window.renderHxlcRegulationWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const totalMin = regulationFrameworks.reduce((sum, item) => sum + Number(item.range.split("-")[0]), 0);
+  const totalMax = regulationFrameworks.reduce((sum, item) => sum + Number(item.range.split("-")[1]), 0);
+  workspaceView.innerHTML = `
+    <section class="regulation-page">
+      <div class="regulation-hero">
+        <div>
+          <div class="breadcrumb">首页 / 法律法规库 / 认证监管</div>
+          <h1>法律法规库</h1>
+          <p>把认证监管、认可规范、审核常用法规、重点行业和属地要求，整理成可维护、可检索、可引用的法规依据体系。</p>
+        </div>
+        <aside class="regulation-summary">
+          <span>建议规模</span>
+          <strong>${totalMin}-${totalMax}</strong>
+          <small>项受控法规与规范文件</small>
+        </aside>
+      </div>
+
+      <div class="regulation-layout">
+        <aside class="regulation-sidebar">
+          <h2>六类框架</h2>
+          <p>先按维护边界分层，再逐步补充真实法规条目。</p>
+          ${regulationFrameworks
+            .map(
+              (item, index) => `
+                <a class="${index === 0 ? "active" : ""}" href="#reg-${item.code}">
+                  <span>${item.code}</span>
+                  <strong>${item.title}</strong>
+                  <b>${item.range}</b>
+                </a>
+              `,
+            )
+            .join("")}
+        </aside>
+
+        <section class="regulation-main">
+          <div class="regulation-toolbar">
+            <div>
+              <span>REGULATION CONTROL MAP</span>
+              <h2>法规库建设结构</h2>
+            </div>
+            <button type="button">导入法规清单</button>
+          </div>
+
+          <div class="regulation-grid">
+            ${regulationFrameworks
+              .map(
+                (item) => `
+                  <article class="regulation-card" id="reg-${item.code}">
+                    <div class="reg-card-head">
+                      <span>${item.code}</span>
+                      <div>
+                        <h3>${item.title}</h3>
+                        <p>${item.note}</p>
+                      </div>
+                      <b>${item.range} 项</b>
+                    </div>
+                    <div class="reg-focus">
+                      ${item.focus.map((focus) => `<em>${focus}</em>`).join("")}
+                    </div>
+                    <p class="reg-example">${item.examples}</p>
+                    <footer>
+                      <span>状态：框架待建库</span>
+                      <a href="#">查看分类</a>
+                    </footer>
+                  </article>
+                `,
+              )
+              .join("")}
+          </div>
+
+          <div class="regulation-note">
+            <strong>建设原则</strong>
+            <p>法规库不追求“大而全”，先保证认证机构常用、常审、常被监管关注的法规和认可要求可控。后续每个法规条目建议绑定适用体系、适用行业、引用场景、更新频次和责任人。</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  `;
+}
+
 function renderAuditWorkspace() {
   workspaceView.innerHTML = `
     <section class="guidance-page">
@@ -579,6 +715,10 @@ function renderWorkspace(moduleId) {
   const item = modules.find((module) => module.id === moduleId) || modules[0];
   if (item.id === "audit") {
     renderAuditWorkspace();
+    return;
+  }
+  if (item.id === "laws") {
+    renderRegulationWorkspace();
     return;
   }
   workspaceView.innerHTML = `
