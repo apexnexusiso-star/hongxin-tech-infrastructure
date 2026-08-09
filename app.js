@@ -152,6 +152,9 @@ const routeAliases = {
 const guidanceCatalog = Array.isArray(window.HXLC_GUIDANCE_CATALOG)
   ? window.HXLC_GUIDANCE_CATALOG
   : [];
+const standardCatalog = Array.isArray(window.HXLC_STANDARD_CATALOG)
+  ? window.HXLC_STANDARD_CATALOG
+  : [];
 
 const guidanceSystems = [
   ["all", "全部作业指导书"],
@@ -219,18 +222,94 @@ function getGuidanceRecommendations() {
 }
 
 function getCodeTokens(code) {
-  const tokens = String(code || "").match(/\d{1,2}(?:\.\d{2}(?:\.\d{2}[A-Za-z]?)?)?/g);
+  const tokens = String(code || "").match(/\d{1,2}(?:\.\d{1,2}){0,2}[A-Za-z]?(?:-\d{1,2}(?:\.\d{1,2}){0,2}[A-Za-z]?)?/g);
   return tokens?.length ? [...new Set(tokens)] : [String(code || "未分类")];
 }
 
 function getItemCodeLevels(item) {
   return getCodeTokens(item.code).map((token) => {
-    const parts = token.split(".");
+    const firstCode = token.split("-")[0];
+    const parts = firstCode.split(".");
     const major = parts[0] || "未分类";
-    const middle = parts.length >= 2 ? `${parts[0]}.${parts[1]}` : major;
-    const small = parts.length >= 3 ? `${parts[0]}.${parts[1]}.${parts[2]}` : middle;
-    return { major, middle, small };
+    const middle = parts.length >= 2
+      ? parts.length === 2 && token.includes("-")
+        ? token
+        : `${parts[0]}.${parts[1]}`
+      : major;
+    const small = parts.length >= 3 ? token : middle;
+    return { major, middle, small, depth: parts.length, token };
   });
+}
+
+const guidanceMajorNames = {
+  "01": "农业、林业和渔业",
+  "02": "采矿和采石",
+  "03": "食品、饮料和烟草",
+  "04": "纺织品及纺织制品",
+  "05": "皮革及皮革制品",
+  "06": "木材和木制品",
+  "07": "纸浆、纸和纸制品",
+  "08": "出版业",
+  "09": "印刷业",
+  "10": "焦炭和精炼石油产品",
+  "11": "化学品、化工产品和纤维",
+  "12": "药品",
+  "13": "橡胶和塑料制品",
+  "14": "非金属矿物制品",
+  "15": "混凝土、水泥、石灰和石膏",
+  "16": "基础金属",
+  "17": "金属制品制造与维修",
+  "18": "机械设备",
+  "19": "电气和光学设备",
+  "20": "造船",
+  "21": "航空航天",
+  "22": "其他运输设备",
+  "23": "其他制造业",
+  "24": "回收业",
+  "25": "电力供应",
+  "26": "燃气供应",
+  "27": "供水",
+  "28": "建设工程",
+  "29": "批发零售与车辆维修",
+  "30": "住宿餐饮",
+  "31": "运输、仓储和通信",
+  "32": "金融、房地产和租赁",
+  "33": "信息技术",
+  "34": "工程与专业技术服务",
+  "35": "其他服务",
+  "36": "公共管理",
+  "37": "教育",
+  "38": "卫生和社会工作",
+  "39": "污水、废弃物和公共服务",
+};
+
+function cleanGuidanceTitle(title) {
+  return String(title || "")
+    .replace(/质量管理|环境管理|职业健康安全管理|能源管理/g, "")
+    .replace(/审核作业指导书/g, "")
+    .replace(/作业指导书/g, "")
+    .replace(/[（）()]/g, "")
+    .trim();
+}
+
+function itemsMatchingLevel(items, level, code) {
+  return items.filter((item) =>
+    getItemCodeLevels(item).some((levels) => levels[level] === code),
+  );
+}
+
+function labelForCode(code, level, items) {
+  if (level === "major") {
+    return guidanceMajorNames[code] || "专业大类";
+  }
+  const matched = itemsMatchingLevel(items, level, code);
+  if (level === "middle") {
+    const hasThirdLevel = matched.some((item) =>
+      getItemCodeLevels(item).some((levels) => levels.middle === code && levels.depth >= 3),
+    );
+    if (hasThirdLevel) return `${matched.length} 个小类`;
+  }
+  return cleanGuidanceTitle(matched[0]?.title) || "专业小类";
 }
 
 function countBy(items, keyFn) {
@@ -248,12 +327,40 @@ function sortCodes(values) {
   return [...values].sort((a, b) => String(a).localeCompare(String(b), "zh-CN", { numeric: true }));
 }
 
-function renderCodeButton(code, count, level, activeCode) {
+function renderCodeButton(code, count, level, activeCode, items = guidanceCatalog) {
   return `
     <button class="${code === activeCode ? "active" : ""}" type="button" data-code-level="${level}" data-code-value="${escapeHtml(code)}">
       <span>${escapeHtml(code)}</span>
+      <strong>${escapeHtml(labelForCode(code, level, items))}</strong>
       <b>${count}</b>
     </button>
+  `;
+}
+
+function uniqueSorted(values) {
+  return sortCodes(new Set(values));
+}
+
+function optionLabel(code, level, items) {
+  return `${code} ${labelForCode(code, level, items)}`;
+}
+
+function renderGuidanceSelect(label, name, options, value, items, level) {
+  return `
+    <label>
+      <span>${escapeHtml(label)}</span>
+      <select data-guidance-filter="${escapeHtml(name)}">
+        ${options
+          .map(
+            (code) => `
+              <option value="${escapeHtml(code)}" ${code === value ? "selected" : ""}>
+                ${escapeHtml(optionLabel(code, level, items))}
+              </option>
+            `,
+          )
+          .join("")}
+      </select>
+    </label>
   `;
 }
 
@@ -291,6 +398,9 @@ function hydrateGuidanceCatalog() {
         `;
       })
       .join("");
+    if (!workspaceView.querySelector(".guidance-filter")) {
+      domainList.insertAdjacentHTML("afterend", '<div class="guidance-filter"></div>');
+    }
   }
 
   const renderRecommendations = () => {
@@ -314,6 +424,86 @@ function hydrateGuidanceCatalog() {
     cards.innerHTML = recommended.map(renderGuidanceCard).join("");
   };
 
+  const renderSidebarFilter = () => {
+    const filter = workspaceView.querySelector(".guidance-filter");
+    if (!filter) return;
+    if (activeSystem === "all") {
+      filter.innerHTML = `
+        <div class="filter-title">专业代码筛选</div>
+        <p>先选择 Q / E / S / 能源体系。</p>
+      `;
+      return;
+    }
+
+    const systemItems = guidanceCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    if (activeSystem === "ISO50001") {
+      filter.innerHTML = `
+        <div class="filter-title">能源领域</div>
+        <label>
+          <span>领域文件</span>
+          <select data-guidance-file>
+            <option value="">选择能源领域</option>
+            ${systemItems
+              .map(
+                (item) => `
+                  <option value="${escapeHtml(item.url)}">
+                    ${escapeHtml(item.code)} ${escapeHtml(cleanGuidanceTitle(item.title) || item.title)}
+                  </option>
+                `,
+              )
+              .join("")}
+          </select>
+        </label>
+      `;
+      return;
+    }
+
+    const allLevels = systemItems.flatMap((item) =>
+      getItemCodeLevels(item).map((levels) => ({ ...levels, item })),
+    );
+    const majorOptions = uniqueSorted(allLevels.map((levels) => levels.major));
+    if (!selectedMajor || !majorOptions.includes(selectedMajor)) {
+      selectedMajor = majorOptions[0] || "";
+    }
+    const majorLevels = allLevels.filter((levels) => levels.major === selectedMajor);
+    const majorItems = systemItems.filter((item) =>
+      getItemCodeLevels(item).some((levels) => levels.major === selectedMajor),
+    );
+    const middleOptions = uniqueSorted(majorLevels.map((levels) => levels.middle));
+    if (!selectedMiddle || !middleOptions.includes(selectedMiddle)) {
+      selectedMiddle = middleOptions[0] || "";
+    }
+    const fileLevels = majorLevels.filter((levels) => levels.middle === selectedMiddle);
+    const seenFiles = new Set();
+    const fileOptions = fileLevels.filter((levels) => {
+      const key = `${levels.item.url}::${levels.small}`;
+      if (seenFiles.has(key)) return false;
+      seenFiles.add(key);
+      return true;
+    });
+
+    filter.innerHTML = `
+      <div class="filter-title">专业代码筛选</div>
+      ${renderGuidanceSelect("大类", "major", majorOptions, selectedMajor, systemItems, "major")}
+      ${renderGuidanceSelect("中类", "middle", middleOptions, selectedMiddle, majorItems, "middle")}
+      <label>
+        <span>小类 / 文件</span>
+        <select data-guidance-file>
+          <option value="">选择后打开文件</option>
+          ${fileOptions
+            .map(
+              (levels) => `
+                <option value="${escapeHtml(levels.item.url)}">
+                  ${escapeHtml(levels.small)} ${escapeHtml(cleanGuidanceTitle(levels.item.title) || levels.item.title)}
+                </option>
+              `,
+            )
+            .join("")}
+        </select>
+      </label>
+    `;
+  };
+
   const renderBrowser = () => {
     if (!browser) return;
     if (activeSystem === "all") {
@@ -327,6 +517,46 @@ function hydrateGuidanceCatalog() {
     }
 
     const systemItems = guidanceCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    const browserSystemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+    browser.innerHTML = `
+      <div class="browser-empty">
+        <strong>${escapeHtml(browserSystemLabel)}已加载</strong>
+        <p>请在左侧“专业代码筛选”中依次选择大类、中类和小类文件。</p>
+      </div>
+    `;
+    return;
+    if (activeSystem === "ISO50001") {
+      const systemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+      browser.innerHTML = `
+        <div class="browser-head">
+          <div>
+            <span>${escapeHtml(activeSystem)}</span>
+            <h3>${escapeHtml(systemLabel)}领域文件</h3>
+            <p>能源管理体系按独立能源领域直接定位，不拆成大类、中类、小类三级。</p>
+          </div>
+          <a href="${escapeHtml(systemItems[0]?.url || "#")}">打开第一份文件 <i></i></a>
+        </div>
+        <div class="energy-browser">
+          <section>
+            <h4>能源领域</h4>
+            <div class="file-list">
+              ${systemItems
+                .map(
+                  (item) => `
+                    <a href="${escapeHtml(item.url)}">
+                      <span>${escapeHtml(item.code || "")}</span>
+                      <strong>${escapeHtml(cleanGuidanceTitle(item.title) || item.title)}</strong>
+                      <small>${escapeHtml(item.fileNo)} · HTML 全文</small>
+                    </a>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        </div>
+      `;
+      return;
+    }
     const majorCounts = countBy(systemItems, (levels) => levels.major);
     if (!selectedMajor || !majorCounts.has(selectedMajor)) {
       selectedMajor = sortCodes(majorCounts.keys())[0] || "";
@@ -343,6 +573,50 @@ function hydrateGuidanceCatalog() {
     const middleItems = majorItems.filter((item) =>
       getItemCodeLevels(item).some((levels) => levels.middle === selectedMiddle),
     );
+    const hasThirdLevel = majorItems.some((item) =>
+      getItemCodeLevels(item).some((levels) => levels.depth >= 3),
+    );
+    if (!hasThirdLevel) {
+      const systemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+      browser.innerHTML = `
+        <div class="browser-head">
+          <div>
+            <span>${escapeHtml(activeSystem)}</span>
+            <h3>${escapeHtml(systemLabel)}专业目录</h3>
+            <p>当前体系采用两级专业代码：大类 ${majorCounts.size} 项，当前大类下专业小类 ${middleCounts.size} 项，当前文件 ${middleItems.length} 份。</p>
+          </div>
+          <a href="${escapeHtml(systemItems[0]?.url || "#")}">打开本体系首页 <i></i></a>
+        </div>
+        <div class="code-browser is-two-level">
+          <section>
+            <h4>大类</h4>
+            <div class="code-list">
+              ${sortCodes(majorCounts.keys()).map((code) => renderCodeButton(code, majorCounts.get(code), "major", selectedMajor, systemItems)).join("")}
+            </div>
+          </section>
+          <section>
+            <h4>专业小类与文件</h4>
+            <div class="small-list">
+              ${sortCodes(middleCounts.keys()).map((code) => renderCodeButton(code, middleCounts.get(code), "middle", selectedMiddle, majorItems)).join("")}
+            </div>
+            <div class="file-list">
+              ${middleItems
+                .map(
+                  (item) => `
+                    <a href="${escapeHtml(item.url)}">
+                      <span>${escapeHtml(item.code || selectedMiddle)}</span>
+                      <strong>${escapeHtml(item.title)}</strong>
+                      <small>${escapeHtml(item.fileNo)} · HTML 全文</small>
+                    </a>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        </div>
+      `;
+      return;
+    }
     const smallCounts = countBy(middleItems, (levels) => levels.small);
     if (!selectedSmall || !smallCounts.has(selectedSmall)) {
       selectedSmall = sortCodes(smallCounts.keys())[0] || "";
@@ -365,13 +639,13 @@ function hydrateGuidanceCatalog() {
         <section>
           <h4>大类</h4>
           <div class="code-list">
-            ${sortCodes(majorCounts.keys()).map((code) => renderCodeButton(code, majorCounts.get(code), "major", selectedMajor)).join("")}
+            ${sortCodes(majorCounts.keys()).map((code) => renderCodeButton(code, majorCounts.get(code), "major", selectedMajor, systemItems)).join("")}
           </div>
         </section>
         <section>
           <h4>中类</h4>
           <div class="code-list">
-            ${sortCodes(middleCounts.keys()).map((code) => renderCodeButton(code, middleCounts.get(code), "middle", selectedMiddle)).join("")}
+            ${sortCodes(middleCounts.keys()).map((code) => renderCodeButton(code, middleCounts.get(code), "middle", selectedMiddle, majorItems)).join("")}
           </div>
         </section>
         <section>
@@ -385,6 +659,7 @@ function hydrateGuidanceCatalog() {
                 return `
                   <button class="${code === selectedSmall ? "active" : ""}" type="button" data-code-level="small" data-code-value="${escapeHtml(code)}">
                     <span>${escapeHtml(code)}</span>
+                    <strong>${escapeHtml(labelForCode(code, "small", middleItems))}</strong>
                     <b>${matched.length}</b>
                   </button>
                 `;
@@ -411,6 +686,7 @@ function hydrateGuidanceCatalog() {
 
   const applyFilter = () => {
     renderRecommendations();
+    renderSidebarFilter();
     renderBrowser();
   };
 
@@ -440,6 +716,28 @@ function hydrateGuidanceCatalog() {
       .querySelectorAll("button")
       .forEach((item) => item.classList.toggle("active", item === button));
     applyFilter();
+  });
+
+  workspaceView.addEventListener("change", (event) => {
+    const filter = event.target.closest("[data-guidance-filter]");
+    if (filter) {
+      if (filter.dataset.guidanceFilter === "major") {
+        selectedMajor = filter.value;
+        selectedMiddle = "";
+        selectedSmall = "";
+      }
+      if (filter.dataset.guidanceFilter === "middle") {
+        selectedMiddle = filter.value;
+        selectedSmall = "";
+      }
+      renderSidebarFilter();
+      renderBrowser();
+      return;
+    }
+    const fileSelect = event.target.closest("[data-guidance-file]");
+    if (fileSelect?.value) {
+      window.location.href = fileSelect.value;
+    }
   });
 
   browser?.addEventListener("click", (event) => {
@@ -615,6 +913,48 @@ function renderRegulationWorkspace() {
   `;
 }
 
+function renderStandardWorkspace() {
+  if (typeof window.renderHxlcStandardWorkspace === "function") {
+    window.renderHxlcStandardWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const item = modules.find((module) => module.id === "standards");
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>07 / 标准规范库</div>
+        <h1>标准规范库</h1>
+        <p>${item?.hero || "以受控方式维护认证机构常用标准元数据，支撑审核、复核和认证决定。"}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>${standardCatalog.length || "待导入"} 项标准元数据</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+  `;
+}
+
+function renderTechnicalFieldWorkspace() {
+  if (typeof window.renderHxlcTechnicalFieldWorkspace === "function") {
+    window.renderHxlcTechnicalFieldWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const item = modules.find((module) => module.id === "specialties");
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>03 / 技术领域分析</div>
+        <h1>技术领域分析</h1>
+        <p>${item?.hero || "围绕专业小类共同基础、差异边界和审核能力迁移建立技术领域分析文件。"}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>QMS 第17大类样例</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+  `;
+}
+
 function renderAuditWorkspace() {
   workspaceView.innerHTML = `
     <section class="guidance-page">
@@ -719,6 +1059,14 @@ function renderWorkspace(moduleId) {
   }
   if (item.id === "laws") {
     renderRegulationWorkspace();
+    return;
+  }
+  if (item.id === "standards") {
+    renderStandardWorkspace();
+    return;
+  }
+  if (item.id === "specialties") {
+    renderTechnicalFieldWorkspace();
     return;
   }
   workspaceView.innerHTML = `
