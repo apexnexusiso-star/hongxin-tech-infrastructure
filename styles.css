@@ -313,6 +313,19 @@ input {
   border: 1px solid rgba(216, 210, 199, 0.82);
   border-radius: 0;
   box-shadow: 0 20px 48px rgba(32, 35, 41, 0.13);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.knowledge-map:hover,
+.knowledge-map:focus-visible {
+  border-color: rgba(179, 0, 43, 0.32);
+  box-shadow: 0 24px 58px rgba(32, 35, 41, 0.16);
+  transform: translateY(-2px);
+  outline: 0;
 }
 
 .knowledge-map::before {
@@ -379,6 +392,42 @@ input {
   box-shadow: none;
 }
 
+.knowledge-preview {
+  height: 184px;
+  margin-top: -12px;
+}
+
+.knowledge-preview canvas {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  border: 1px solid rgba(32, 35, 41, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.orbit-a {
+  width: 278px;
+  height: 84px;
+}
+
+.orbit-b {
+  width: 350px;
+  height: 118px;
+  border-color: rgba(176, 0, 40, 0.08);
+  transform: translate(-50%, -50%) rotate(13deg);
+}
+
 .visual-picture::before,
 .visual-picture::after {
   position: absolute;
@@ -397,6 +446,13 @@ input {
   background:
     linear-gradient(116deg, transparent 0 42%, rgba(176, 0, 40, 0.06) 42.2% 43%, transparent 43.2%),
     linear-gradient(34deg, transparent 0 56%, rgba(32, 35, 41, 0.06) 56.2% 57%, transparent 57.2%);
+}
+
+.knowledge-preview::after {
+  background:
+    radial-gradient(circle at 52% 52%, rgba(255, 255, 255, 0.88), transparent 38%),
+    linear-gradient(116deg, transparent 0 42%, rgba(176, 0, 40, 0.045) 42.2% 43%, transparent 43.2%),
+    linear-gradient(34deg, transparent 0 56%, rgba(32, 35, 41, 0.045) 56.2% 57%, transparent 57.2%);
 }
 
 .paper-layer,
@@ -862,6 +918,179 @@ h2 {
   font-size: 13px;
   font-weight: 800;
 }
+
+.knowledge-graph-page {
+  margin: 52px 34px 42px;
+}
+
+.kg-hero {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 18px;
+  padding: 30px 34px;
+  color: #f7f4ee;
+  background:
+    linear-gradient(90deg, var(--red) 0 12px, transparent 12px),
+    linear-gradient(118deg, #202329, #30343d 56%, #171a20);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 24px 58px rgba(32, 35, 41, 0.18);
+}
+
+.kg-breadcrumb {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  color: rgba(247, 244, 238, 0.62);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.kg-hero h1 {
+  margin: 18px 0 10px;
+  font-size: 46px;
+  line-height: 1.08;
+}
+
+.kg-hero p {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(247, 244, 238, 0.76);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.kg-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+.kg-actions button {
+  min-width: 98px;
+  height: 38px;
+  color: #f7f4ee;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.kg-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 304px;
+  gap: 18px;
+  min-height: 620px;
+}
+
+.kg-canvas-shell {
+  position: relative;
+  min-width: 0;
+  min-height: 620px;
+  overflow: hidden;
+  background: #171a20;
+  border: 1px solid rgba(32, 35, 41, 0.32);
+  border-radius: 8px;
+  box-shadow: 0 24px 58px rgba(32, 35, 41, 0.18);
+}
+
+#knowledge-graph-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+#knowledge-graph-canvas:active {
+  cursor: grabbing;
+}
+
+.kg-hint {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  padding: 8px 12px;
+  color: rgba(247, 244, 238, 0.72);
+  background: rgba(17, 19, 24, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.kg-inspector {
+  min-width: 0;
+  padding: 24px;
+  color: #f7f4ee;
+  background: #202329;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: inset 8px 0 0 var(--red);
+}
+
+.kg-inspector > span {
+  color: var(--red-2);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.kg-inspector h2 {
+  margin: 12px 0 10px;
+  font-size: 28px;
+}
+
+.kg-inspector p {
+  margin: 0;
+  color: rgba(247, 244, 238, 0.72);
+  line-height: 1.6;
+}
+
+.kg-stat-grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px 14px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kg-stat-grid b {
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.kg-stat-grid small {
+  align-self: center;
+  color: rgba(247, 244, 238, 0.68);
+}
+
+.kg-legend {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  color: rgba(247, 244, 238, 0.74);
+  font-size: 13px;
+}
+
+.kg-legend i {
+  align-self: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.kg-legend .core { background: #fff; }
+.kg-legend .module { background: var(--red); }
+.kg-legend .leaf { background: #8fb7d8; }
 
 .regulation-page {
   margin: 52px 34px 42px;
@@ -1811,10 +2040,10 @@ h2 {
 }
 
 .tfa-group-strip-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px minmax(260px, 480px);
   gap: 22px;
+  align-items: end;
   padding-bottom: 14px;
   border-bottom: 1px solid #e3dcd1;
 }
@@ -1832,17 +2061,46 @@ h2 {
 }
 
 .tfa-group-strip-head p {
-  max-width: 480px;
   margin: 0;
   color: #60636a;
   font-size: 13px;
   line-height: 1.55;
 }
 
+.tfa-major-control {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.tfa-major-control span {
+  color: #60636a;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.tfa-major-control select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: #fffdfa;
+  border: 1px solid #d8d0c4;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.tfa-major-control select:disabled {
+  color: #777a80;
+  background: #f4f0e9;
+}
+
 .tfa-group-list {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+  gap: 10px;
   margin-top: 14px;
 }
 
@@ -2922,7 +3180,8 @@ h2 {
   }
 
   .browser-head,
-  .code-browser {
+  .code-browser,
+  .kg-stage {
     grid-template-columns: 1fr;
   }
 
@@ -2956,6 +3215,7 @@ h2 {
   }
 
   .tfa-system-row,
+  .tfa-group-strip-head,
   .tfa-reader-layout {
     grid-template-columns: 1fr;
   }
@@ -3000,6 +3260,15 @@ h2 {
 
   .knowledge-map {
     min-height: 390px;
+  }
+
+  .kg-hero {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .kg-canvas-shell {
+    min-height: 560px;
   }
 
   .architecture-grid,
@@ -3063,6 +3332,27 @@ h2 {
     padding-right: 0;
   }
 
+  .knowledge-graph-page {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .kg-hero {
+    padding: 24px 20px;
+  }
+
+  .kg-hero h1 {
+    font-size: 36px;
+  }
+
+  .kg-stage {
+    min-height: 0;
+  }
+
+  .kg-canvas-shell {
+    min-height: 460px;
+  }
+
   .hero-grid {
     padding-top: 38px;
     gap: 36px;
@@ -3099,6 +3389,10 @@ h2 {
   }
 
   .tfa-system-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tfa-group-strip-head {
     grid-template-columns: 1fr;
   }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>宏信联诚认证技术知识库</title>
-    <link rel="stylesheet" href="styles.css?v=20260809-latest1" />
+    <link rel="stylesheet" href="styles.css?v=20260814-knowledge1" />
   </head>
   <body>
     <div class="site-shell">
@@ -23,7 +23,7 @@
           <a href="#specialties" data-route="specialties">技术领域分析</a>
           <a href="#audit" data-route="audit">作业指导书</a>
           <a href="#tools" data-route="tools">审核工具箱</a>
-          <a href="#cases" data-route="cases">更新动态</a>
+          <a href="#cases" data-route="cases">优秀案例</a>
         </nav>
         <div class="top-actions">
           <button class="lang-button" type="button">中</button>
@@ -69,29 +69,17 @@
               </div>
             </div>
 
-            <aside class="knowledge-map" aria-labelledby="map-title">
+            <aside class="knowledge-map" aria-labelledby="map-title" data-route="knowledge-graph" role="button" tabindex="0">
               <h2 id="map-title">Knowledge Architecture</h2>
               <p>
                 Versioned standards, audit evidence and expert judgement connected as usable
                 certification intelligence.
               </p>
               <div class="map-kicker">STANDARDS / EVIDENCE / REVIEW / DECISION</div>
-              <div class="visual-picture" aria-hidden="true">
-                <span class="paper-layer layer-back"></span>
-                <span class="paper-layer layer-mid"></span>
-                <span class="paper-layer layer-front"></span>
-                <span class="paper-line line-a"></span>
-                <span class="paper-line line-b"></span>
-                <span class="paper-line line-c"></span>
-                <span class="scope-lens"></span>
-                <span class="scope-handle"></span>
-                <span class="tile tile-a"></span>
-                <span class="tile tile-b"></span>
-                <span class="tile tile-c"></span>
-                <span class="check-card"><b></b></span>
-                <span class="red-pin pin-a"></span>
-                <span class="red-pin pin-b"></span>
-                <span class="red-pin pin-c"></span>
+              <div class="visual-picture knowledge-preview" aria-hidden="true">
+                <canvas id="knowledge-preview-canvas"></canvas>
+                <span class="preview-orbit orbit-a"></span>
+                <span class="preview-orbit orbit-b"></span>
               </div>
               <div class="index-chip"><span></span>Live index: ISO 9001 · 14001 · 45001 · CNAS</div>
             </aside>
@@ -129,7 +117,7 @@
           <section class="architecture" aria-labelledby="architecture-title">
             <div>
               <h2 id="architecture-title">八项技术底盘</h2>
-              <p>用统一入口管理内部制度、技术规则、专业分析、审核方法、培训课程和案例经验。</p>
+              <p>用统一入口管理内部制度、认证规则、技术领域分析、审核方法、法律法规、标准规范、案例经验和现场手卡。</p>
             </div>
             <div class="architecture-grid" id="architecture-grid"></div>
           </section>
@@ -212,13 +200,14 @@
       </main>
     </div>
 
-    <script src="assets/guidance-catalog.js?v=20260809-latest1"></script>
-    <script src="assets/technical-field-catalog.js?v=20260809-latest1"></script>
-    <script src="assets/technical-field-workspace.js?v=20260809-latest1"></script>
-    <script src="assets/standard-catalog.js?v=20260809-latest1"></script>
-    <script src="assets/standard-workspace.js?v=20260809-latest1"></script>
-    <script src="assets/regulation-catalog.js?v=20260809-latest1"></script>
-    <script src="assets/regulation-workspace.js?v=20260809-latest1"></script>
-    <script src="app.js?v=20260809-latest1"></script>
+    <script src="assets/guidance-catalog.js?v=20260814-knowledge1"></script>
+    <script src="assets/audit-card-catalog.js?v=20260814-knowledge1"></script>
+    <script src="assets/technical-field-catalog.js?v=20260814-knowledge1"></script>
+    <script src="assets/technical-field-workspace.js?v=20260814-knowledge1"></script>
+    <script src="assets/standard-catalog.js?v=20260814-knowledge1"></script>
+    <script src="assets/standard-workspace.js?v=20260814-knowledge1"></script>
+    <script src="assets/regulation-catalog.js?v=20260814-knowledge1"></script>
+    <script src="assets/regulation-workspace.js?v=20260814-knowledge1"></script>
+    <script src="app.js?v=20260814-knowledge1"></script>
   </body>
 </html>

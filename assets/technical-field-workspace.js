@@ -82,6 +82,30 @@
     });
   }
 
+  const majorNames = {
+    "17": "金属冶炼、金属制品及加工维修",
+    "18": "机械设备制造、修理与安装",
+    "19": "电子、电气、光学设备制造及修理",
+  };
+
+  function majorOptionsForSystem(systemData) {
+    const groups = systemData?.groups || [];
+    const options = [];
+    groups.forEach((group) => {
+      const code = group.majorCode || "";
+      if (!code || options.some((item) => item.code === code)) return;
+      const scopedGroups = groups.filter((item) => item.majorCode === code);
+      const docCount = scopedGroups.reduce((sum, item) => sum + 1 + (item.cardCount || 0), 0);
+      options.push({
+        code,
+        label: `${code} 大类`,
+        name: majorNames[code] || `${code} 大类技术领域`,
+        status: `${scopedGroups.length} 组 · ${docCount} 份文件`,
+      });
+    });
+    return options.sort((a, b) => a.code.localeCompare(b.code, "zh-CN", { numeric: true }));
+  }
+
   window.renderHxlcTechnicalFieldWorkspace = function renderHxlcTechnicalFieldWorkspace(
     container,
     providedEscapeHtml,
@@ -91,6 +115,7 @@
     const systemOptions = buildSystemOptions(catalog);
     const firstAvailable = systemOptions.find((system) => !system.disabled)?.code || "QMS";
     let activeSystem = firstAvailable;
+    let activeMajorCode = "";
     let activeGroupId = "";
     let activeDocUrl = "";
 
@@ -134,6 +159,10 @@
               <span data-tfa-system-label></span>
               <h2 data-tfa-system-title></h2>
             </div>
+            <label class="tfa-major-control">
+              <span>专业大类</span>
+              <select data-tfa-major></select>
+            </label>
             <p data-tfa-orphan-note></p>
           </div>
           <div class="tfa-group-list"></div>
@@ -178,10 +207,16 @@
     const systemLabelEl = container.querySelector("[data-tfa-system-label]");
     const systemTitleEl = container.querySelector("[data-tfa-system-title]");
     const orphanNoteEl = container.querySelector("[data-tfa-orphan-note]");
+    const majorSelect = container.querySelector("[data-tfa-major]");
     const docTreeTitleEl = container.querySelector("[data-tfa-doc-tree-title]");
     const docTreeNoteEl = container.querySelector("[data-tfa-doc-tree-note]");
 
-    const groupsForActiveSystem = () => activeSystemData()?.groups || [];
+    const groupsForActiveSystem = () => {
+      const systemData = activeSystemData();
+      const groups = systemData?.groups || [];
+      if (systemData?.direct || !activeMajorCode) return groups;
+      return groups.filter((group) => group.majorCode === activeMajorCode);
+    };
     const activeGroup = () => {
       const groups = groupsForActiveSystem();
       return groups.find((group) => group.id === activeGroupId) || groups[0];
@@ -190,6 +225,12 @@
 
     const render = () => {
       const systemData = activeSystemData();
+      const majors = majorOptionsForSystem(systemData);
+      if (!majors.some((major) => major.code === activeMajorCode)) {
+        activeMajorCode = majors[0]?.code || "";
+        activeGroupId = "";
+        activeDocUrl = "";
+      }
       const groups = groupsForActiveSystem();
       if (!groups.some((group) => group.id === activeGroupId)) {
         activeGroupId = groups[0]?.id || "";
@@ -202,6 +243,18 @@
       }
       if (groupList) {
         groupList.innerHTML = groups.map((item) => renderGroupCard(item, activeGroupId, escapeHtml)).join("");
+      }
+      if (majorSelect) {
+        majorSelect.innerHTML = majors
+          .map(
+            (major) => `
+              <option value="${escapeHtml(major.code)}" ${major.code === activeMajorCode ? "selected" : ""}>
+                ${escapeHtml(`${major.label} · ${major.name} · ${major.status}`)}
+              </option>
+            `,
+          )
+          .join("");
+        majorSelect.disabled = majors.length <= 1;
       }
       if (docList) {
         docList.innerHTML = docs.map((doc) => renderDocButton(doc, activeDocUrl, escapeHtml)).join("");
@@ -223,6 +276,17 @@
           : "待导入";
       }
       if (systemTitleEl) systemTitleEl.textContent = systemData?.majorName || "技术领域分组";
+      const selectedMajor = majors.find((item) => item.code === activeMajorCode);
+      if (systemLabelEl) {
+        systemLabelEl.textContent = systemData && selectedMajor
+          ? `${systemData.system} / ${selectedMajor.label} / ${selectedMajor.status}`
+          : systemData
+            ? `${systemData.system} / ${systemData.totalGroups || 0} 组`
+            : "待导入";
+      }
+      if (systemTitleEl) {
+        systemTitleEl.textContent = selectedMajor?.name || systemData?.systemName || "技术领域分组";
+      }
       if (orphanNoteEl) {
         const orphans = systemData?.orphanCards || [];
         orphanNoteEl.innerHTML = orphans.length
@@ -248,10 +312,17 @@
       button.addEventListener("click", () => {
         if (button.disabled) return;
         activeSystem = button.dataset.tfaSystem || activeSystem;
+        activeMajorCode = "";
         activeGroupId = "";
         activeDocUrl = "";
         render();
       });
+    });
+    majorSelect?.addEventListener("change", () => {
+      activeMajorCode = majorSelect.value || activeMajorCode;
+      activeGroupId = "";
+      activeDocUrl = "";
+      render();
     });
     groupList?.addEventListener("click", (event) => {
       const button = event.target.closest("[data-tfa-group]");

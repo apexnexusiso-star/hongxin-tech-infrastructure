@@ -1,4 +1,4 @@
-﻿window.HXLC_GUIDANCE_CATALOG = [
+window.HXLC_GUIDANCE_CATALOG = [
   {
     "title": "乳制品厂的运营和奶酪的制造审核作业指导书",
     "system": "ISO9001",

@@ -1,4 +1,4 @@
-const modules = [
+﻿const modules = [
   {
     id: "governance",
     no: "01",
@@ -68,25 +68,8 @@ const modules = [
     tags: ["作业指导书", "审核检查表", "证据链", "过程方法", "远程审核"],
   },
   {
-    id: "training",
-    no: "05",
-    title: "培训教材课件",
-    summary: "内部培训教材、审核员培训资料、客户课程和培训用 PPT 的统一资料库。",
-    hero:
-      "把技术文件转化为教材、课件、案例讲解和考试题库，让能力建设可以持续复制。",
-    sections: [
-      ["内部培训", "新员工、审核管理人员、技术人员、认证决定人员和市场人员合规培训教材。"],
-      ["审核员课程", "标准理解、专业能力、审核方法、报告写作和职业操守培训资料。"],
-      ["内审员教材", "面向客户组织的质量、环境、职业健康安全内审员培训教材。"],
-      ["专题课件", "能源、信息安全、服务认证、双碳、质量提升等专题培训 PPT。"],
-      ["题库考试", "课程练习、结业测试、年度能力保持和培训效果评价题库。"],
-      ["视频脚本", "课程录制、数字人讲解、公开课和内部微课使用的讲稿资料。"],
-    ],
-    tags: ["培训教材", "PPT", "题库", "内审员", "继续教育"],
-  },
-  {
     id: "laws",
-    no: "06",
+    no: "05",
     title: "法律法规库",
     summary: "与认证活动、客户行业和审核领域相关的法律法规及合规要求。",
     hero:
@@ -103,7 +86,7 @@ const modules = [
   },
   {
     id: "standards",
-    no: "07",
+    no: "06",
     title: "标准规范库",
     summary: "ISO、GB/T、CNAS、CCAA 及行业标准的受控版本、条款解释和引用关系资料库。",
     hero:
@@ -113,16 +96,16 @@ const modules = [
       ["CNAS 要求", "认可规则、认可准则、应用说明、转换安排和见证评审关注点。"],
       ["CCAA 要求", "审核员注册、继续教育、人员能力和考试相关要求。"],
       ["条款解释", "对关键条款、易混条款和审核证据要求进行解释说明。"],
-      ["修订影响", "新标准发布后的认证方案、模板、培训和证书转换影响分析。"],
-      ["引用关系", "把标准条款与审核检查表、作业指导书和培训教材建立关联。"],
+      ["修订影响", "新标准发布后的认证方案、模板、审核方法和证书转换影响分析。"],
+      ["引用关系", "把标准条款与审核检查表、作业指导书和法规依据建立关联。"],
     ],
-    tags: ["认证认可", "CNAS", "CCAA", "审核法规", "属地法规"],
+    tags: ["ISO", "GB/T", "CNAS", "CCAA", "条款解释"],
   },
   {
     id: "cases",
-    no: "08",
+    no: "07",
     title: "优秀案例库",
-    summary: "优秀审核报告、专业分析、培训案例、监管案例和技术争议处理样例。",
+    summary: "优秀审核报告、专业分析、监管案例、技术争议处理和经验复盘样例。",
     hero:
       "将优秀实践和真实案例沉淀为机构能力，帮助审核员、技术人员和认证决定人员统一判断尺度。",
     sections: [
@@ -134,6 +117,23 @@ const modules = [
       ["经验复盘", "每月技术例会、审核复盘和年度质量分析报告。"],
     ],
     tags: ["优秀报告", "监管案例", "不符合", "申投诉", "复盘"],
+  },
+  {
+    id: "audit-cards",
+    no: "08",
+    title: "审核现场手卡",
+    summary: "面向审核员现场使用的条款提示、证据清单、风险要点和快速判断卡。",
+    hero:
+      "把长篇作业指导书中的关键要求提炼成现场可随查、可携带、可快速调用的审核指导手卡，提高审核一致性和现场效率。",
+    sections: [
+      ["条款手卡", "按 ISO 9001、14001、45001、50001 条款提炼审核问题、证据样例和常见偏差。"],
+      ["行业手卡", "按高频行业整理关键过程、现场观察点、专业术语和风险提示。"],
+      ["法规手卡", "把适用法规要求转化为现场可核查的问题和证据清单。"],
+      ["证据手卡", "针对记录、访谈、现场观察、数据抽样和照片证据给出快速判断提示。"],
+      ["风险手卡", "提示高风险场景、易漏审环节、重大不符合线索和升级复核条件。"],
+      ["移动端形态", "未来可做成手机端、二维码、离线包或审核任务随身卡。"],
+    ],
+    tags: ["现场手卡", "条款提示", "证据清单", "风险要点", "移动端"],
   },
 ];
 
@@ -151,6 +151,9 @@ const routeAliases = {
 
 const guidanceCatalog = Array.isArray(window.HXLC_GUIDANCE_CATALOG)
   ? window.HXLC_GUIDANCE_CATALOG
+  : [];
+const auditCardCatalog = Array.isArray(window.HXLC_AUDIT_CARD_CATALOG)
+  ? window.HXLC_AUDIT_CARD_CATALOG
   : [];
 const standardCatalog = Array.isArray(window.HXLC_STANDARD_CATALOG)
   ? window.HXLC_STANDARD_CATALOG
@@ -177,9 +180,9 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;");
 }
 
-function guidanceSystemCount(system) {
-  if (system === "all") return guidanceCatalog.length;
-  return guidanceCatalog.filter((item) => item.system === system).length;
+function guidanceSystemCount(system, catalog = guidanceCatalog) {
+  if (system === "all") return catalog.length;
+  return catalog.filter((item) => item.system === system).length;
 }
 
 function compareGuidanceItems(a, b) {
@@ -193,26 +196,30 @@ function compareGuidanceItems(a, b) {
   );
 }
 
-function renderGuidanceCard(item) {
-  const title = item.title || "未命名作业指导书";
+function renderGuidanceCard(item, mode = "guidance") {
+  const isHandCard = mode === "hand-card";
+  const title = item.title || (isHandCard ? "未命名审核现场手卡" : "未命名作业指导书");
+  const displayTitle = isHandCard
+    ? `${cleanGuidanceTitle(title) || title} 审核现场手卡`
+    : title;
   const meta = [item.fileNo, `目录 ${item.tocItems || 0} 项`].filter(Boolean).join(" · ");
   return `
     <a class="guidance-card" href="${escapeHtml(item.url)}" title="${escapeHtml(title)}">
       <div class="doc-icon"></div>
       <span class="pill">${escapeHtml(item.system || "ISO")}</span>
-      <strong>${escapeHtml(title)}</strong>
+      <strong>${escapeHtml(displayTitle)}</strong>
       <small>${escapeHtml(meta)}</small>
-      <footer><span>HTML 全文 · 表格 ${escapeHtml(item.tables || 0)} 个</span><b></b></footer>
+      <footer><span>${isHandCard ? `现场速查 · 证据提示 ${escapeHtml(item.tables || 0)} 项` : `HTML 全文 · 表格 ${escapeHtml(item.tables || 0)} 个`}</span><b></b></footer>
     </a>
   `;
 }
 
-function getGuidanceRecommendations() {
+function getGuidanceRecommendations(catalog = guidanceCatalog) {
   const quota = { ISO9001: 2, ISO14001: 2, ISO45001: 1, ISO50001: 1 };
   const picked = [];
   Object.entries(quota).forEach(([system, count]) => {
     picked.push(
-      ...guidanceCatalog
+      ...catalog
         .filter((item) => item.system === system)
         .sort(compareGuidanceItems)
         .slice(0, count),
@@ -364,8 +371,10 @@ function renderGuidanceSelect(label, name, options, value, items, level) {
   `;
 }
 
-function hydrateGuidanceCatalog() {
-  if (!guidanceCatalog.length) return;
+function hydrateGuidanceCatalog(options = {}) {
+  const mode = options.mode || "guidance";
+  const isHandCard = mode === "hand-card";
+  const activeCatalog = isHandCard ? auditCardCatalog : guidanceCatalog;
 
   const domainList = workspaceView.querySelector(".domain-list");
   const cards = workspaceView.querySelector(".guidance-cards");
@@ -380,20 +389,29 @@ function hydrateGuidanceCatalog() {
   let selectedSmall = "";
 
   if (intro) {
-    intro.textContent = `精选展示 6 项，完整目录请从左侧体系进入大类、中类、小类逐级浏览。`;
+    if (isHandCard) {
+      intro.textContent = activeCatalog.length
+        ? "精选展示 6 张现场手卡，完整目录请从左侧体系进入大类、中类、小类逐级浏览。"
+        : "当前暂无审核现场手卡，待导入真实内容后在这里展示推荐与最新发布。";
+    } else {
+      intro.textContent = "精选展示 6 项，完整目录请从左侧体系进入大类、中类、小类逐级浏览。";
+    }
   }
 
-  if (sampleLink && guidanceCatalog[0]) {
-    sampleLink.href = guidanceCatalog[0].url;
+  if (sampleLink && activeCatalog[0]) {
+    sampleLink.href = activeCatalog[0].url;
+  } else if (sampleLink && isHandCard) {
+    sampleLink.href = "#audit-cards";
   }
 
   if (domainList) {
     domainList.innerHTML = guidanceSystems
       .map(([system, label], index) => {
-        const count = guidanceSystemCount(system);
+        const count = guidanceSystemCount(system, activeCatalog);
+        const displayLabel = isHandCard && system === "all" ? "全部审核现场手卡" : label;
         return `
           <button class="${index === 0 ? "active" : ""}" type="button" data-guidance-system="${system}">
-            <span>${label}</span><b>${count}</b>
+            <span>${displayLabel}</span><b>${count}</b>
           </button>
         `;
       })
@@ -407,7 +425,7 @@ function hydrateGuidanceCatalog() {
     if (!cards) return;
     const keyword = (searchInput?.value || "").trim().toLowerCase();
     if (keyword) {
-      const filtered = guidanceCatalog
+      const filtered = activeCatalog
         .filter((item) => {
           const haystack = `${item.system} ${item.code} ${item.title} ${item.fileNo}`.toLowerCase();
           return haystack.includes(keyword);
@@ -415,13 +433,15 @@ function hydrateGuidanceCatalog() {
         .sort(compareGuidanceItems)
         .slice(0, 12);
       cards.innerHTML = filtered.length
-        ? filtered.map(renderGuidanceCard).join("")
-        : '<div class="guidance-empty">没有找到匹配的作业指导书。</div>';
+        ? filtered.map((item) => renderGuidanceCard(item, mode)).join("")
+        : `<div class="guidance-empty">没有找到匹配的${isHandCard ? "审核现场手卡" : "作业指导书"}。</div>`;
       return;
     }
 
-    const recommended = getGuidanceRecommendations();
-    cards.innerHTML = recommended.map(renderGuidanceCard).join("");
+    const recommended = getGuidanceRecommendations(activeCatalog);
+    cards.innerHTML = recommended.length
+      ? recommended.map((item) => renderGuidanceCard(item, mode)).join("")
+      : `<div class="guidance-empty">${isHandCard ? "审核现场手卡内容待导入，当前暂无可展示条目。" : "暂无可展示条目。"}</div>`;
   };
 
   const renderSidebarFilter = () => {
@@ -430,19 +450,26 @@ function hydrateGuidanceCatalog() {
     if (activeSystem === "all") {
       filter.innerHTML = `
         <div class="filter-title">专业代码筛选</div>
-        <p>先选择 Q / E / S / 能源体系。</p>
+        <p>先选择 Q / E / S / 能源体系，再定位现场适用手卡。</p>
       `;
       return;
     }
 
-    const systemItems = guidanceCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    const systemItems = activeCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    if (!systemItems.length) {
+      filter.innerHTML = `
+        <div class="filter-title">专业代码筛选</div>
+        <p>${isHandCard ? "该体系下暂无审核现场手卡，待导入真实内容后启用筛选。" : "该体系下暂无可筛选文件。"}</p>
+      `;
+      return;
+    }
     if (activeSystem === "ISO50001") {
       filter.innerHTML = `
         <div class="filter-title">能源领域</div>
         <label>
-          <span>领域文件</span>
+          <span>${isHandCard ? "现场手卡" : "领域文件"}</span>
           <select data-guidance-file>
-            <option value="">选择能源领域</option>
+            <option value="">${isHandCard ? "选择能源现场手卡" : "选择能源领域"}</option>
             ${systemItems
               .map(
                 (item) => `
@@ -489,7 +516,7 @@ function hydrateGuidanceCatalog() {
       <label>
         <span>小类 / 文件</span>
         <select data-guidance-file>
-          <option value="">选择后打开文件</option>
+          <option value="">${isHandCard ? "选择后打开现场手卡" : "选择后打开文件"}</option>
           ${fileOptions
             .map(
               (levels) => `
@@ -510,18 +537,27 @@ function hydrateGuidanceCatalog() {
       browser.innerHTML = `
         <div class="browser-empty">
           <strong>请选择左侧一个管理体系</strong>
-          <p>进入后可按专业代码逐级选择大类、中类和小类，最后打开对应作业指导书全文。</p>
+          <p>进入后可按专业代码逐级选择大类、中类和小类，最后打开对应${isHandCard ? "审核现场手卡" : "作业指导书全文"}。</p>
         </div>
       `;
       return;
     }
 
-    const systemItems = guidanceCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    const systemItems = activeCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
     const browserSystemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+    if (!systemItems.length) {
+      browser.innerHTML = `
+        <div class="browser-empty">
+          <strong>${escapeHtml(browserSystemLabel)}暂无内容</strong>
+          <p>${isHandCard ? "当前审核现场手卡库尚未导入该体系文件，后续导入后将在这里按专业代码展开。" : "当前没有可展示文件。"}</p>
+        </div>
+      `;
+      return;
+    }
     browser.innerHTML = `
       <div class="browser-empty">
         <strong>${escapeHtml(browserSystemLabel)}已加载</strong>
-        <p>请在左侧“专业代码筛选”中依次选择大类、中类和小类文件。</p>
+        <p>请在左侧“专业代码筛选”中依次选择大类、中类和小类${isHandCard ? "手卡" : "文件"}。</p>
       </div>
     `;
     return;
@@ -955,7 +991,8 @@ function renderTechnicalFieldWorkspace() {
   `;
 }
 
-function renderAuditWorkspace() {
+function renderAuditWorkspace(mode = "guidance") {
+  const isHandCard = mode === "hand-card";
   workspaceView.innerHTML = `
     <section class="guidance-page">
       <div class="guidance-hero">
@@ -1048,13 +1085,435 @@ function renderAuditWorkspace() {
       </div>
     </section>
   `;
-  hydrateGuidanceCatalog();
+  if (isHandCard) {
+    const breadcrumb = workspaceView.querySelector(".breadcrumb");
+    const title = workspaceView.querySelector(".guidance-copy h1");
+    const intro = workspaceView.querySelector(".guidance-copy p");
+    const label = workspaceView.querySelector(".section-label");
+    const banner = workspaceView.querySelector(".guidance-banner");
+    const searchInput = workspaceView.querySelector(".guidance-search input");
+    const searchButton = workspaceView.querySelector(".search-action");
+    const sidebarIntro = workspaceView.querySelector(".guidance-sidebar p");
+    const quickRule = workspaceView.querySelector(".quick-links a:last-child");
+    const recommendIntro = workspaceView.querySelector(".recommend-head p");
+    const noteTitle = workspaceView.querySelector(".guidance-note h2");
+    const noteText = workspaceView.querySelector(".guidance-note p");
+    const noteLink = workspaceView.querySelector(".guidance-note a");
+    const footLeft = workspaceView.querySelector(".guidance-foot span:first-child");
+
+    if (breadcrumb) breadcrumb.textContent = "首页 / 专业知识库 / 审核现场手卡";
+    if (title) title.textContent = "审核现场手卡专栏";
+    if (intro) intro.textContent = "把作业指导书压缩为现场可速查、可提示、可执行的审核要点卡";
+    if (label) label.innerHTML = "<span></span>AUDIT FIELD CARD LIBRARY";
+    if (banner) banner.setAttribute("aria-label", "审核现场手卡技术图");
+    if (searchInput) {
+      searchInput.setAttribute("aria-label", "检索审核现场手卡");
+      searchInput.setAttribute("placeholder", "搜索手卡名称、专业代码、现场证据、风险要点或适用行业......");
+    }
+    if (searchButton) searchButton.textContent = "检索手卡";
+    if (sidebarIntro) sidebarIntro.textContent = "按管理体系与现场审核场景浏览";
+    if (quickRule) quickRule.textContent = "现场手卡编制规则";
+    if (recommendIntro) recommendIntro.textContent = "优先展示现场使用频率高、证据提示清晰的审核手卡";
+    if (noteTitle) noteTitle.textContent = "编制与使用说明";
+    if (noteText) {
+      noteText.textContent =
+        "每张手卡均从作业指导书中提炼关键过程、现场证据、法规关注点和高风险提示。它不是替代完整作业指导书，而是帮助审核员在现场快速确认审核方向。";
+    }
+    if (noteLink) noteLink.innerHTML = "查看真实全文来源 <span></span>";
+    if (footLeft) footLeft.textContent = "HLC CERTIFICATION · FIELD AUDIT CARD PORTAL";
+  }
+  hydrateGuidanceCatalog({ mode });
+}
+
+function knowledgeGraphStats() {
+  const guidance = Array.isArray(window.HXLC_GUIDANCE_CATALOG) ? window.HXLC_GUIDANCE_CATALOG : [];
+  const standards = Array.isArray(window.HXLC_STANDARD_CATALOG) ? window.HXLC_STANDARD_CATALOG : [];
+  const regulations = Array.isArray(window.HXLC_REGULATION_CATALOG) ? window.HXLC_REGULATION_CATALOG : [];
+  const technicalFields = Array.isArray(window.HXLC_TECHNICAL_FIELD_CATALOG)
+    ? window.HXLC_TECHNICAL_FIELD_CATALOG
+    : [];
+  return {
+    guidance: guidance.length,
+    auditCards: auditCardCatalog.length,
+    standards: standards.length,
+    regulations: regulations.length,
+    technicalGroups: technicalFields.reduce((sum, item) => sum + (item.totalGroups || 0), 0),
+    technicalDocs: technicalFields.reduce((sum, item) => sum + (item.totalDocuments || 0), 0),
+  };
+}
+
+function buildKnowledgeGraphNodes(stats) {
+  const nodes = [
+    { id: "core", label: "宏信知识中枢", type: "core", value: 42, route: "home", x: 0, y: 0, z: 0 },
+  ];
+  const links = [];
+  const main = [
+    ["governance", "内部文件库", "制度 / 表单 / 记录", 18],
+    ["rules", "认证规则库", "规则 / 证据 / 决定", 20],
+    ["specialties", "技术领域分析", `${stats.technicalGroups || 0} 组 / ${stats.technicalDocs || 0} 份`, 24],
+    ["audit", "作业指导书", `${stats.guidance || 0} 份电子书`, 26],
+    ["laws", "法律法规库", `${stats.regulations || 0} 项法规`, 22],
+    ["standards", "标准规范库", `${stats.standards || 0} 项标准`, 22],
+    ["cases", "优秀案例库", "报告 / 投诉 / 复盘", 16],
+    ["audit-cards", "审核现场手卡", `${stats.auditCards || 0} 张手卡`, 16],
+  ];
+  const children = {
+    governance: ["管理手册", "程序文件", "记录表格"],
+    rules: ["范围判定", "审核证据", "认证决定"],
+    specialties: ["QMS 分组", "EMS 分组", "OHSMS 分组", "能源领域"],
+    audit: ["ISO9001", "ISO14001", "ISO45001", "ISO50001"],
+    laws: ["认证监管", "认可规范", "行业法规"],
+    standards: ["ISO 标准", "GB/T 标准", "CNAS 要求"],
+    cases: ["优秀报告", "风险案例", "经验复盘"],
+    "audit-cards": ["条款提示", "证据清单", "风险要点"],
+  };
+  const radius = 280;
+  main.forEach(([id, label, meta, value], index) => {
+    const angle = (Math.PI * 2 * index) / main.length - Math.PI / 2;
+    const y = index % 2 === 0 ? -74 : 74;
+    nodes.push({
+      id,
+      label,
+      meta,
+      type: "module",
+      value,
+      route: id,
+      x: Math.cos(angle) * radius,
+      y,
+      z: Math.sin(angle) * radius,
+    });
+    links.push(["core", id]);
+    (children[id] || []).forEach((childLabel, childIndex) => {
+      const childAngle = angle + (childIndex - ((children[id] || []).length - 1) / 2) * 0.22;
+      const childId = `${id}-${childIndex}`;
+      nodes.push({
+        id: childId,
+        label: childLabel,
+        type: "leaf",
+        value: 10,
+        route: id,
+        x: Math.cos(childAngle) * (radius + 118),
+        y: y + (childIndex % 2 === 0 ? -48 : 48),
+        z: Math.sin(childAngle) * (radius + 118),
+      });
+      links.push([id, childId]);
+    });
+  });
+  return { nodes, links };
+}
+
+function renderKnowledgeGraphWorkspace() {
+  const stats = knowledgeGraphStats();
+  workspaceView.innerHTML = `
+    <section class="knowledge-graph-page">
+      <div class="kg-hero">
+        <div>
+          <div class="kg-breadcrumb">首页 / 知识图谱 / Knowledge Graph</div>
+          <h1>宏信联诚知识图谱</h1>
+          <p>把标准、法规、规则、作业指导书、技术领域分析、审核现场手卡和案例经验连接成可探索的认证技术网络。</p>
+        </div>
+        <div class="kg-actions">
+          <button type="button" data-kg-action="reset">复位视角</button>
+          <button type="button" data-kg-action="spin">暂停旋转</button>
+        </div>
+      </div>
+      <div class="kg-stage">
+        <div class="kg-canvas-shell">
+          <canvas id="knowledge-graph-canvas" aria-label="宏信联诚知识图谱"></canvas>
+          <div class="kg-hint">拖拽旋转 · 点击节点进入对应知识库</div>
+        </div>
+        <aside class="kg-inspector">
+          <span>KNOWLEDGE INDEX</span>
+          <h2>认证技术网络</h2>
+          <p>中心节点代表宏信知识中枢，外圈节点代表八项技术底盘，外围节点代表可继续展开的知识对象。</p>
+          <div class="kg-stat-grid">
+            <b>${escapeHtml(stats.guidance)}</b><small>作业指导书</small>
+            <b>${escapeHtml(stats.standards)}</b><small>标准条目</small>
+            <b>${escapeHtml(stats.regulations)}</b><small>法规文件</small>
+            <b>${escapeHtml(stats.technicalGroups)}</b><small>技术领域组</small>
+          </div>
+          <div class="kg-legend">
+            <i class="core"></i><span>知识中枢</span>
+            <i class="module"></i><span>技术底盘</span>
+            <i class="leaf"></i><span>知识对象</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  `;
+  requestAnimationFrame(() => {
+    initKnowledgeGraph(workspaceView.querySelector("#knowledge-graph-canvas"));
+  });
+}
+
+function initKnowledgeGraph(canvas) {
+  if (!canvas) return;
+  const shell = canvas.closest(".kg-canvas-shell");
+  const ctx = canvas.getContext("2d");
+  const graph = buildKnowledgeGraphNodes(knowledgeGraphStats());
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let rotationY = -0.42;
+  let rotationX = 0.22;
+  let velocityY = 0.0032;
+  let isDragging = false;
+  let spin = true;
+  let lastX = 0;
+  let lastY = 0;
+  let moved = 0;
+  let projected = [];
+
+  function resize() {
+    const rect = shell.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(320, rect.width);
+    height = Math.max(360, rect.height);
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function rotatePoint(node) {
+    const cosY = Math.cos(rotationY);
+    const sinY = Math.sin(rotationY);
+    const cosX = Math.cos(rotationX);
+    const sinX = Math.sin(rotationX);
+    const x1 = node.x * cosY - node.z * sinY;
+    const z1 = node.x * sinY + node.z * cosY;
+    const y1 = node.y * cosX - z1 * sinX;
+    const z2 = node.y * sinX + z1 * cosX;
+    const scale = 760 / (760 + z2);
+    return {
+      ...node,
+      sx: width / 2 + x1 * scale,
+      sy: height / 2 + y1 * scale,
+      z: z2,
+      scale,
+      radius: (node.type === "core" ? 28 : node.type === "module" ? 18 : 9) * scale,
+    };
+  }
+
+  function draw() {
+    if (!document.body.contains(canvas)) return;
+    if (spin && !isDragging) rotationY += velocityY;
+    ctx.clearRect(0, 0, width, height);
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, "#171a20");
+    gradient.addColorStop(0.52, "#252932");
+    gradient.addColorStop(1, "#111318");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.strokeStyle = "rgba(255,255,255,0.045)";
+    ctx.lineWidth = 1;
+    for (let x = 0; x < width; x += 44) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+    }
+    for (let y = 0; y < height; y += 44) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+    }
+
+    projected = graph.nodes.map(rotatePoint);
+    const byId = new Map(projected.map((node) => [node.id, node]));
+
+    graph.links
+      .map(([from, to]) => [byId.get(from), byId.get(to)])
+      .filter(([from, to]) => from && to)
+      .sort((a, b) => (a[0].z + a[1].z) - (b[0].z + b[1].z))
+      .forEach(([from, to]) => {
+        const alpha = Math.max(0.16, Math.min(0.72, (from.scale + to.scale) / 2));
+        ctx.strokeStyle = `rgba(183, 199, 213, ${alpha * 0.34})`;
+        ctx.lineWidth = Math.max(0.8, 1.6 * alpha);
+        ctx.beginPath();
+        ctx.moveTo(from.sx, from.sy);
+        ctx.lineTo(to.sx, to.sy);
+        ctx.stroke();
+      });
+
+    projected
+      .sort((a, b) => a.z - b.z)
+      .forEach((node) => {
+        const alpha = Math.max(0.35, Math.min(1, node.scale));
+        const color = node.type === "core" ? "#ffffff" : node.type === "module" ? "#c60032" : "#8fb7d8";
+        ctx.shadowColor = node.type === "core" ? "rgba(255,255,255,0.4)" : "rgba(198,0,50,0.34)";
+        ctx.shadowBlur = node.type === "leaf" ? 8 : 18;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.arc(node.sx, node.sy, node.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+
+        if (node.type !== "leaf" || node.scale > 0.78) {
+          ctx.font = `${node.type === "core" ? 18 : 13}px Microsoft YaHei, Arial`;
+          ctx.textAlign = "center";
+          ctx.fillStyle = node.type === "core" ? "#ffffff" : "#f4f1ea";
+          ctx.fillText(node.label, node.sx, node.sy - node.radius - 12);
+          if (node.meta && node.scale > 0.82) {
+            ctx.font = "11px Microsoft YaHei, Arial";
+            ctx.fillStyle = "rgba(235,239,244,0.72)";
+            ctx.fillText(node.meta, node.sx, node.sy - node.radius + 5);
+          }
+        }
+      });
+
+    requestAnimationFrame(draw);
+  }
+
+  function hitTest(x, y) {
+    return [...projected]
+      .reverse()
+      .find((node) => Math.hypot(node.sx - x, node.sy - y) <= Math.max(16, node.radius + 6));
+  }
+
+  canvas.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    moved = 0;
+    lastX = event.offsetX;
+    lastY = event.offsetY;
+    canvas.setPointerCapture(event.pointerId);
+  });
+  canvas.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    const dx = event.offsetX - lastX;
+    const dy = event.offsetY - lastY;
+    moved += Math.abs(dx) + Math.abs(dy);
+    rotationY += dx * 0.006;
+    rotationX = Math.max(-0.9, Math.min(0.9, rotationX + dy * 0.004));
+    lastX = event.offsetX;
+    lastY = event.offsetY;
+  });
+  canvas.addEventListener("pointerup", (event) => {
+    isDragging = false;
+    canvas.releasePointerCapture(event.pointerId);
+    if (moved < 8) {
+      const node = hitTest(event.offsetX, event.offsetY);
+      if (node?.route && node.route !== "home") setActiveView(node.route);
+    }
+  });
+
+  workspaceView.querySelector('[data-kg-action="reset"]')?.addEventListener("click", () => {
+    rotationY = -0.42;
+    rotationX = 0.22;
+  });
+  workspaceView.querySelector('[data-kg-action="spin"]')?.addEventListener("click", (event) => {
+    spin = !spin;
+    event.currentTarget.textContent = spin ? "暂停旋转" : "继续旋转";
+  });
+
+  window.addEventListener("resize", resize);
+  resize();
+  draw();
+}
+
+function initKnowledgePreview(canvas) {
+  if (!canvas) return;
+  const shell = canvas.closest(".knowledge-preview");
+  const ctx = canvas.getContext("2d");
+  const points = [
+    { label: "HLC", type: "core", angle: 0, radius: 0, size: 25 },
+    { label: "Standards", angle: -1.7, radius: 104, size: 13 },
+    { label: "Evidence", angle: -0.7, radius: 128, size: 11 },
+    { label: "Review", angle: 0.25, radius: 116, size: 12 },
+    { label: "Decision", angle: 1.25, radius: 130, size: 11 },
+    { label: "Audit", angle: 2.25, radius: 112, size: 12 },
+  ];
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let t = 0;
+
+  function resize() {
+    const rect = shell.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(320, rect.width);
+    height = Math.max(168, rect.height);
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function project(point) {
+    if (point.type === "core") {
+      return { ...point, x: width * 0.52, y: height * 0.53, depth: 1, alpha: 1 };
+    }
+    const angle = point.angle + t;
+    const x = width * 0.52 + Math.cos(angle) * point.radius;
+    const y = height * 0.53 + Math.sin(angle) * point.radius * 0.36;
+    const depth = 0.72 + Math.sin(angle) * 0.28;
+    return { ...point, x, y, depth, alpha: 0.5 + depth * 0.5 };
+  }
+
+  function draw() {
+    if (!document.body.contains(canvas)) return;
+    t += 0.004;
+    ctx.clearRect(0, 0, width, height);
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, "rgba(255,253,250,0.05)");
+    gradient.addColorStop(0.52, "rgba(255,255,255,0.62)");
+    gradient.addColorStop(1, "rgba(239,236,229,0.15)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    const projected = points.map(project);
+    const core = projected[0];
+    projected.slice(1).forEach((point) => {
+      ctx.strokeStyle = `rgba(176,0,40,${0.18 * point.alpha})`;
+      ctx.lineWidth = Math.max(0.7, 1.4 * point.depth);
+      ctx.beginPath();
+      ctx.moveTo(core.x, core.y);
+      ctx.lineTo(point.x, point.y);
+      ctx.stroke();
+    });
+
+    projected
+      .slice()
+      .sort((a, b) => a.depth - b.depth)
+      .forEach((point) => {
+        const radius = point.type === "core" ? point.size : point.size * point.depth;
+        ctx.shadowColor = point.type === "core" ? "rgba(176,0,40,0.28)" : "rgba(32,35,41,0.12)";
+        ctx.shadowBlur = point.type === "core" ? 20 : 10;
+        ctx.fillStyle = point.type === "core" ? "#b00028" : point.depth > 0.82 ? "#202329" : "#d7d2c8";
+        ctx.globalAlpha = point.alpha;
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+        ctx.font = `${point.type === "core" ? 13 : 10}px Arial, Microsoft YaHei, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.fillStyle = point.type === "core" ? "#ffffff" : "#202329";
+        ctx.fillText(point.label, point.x, point.y + (point.type === "core" ? 4 : radius + 15));
+      });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+  draw();
 }
 
 function renderWorkspace(moduleId) {
   const item = modules.find((module) => module.id === moduleId) || modules[0];
   if (item.id === "audit") {
     renderAuditWorkspace();
+    return;
+  }
+  if (item.id === "audit-cards") {
+    renderAuditWorkspace("hand-card");
     return;
   }
   if (item.id === "laws") {
@@ -1125,12 +1584,16 @@ function setActiveView(rawRoute) {
   const route = routeAliases[rawRoute] || rawRoute;
   const isBook = route === "book";
   const isHome = route === "home" || !route;
+  const isKnowledgeGraph = route === "knowledge-graph";
   const isModule = modules.some((module) => module.id === route);
 
   Object.values(views).forEach((view) => view.classList.remove("active"));
 
   if (isBook) {
     views.book.classList.add("active");
+  } else if (isKnowledgeGraph) {
+    views.workspace.classList.add("active");
+    renderKnowledgeGraphWorkspace();
   } else if (isModule) {
     renderWorkspace(route);
     views.workspace.classList.add("active");
@@ -1159,9 +1622,22 @@ document.addEventListener("click", (event) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  const trigger = event.target.closest("[data-route]");
+  if (!trigger || trigger.tagName === "A" || trigger.tagName === "BUTTON") return;
+  const route = trigger.dataset.route;
+  if (!route) return;
+  event.preventDefault();
+  setActiveView(route);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 window.addEventListener("hashchange", () => {
   setActiveView(window.location.hash.slice(1) || "home");
 });
 
 renderArchitecture();
+initKnowledgePreview(document.querySelector("#knowledge-preview-canvas"));
 setActiveView(window.location.hash.slice(1) || "home");
+

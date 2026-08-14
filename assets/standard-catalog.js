@@ -1,4 +1,4 @@
-﻿window.HXLC_STANDARD_CATALOG = [
+window.HXLC_STANDARD_CATALOG = [
   {
     "id": "STD-041",
     "categoryCode": "01",
