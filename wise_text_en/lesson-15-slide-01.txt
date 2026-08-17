@@ -1,0 +1,17 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back. In the last two lessons, we moved across Annex A control themes: policy, organization, resources, impact assessment, lifecycle, data, information for interested parties, use of AI systems, and third-party relationships. Today we test whether those themes can become real audit work.
+
+Learner: Annex A still feels like a large checklist. If the Statement of Applicability says a control is implemented, do we just ask for the procedure and move to the next control?
+
+Instructor: That is the tempting answer, and it is exactly the trap of this lesson. Annex A is not audited by reciting control names. A selected control must be turned into a purpose, a criterion, a sample, evidence, and finally a conclusion. Today our key phrase is the control-to-finding drill.
+
+Why This Lesson Is A Stress Test
+
+This lesson is deliberately less dramatic than the medical impact case. There is no emergency room, no patient pathway, and no obvious life-safety story. The subject is practical Annex A control auditing, which can easily become a dry tour through tables. If we can make this lesson concrete, the writing method is strong enough for the rest of the course.
+
+Our textbook boundary is sections 8.11 to 8.19, supported by the generative AI office-tool case in section 12.5 and the Annex A traceability workpapers in Appendix L. By the end, you should be able to use an Annex A control audit method, identify common SoA gaps, trace one control to one AI system sample, design role-specific interview questions, and judge whether evidence is sufficient for a finding.
+
+Listen for the movement. We start from a control theme, but we do not stay there. We move to a sampled AI system, a real use case, a responsible role, an operating record, and a conclusion that can survive report review. That movement is what separates a control checklist from an audit.
+
+Keep that movement in your notes today.

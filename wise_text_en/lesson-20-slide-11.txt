@@ -1,0 +1,13 @@
+Learner Practice Task
+
+This page belongs to Lesson 20: ISO/IEC 42001 Auditor Competence Development and Course Closure.
+
+The anchor case is Apex Certification Technology Research Center and AIMS Auditor Panel.
+
+The audit handle is authorization evidence path.
+
+Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as competence matrix, course exam, witnessed audit record, workpaper review.
+
+The comfortable answer hides this issue: Course success is important, but it does not prove competence for every AI context, sector risk, technical boundary or finding judgement.
+
+Keep the professional boundary in view: For the sampled authorization decision, the certification body should limit or stage authorization until witnessed evidence demonstrates competence in impact assessment, lifecycle evidence and finding language for higher-impact AI systems.

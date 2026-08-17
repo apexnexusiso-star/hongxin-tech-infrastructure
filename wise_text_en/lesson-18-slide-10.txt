@@ -1,0 +1,13 @@
+Misunderstandings to Remove
+
+This page belongs to Lesson 18: Audit Findings, Nonconformities, Corrective Action, and Reports.
+
+The anchor case is EduScore Analytics and EssayMark Auto-Scoring.
+
+The audit handle is finding anatomy.
+
+Use this page to connect the slide purpose, Misunderstandings to remove, with sampled evidence such as complaint log, impact assessment, monitoring report, teacher review record.
+
+The comfortable answer hides this issue: Immediate correction may be useful, but the audit still has to decide whether impact assessment, monitoring, teacher review or corrective action processes failed.
+
+Keep the professional boundary in view: For the sampled EssayMark scoring period, the organization did not demonstrate that repeated teacher complaints triggered impact-assessment review and corrective action for feedback affecting English-language learners.

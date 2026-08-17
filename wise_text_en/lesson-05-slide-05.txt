@@ -1,0 +1,9 @@
+Scope audit is a traceability exercise
+
+AIMS scope should align with AI activities, locations, services, roles, technologies and exclusions. Exclusions need reasons that survive sampling. In HelioBank's PreScore Credit Navigator case, this point is not abstract. The line "Scope audit is a traceability exercise" shapes how the auditor reads the Lesson 5 Scope audit is a traceability exercise sample and how retail banking loan pre-assessment decisions reach people, records and management responsibility.
+
+The practical route begins when the auditor chooses a sample. Sample one AI use outside the written boundary and ask whether the exclusion remains defensible. For the line "Scope audit is a traceability exercise", Jonas Reed should turn "Scope audit is a traceability exercise" into different questions for loan product owner, vendor manager, data protection lead. Their answers should meet around the Lesson 5 Scope audit is a traceability exercise sample, not remain separate.
+
+Evidence for the line "Scope audit is a traceability exercise" starts with responsibility matrix, supplier contract schedule, threshold approval minute. If the answer sounds rehearsed in the "Scope audit is a traceability exercise" trail, extend the review to customer journey map, complaint file and ask whether those records tell the Scope audit is a traceability exercise story about PreScore Credit Navigator.
+
+Practical takeaway: If the loan journey is central to customer pre-assessment, a supplier label alone cannot carry the exclusion. Use this line to test whether the Lesson 5 Scope audit is a traceability exercise sample connects to control, review and management responsibility.

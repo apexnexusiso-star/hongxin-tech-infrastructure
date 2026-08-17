@@ -1,0 +1,15 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back. In the previous lessons, we built the audit view of context, interested parties, scope, leadership, planning and applicable obligations. Today we arrive at the part of ISO/IEC 42001 that often decides whether an AIMS is alive or only well written: AI risk assessment and AI system impact assessment.
+
+Learner: Are those two not basically the same thing? If the organization has a risk register, why do we need another impact assessment?
+
+Instructor: That question is exactly where this lesson starts. A risk register may tell us what can go wrong. An impact assessment asks who may feel the consequence, how that consequence travels through a real AI use scenario, and whether the organization has changed its controls because of that understanding. If we miss that difference, we may audit a tidy document and still miss the people affected by the system.
+
+Lesson Positioning
+
+Our learning boundary today is textbook sections 5.1 to 5.3, with one medical assisted-diagnosis case from section 12.3. We are not yet going deep into the Statement of Applicability or Annex A control selection. Those will come next. For this lesson, keep one image in mind: a split screen. On the left side is AI risk assessment. On the right side is AI system impact assessment. The two screens are connected, but they do different work.
+
+By the end of the lesson, you should be able to explain the difference between AI-specific risk and ordinary information security risk, describe the normal steps of risk identification, analysis, evaluation and treatment, and audit whether an impact assessment has considered the right affected parties, timing and update triggers. More importantly, you should be able to hold the audit boundary: you do not become a clinician, a model engineer, or a regulator. You remain an auditor of the management system.
+
+As you listen, do not try to memorize every evidence item. Listen for the movement of the audit. We start from a document, test it against real use, trace it to decisions and then return to the management system. That movement is more important than any single checklist row, because it is what keeps an AI audit from becoming a paper exercise.

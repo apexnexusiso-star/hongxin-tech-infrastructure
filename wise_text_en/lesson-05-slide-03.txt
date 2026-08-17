@@ -1,0 +1,9 @@
+AI role boundaries make responsibility auditable
+
+The same organization may be a user of one AI service, a deployer of another and a provider for its own product. The audit has to name the role for each use. In HelioBank's PreScore Credit Navigator case, this point is not abstract. The line "AI role boundaries make responsibility auditable" shapes how the auditor reads the Lesson 5 AI role boundaries make responsibility auditable sample and how retail banking loan pre-assessment decisions reach people, records and management responsibility.
+
+This is also where professional restraint matters. Draw the responsibility boundary around a sampled AI system and test who controls each decision point. For the line "AI role boundaries make responsibility auditable", Jonas Reed should turn "AI role boundaries make responsibility auditable" into different questions for loan product owner, vendor manager, data protection lead. Their answers should meet around the Lesson 5 AI role boundaries make responsibility auditable sample, not remain separate.
+
+Evidence for the line "AI role boundaries make responsibility auditable" starts with responsibility matrix, supplier contract schedule, threshold approval minute. If the answer sounds rehearsed in the "AI role boundaries make responsibility auditable" trail, extend the review to customer journey map, complaint file and ask whether those records tell the AI role boundaries make responsibility auditable story about PreScore Credit Navigator.
+
+Practical takeaway: Supplier contracts, configuration records and customer journey maps show where HelioBank's responsibility begins. Use this line to test whether the Lesson 5 AI role boundaries make responsibility auditable sample connects to control, review and management responsibility.

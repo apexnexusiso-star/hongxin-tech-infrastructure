@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome to Lesson 1 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If AI tools are already everywhere, why do we need a management system before we can audit them?
+
+Instructor: Because the tool is not the whole problem. The management question begins when AI output changes work, responsibility, customer expectation or affected-party impact.
+
+This is the first lesson, so we begin by building the reason for the whole course. Our focus is real-use responsibility trace. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to explain why AI governance is a management-system problem, not only a technical review topic; connect AI use, risk, opportunity and responsibility in ordinary business language; identify the first evidence route an auditor should open before judging AIMS maturity; and avoid treating a general AI policy as proof that real AI use is governed.
+
+Lesson Positioning
+
+Our textbook boundary is Preface; 1.1-1.4; 1.7. Keep that boundary clear for BrightDesk Services: this lesson teaches a route for BrightReply Support AI when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is BrightDesk Services: BrightReply Support AI. I use it because BrightDesk Services gives us concrete people, BrightReply Support AI gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for real-use responsibility trace. In the story of BrightReply Support AI, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to BrightDesk Services, not to a generic checklist.

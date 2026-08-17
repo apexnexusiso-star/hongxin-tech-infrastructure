@@ -1,0 +1,13 @@
+Professional Boundary Wording
+
+This page belongs to Lesson 13: Annex A Part One: Control Logic, Policy, Organization, Resources, and Impact Assessment.
+
+The anchor case is GovAssist Agency and PolicyGuide Public Bot.
+
+The audit handle is control-to-clause bridge.
+
+Use this page to connect the slide purpose, Professional boundary wording, with sampled evidence such as SoA rationale, AI policy, responsibility table, resource plan.
+
+The comfortable answer hides this issue: A single policy may not address public-facing communication, grant eligibility sensitivity, role authority, resource needs or impact assessment for this specific chatbot.
+
+Keep the professional boundary in view: For the sampled PolicyGuide bot, the organization had a central AI policy but did not demonstrate system-specific responsibilities, resources and impact-assessment controls for grant eligibility consultations.

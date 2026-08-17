@@ -1,0 +1,13 @@
+Closing Bridge
+
+This page belongs to Lesson 01: Why AI Governance Requires an Artificial Intelligence Management System.
+
+The anchor case is BrightDesk Services and BrightReply Support AI.
+
+The audit handle is real-use responsibility trace.
+
+Use this page to connect the slide purpose, Closing bridge to the next lesson, with sampled evidence such as AI use inventory, ticket audit trail, agent training scenario, refund approval record.
+
+The comfortable answer hides this issue: The AI draft has become part of the service process. It influences customer commitments, complaint handling and refund decisions even when a human clicks the final button.
+
+Keep the professional boundary in view: For the sampled BrightReply use, the organization has not shown how AI-assisted replies are identified, reviewed and fed into risk review when customer commitments are affected.

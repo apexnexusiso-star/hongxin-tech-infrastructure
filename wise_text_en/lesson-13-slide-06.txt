@@ -1,0 +1,29 @@
+Workpaper Coaching Notes
+
+A clean workpaper for Lesson 13 would not copy the textbook table. It would name PolicyGuide Public Bot, state the criterion for GovAssist Agency, describe one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply, list the evidence reviewed and explain why the evidence was or was not sufficient.
+
+The workpaper should also record the boundary of judgement. For GovAssist Agency, Imani Brooks can judge whether the AIMS handled the issue shown by the PolicyGuide Public Bot sample through defined responsibilities and records. The auditor should not invent technical requirements outside the Lesson 13 criteria.
+
+If the evidence is incomplete, the workpaper should show the next sampling decision. One path might be another record from public-service owner. Another path might be a demonstration by content policy owner. A third path might be a complaint, log or management review note linked to a complaint that the chatbot answer discouraged an eligible applicant.
+
+This is how a lesson becomes usable for oral delivery. Learners hear the concept, watch it enter PolicyGuide Public Bot, see the evidence trail, and practice turning a weak phrase into a professional audit statement.
+
+A final coaching prompt helps close the loop: ask what GovAssist Agency would need to change tomorrow if Imani Brooks's concern proved valid. The answer should point to ownership, records and review, not only to a nicer paragraph in the AIMS manual.
+
+Case Setup: The Comfortable but Dangerous Answer
+
+Let us make the lesson concrete. The organization is GovAssist Agency, working in government policy consultation. The sampled system is PolicyGuide Public Bot. GovAssist uses a public-facing chatbot to explain eligibility for small-business grants and refer citizens to application routes.
+
+The lead auditor is Imani Brooks. Instead of beginning with a full-document request, Imani asks the auditee to open one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply. That choice matters because it gives the audit a real anchor before people start explaining the management system in general terms.
+
+Then comes the comfortable but dangerous answer: One central AI policy covers all systems, so the Annex A policy and organization controls are implemented. It sounds efficient and reassuring. It also hides the weakness that the lesson is designed to expose.
+
+The hidden issue is this: A single policy may not address public-facing communication, grant eligibility sensitivity, role authority, resource needs or impact assessment for this specific chatbot. Once PolicyGuide Public Bot makes that issue visible, the audit stops floating above the organization. It asks whether GovAssist Agency's governance reaches this use, this decision and this evidence trail.
+
+Imani maps the roles before asking for more files. In the route, the auditor has to understand public-service owner; AI governance lead; content policy owner; communications manager; citizen complaint officer. The point is not to make the chart impressive; it is to know who can explain, approve, challenge or correct the AI-related decision.
+
+The evidence objects are equally practical: SoA rationale; AI policy; responsibility table; resource plan; impact assessment summary. For PolicyGuide Public Bot, none of these records is magic by itself. Their value appears when they fit together and explain what happened in the sample.
+
+In GovAssist Agency, comfort and evidence pull in different directions. The comfortable answer lowers the pressure in the room. Evidence for PolicyGuide Public Bot restores the useful pressure by asking where the answer operates, who relies on it and which record would reveal a break.
+
+By the end of this case, the teaching point is not that GovAssist Agency is careless. The point is more useful: PolicyGuide Public Bot can make a plausible management answer too thin when its real use creates a sharper evidence route.

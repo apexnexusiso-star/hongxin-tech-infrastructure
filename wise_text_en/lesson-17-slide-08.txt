@@ -1,0 +1,15 @@
+Audit Forward and Audit Backward
+
+Use audit forward from a model threshold adjustment after a holiday fraud spike. For PayWise Payments, follow that change into scope, then into the risk or impact record, then into the selected control for ShieldScore Fraud Monitor. Only after that should the route reach operating instruction, monitoring and management review.
+
+Use audit backward from a reversed fraud decision where the analyst note does not match the system log. Start with the record, complaint, log or outcome in one disputed transaction that was blocked after a high fraud score and later reversed, then walk back to the requirement that should have governed it. This movement keeps Victor from accepting a general explanation for a specific sample.
+
+For ShieldScore Fraud Monitor, maintenance means PayWise Payments can show that documents exist and have been updated. For the one disputed transaction that was blocked after a high fraud score and later reversed sample, effectiveness means those documents influenced the AI use when evidence became inconvenient for the auditee. That distinction keeps Lesson 17 practical.
+
+Finding Language and Professional Boundary
+
+Professional boundary matters. The weak report phrase would be: The dashboard demonstration proves the control is operating. That sentence may be tempting because it sounds decisive, but it reaches beyond what many audits can prove.
+
+A stronger audit phrase for ShieldScore Fraud Monitor is: For the sampled ShieldScore transaction, the organization did not reconcile interview evidence, system logs and dispute records sufficiently to support the conclusion that fraud-score review controls operated as defined. This wording names the sample, the management-system weakness and the reason it matters without turning Victor Hale into the system designer, regulator or sector specialist.
+
+When learners practice with ShieldScore Fraud Monitor, ask them to underline the criterion in their sentence, circle the sampled use from one disputed transaction that was blocked after a high fraud score and later reversed, and mark the evidence gap. If those parts are missing, the finding is still classroom draft material.

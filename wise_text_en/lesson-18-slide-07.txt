@@ -1,0 +1,17 @@
+Case Setup: The Comfortable but Dangerous Answer
+
+Let us make the lesson concrete. The organization is EduScore Analytics, working in education auto-scoring. The sampled system is EssayMark Auto-Scoring. EduScore provides an AI scoring and feedback tool for schools. Teachers review scores before release, but one school discovered that English-language learners received confusing feedback patterns.
+
+The lead auditor is Aisha Laurent. Instead of beginning with a full-document request, Aisha asks the auditee to open one scoring period where feedback templates were changed manually after teacher complaints. That choice matters because it gives the audit a real anchor before people start explaining the management system in general terms.
+
+Then comes the comfortable but dangerous answer: The issue was fixed before the closing meeting, so there is no need to write a nonconformity. It sounds efficient and reassuring. It also hides the weakness that the lesson is designed to expose.
+
+The hidden issue is this: Immediate correction may be useful, but the audit still has to decide whether impact assessment, monitoring, teacher review or corrective action processes failed. Once EssayMark Auto-Scoring makes that issue visible, the audit stops floating above the organization. It asks whether EduScore Analytics's governance reaches this use, this decision and this evidence trail.
+
+Aisha maps the roles before asking for more files. In the route, the auditor has to understand teacher lead; product owner; impact assessment owner; support manager; corrective action coordinator. The point is not to make the chart impressive; it is to know who can explain, approve, challenge or correct the AI-related decision.
+
+The evidence objects are equally practical: complaint log; impact assessment; monitoring report; teacher review record; corrective action file. For EssayMark Auto-Scoring, none of these records is magic by itself. Their value appears when they fit together and explain what happened in the sample.
+
+In EduScore Analytics, comfort and evidence pull in different directions. The comfortable answer lowers the pressure in the room. Evidence for EssayMark Auto-Scoring restores the useful pressure by asking where the answer operates, who relies on it and which record would reveal a break.
+
+By the end of this case, the teaching point is not that EduScore Analytics is careless. The point is more useful: EssayMark Auto-Scoring can make a plausible management answer too thin when its real use creates a sharper evidence route.

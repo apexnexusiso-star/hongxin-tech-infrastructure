@@ -1,0 +1,17 @@
+Case Setup: The Comfortable but Dangerous Answer
+
+Let us make the lesson concrete. The organization is CityHelp Authority, working in public service consultation. The sampled system is CivicAnswer AI Desk. CityHelp uses an AI assistant to help call-center staff answer questions about housing benefits, permits and community services.
+
+The lead auditor is Leah Morgan. Instead of beginning with a full-document request, Leah asks the auditee to open one benefits inquiry where the AI assistant suggested an outdated eligibility explanation. That choice matters because it gives the audit a real anchor before people start explaining the management system in general terms.
+
+Then comes the comfortable but dangerous answer: All staff completed AI awareness training, so competence and communication are covered. It sounds efficient and reassuring. It also hides the weakness that the lesson is designed to expose.
+
+The hidden issue is this: General awareness does not prove that staff can recognize high-risk citizen situations, use current guidance, escalate wrong answers or preserve records for public-service accountability. Once CivicAnswer AI Desk makes that issue visible, the audit stops floating above the organization. It asks whether CityHelp Authority's governance reaches this use, this decision and this evidence trail.
+
+Leah maps the roles before asking for more files. In the route, the auditor has to understand service center manager; front-line advisor; policy content owner; document controller; issue-reporting coordinator. The point is not to make the chart impressive; it is to know who can explain, approve, challenge or correct the AI-related decision.
+
+The evidence objects are equally practical: competence matrix; training scenario results; knowledge-base version log; issue report; communication notice. For CivicAnswer AI Desk, none of these records is magic by itself. Their value appears when they fit together and explain what happened in the sample.
+
+In CityHelp Authority, comfort and evidence pull in different directions. The comfortable answer lowers the pressure in the room. Evidence for CivicAnswer AI Desk restores the useful pressure by asking where the answer operates, who relies on it and which record would reveal a break.
+
+By the end of this case, the teaching point is not that CityHelp Authority is careless. The point is more useful: CivicAnswer AI Desk can make a plausible management answer too thin when its real use creates a sharper evidence route.

@@ -1,0 +1,9 @@
+Finding formation begins with criteria
+
+A finding compares audit evidence with audit criteria. Without the criterion, the report becomes opinion or commentary. In EduScore Analytics's EssayMark Auto-Scoring case, this point is not abstract. The line "Finding formation begins with criteria" shapes how the auditor reads one scoring period where feedback templates were changed manually after teacher complaints and how education auto-scoring decisions reach people, records and management responsibility.
+
+For spoken teaching, slow down here and make the route visible. Name the relevant ISO/IEC 42001 requirement, organizational rule or applicable obligation before describing the evidence. For the line "Finding formation begins with criteria", Aisha Laurent should turn "Finding formation begins with criteria" into different questions for teacher lead, product owner, impact assessment owner. Their answers should meet around one scoring period where feedback templates were changed manually after teacher complaints, not remain separate.
+
+Evidence for the line "Finding formation begins with criteria" starts with complaint log, impact assessment, monitoring report. If the answer sounds rehearsed in the "Finding formation begins with criteria" trail, extend the review to teacher review record, corrective action file and ask whether those records tell the Finding formation begins with criteria story about EssayMark Auto-Scoring.
+
+Practical takeaway: EduScore's impact review and complaint-handling rules provide the audit criteria for the scoring sample. Use this line to test whether one scoring period where feedback templates were changed manually after teacher complaints connects to control, review and management responsibility.

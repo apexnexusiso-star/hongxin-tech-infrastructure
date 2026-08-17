@@ -1,0 +1,29 @@
+Workpaper Coaching Notes
+
+A clean workpaper for Lesson 6 would not copy the textbook table. It would name TutorPath Adaptive AI, state the criterion for EduSpark Global, describe one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations, list the evidence reviewed and explain why the evidence was or was not sufficient.
+
+The workpaper should also record the boundary of judgement. For EduSpark Global, Marta Singh can judge whether the AIMS handled the issue shown by the TutorPath Adaptive AI sample through defined responsibilities and records. The auditor should not invent technical requirements outside the Lesson 6 criteria.
+
+If the evidence is incomplete, the workpaper should show the next sampling decision. One path might be another record from legal counsel. Another path might be a demonstration by regional compliance manager. A third path might be a complaint, log or management review note linked to a parent request asking whether the system uses AI and how the recommendation was generated.
+
+This is how a lesson becomes usable for oral delivery. Learners hear the concept, watch it enter TutorPath Adaptive AI, see the evidence trail, and practice turning a weak phrase into a professional audit statement.
+
+A final coaching prompt helps close the loop: ask what EduSpark Global would need to change tomorrow if Marta Singh's concern proved valid. The answer should point to ownership, records and review, not only to a nicer paragraph in the AIMS manual.
+
+Case Setup: The Comfortable but Dangerous Answer
+
+Let us make the lesson concrete. The organization is EduSpark Global, working in cross-border education technology. The sampled system is TutorPath Adaptive AI. EduSpark offers adaptive tutoring and essay feedback to schools in the EU, the United States, the United Kingdom and several Asian markets.
+
+The lead auditor is Marta Singh. Instead of beginning with a full-document request, Marta asks the auditee to open one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations. That choice matters because it gives the audit a real anchor before people start explaining the management system in general terms.
+
+Then comes the comfortable but dangerous answer: Once ISO/IEC 42001 is in place, regulatory dates are handled by the compliance department and do not need to appear in the audit sample. It sounds efficient and reassuring. It also hides the weakness that the lesson is designed to expose.
+
+The hidden issue is this: AIMS scope and planning need to know which obligations affect which AI uses and when controls, transparency duties, governance duties or high-risk rules become relevant. Once TutorPath Adaptive AI makes that issue visible, the audit stops floating above the organization. It asks whether EduSpark Global's governance reaches this use, this decision and this evidence trail.
+
+Marta maps the roles before asking for more files. In the route, the auditor has to understand legal counsel; product owner; regional compliance manager; school success lead; AIMS coordinator. The point is not to make the chart impressive; it is to know who can explain, approve, challenge or correct the AI-related decision.
+
+The evidence objects are equally practical: obligation register; jurisdiction map; EU AI Act timing note; GPAI supplier communication; scope boundary matrix. For TutorPath Adaptive AI, none of these records is magic by itself. Their value appears when they fit together and explain what happened in the sample.
+
+In EduSpark Global, comfort and evidence pull in different directions. The comfortable answer lowers the pressure in the room. Evidence for TutorPath Adaptive AI restores the useful pressure by asking where the answer operates, who relies on it and which record would reveal a break.
+
+By the end of this case, the teaching point is not that EduSpark Global is careless. The point is more useful: TutorPath Adaptive AI can make a plausible management answer too thin when its real use creates a sharper evidence route.

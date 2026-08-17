@@ -1,0 +1,7 @@
+Closing Dialogue
+
+Learner: So, the risk assessment tells us what can fail, and the impact assessment tells us who is affected and how the consequence travels through real use.
+
+Instructor: Exactly. And the audit asks whether that understanding changes controls, responsibilities, release decisions, monitoring and improvement. That is the bridge from a document to an effective AIMS.
+
+That is all for today's lesson. In the next lesson, we will continue from this foundation into risk treatment, Annex A control selection, the Statement of Applicability and the evidence chain that connects assessment results to actual management decisions. See you in the next session.

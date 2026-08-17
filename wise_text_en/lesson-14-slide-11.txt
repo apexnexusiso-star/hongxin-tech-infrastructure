@@ -1,0 +1,13 @@
+Learner Practice Task
+
+This page belongs to Lesson 14: Annex A Part Two: Lifecycle, Data, Interested Parties, Use, and Third Parties.
+
+The anchor case is AtlasCloud Commerce and ReplyForge Customer Engine.
+
+The audit handle is third-party use accountability.
+
+Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as supplier terms, approved-use list, data input rule, output review checklist.
+
+The comfortable answer hides this issue: AtlasCloud still governs what data employees input, what outputs may be used, what customers are told, how supplier changes are monitored and how errors are escalated.
+
+Keep the professional boundary in view: For the sampled ReplyForge use, the organization did not demonstrate effective controls over approved inputs, output verification and supplier-change monitoring for merchant-dispute responses.

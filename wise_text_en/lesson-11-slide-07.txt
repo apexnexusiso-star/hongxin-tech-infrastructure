@@ -1,0 +1,15 @@
+Audit Forward and Audit Backward
+
+Use audit forward from a late design change adding a confidence band to the candidate ranking screen. For SafeHire Labs, follow that change into scope, then into the risk or impact record, then into the selected control for CandidateFlow Screening. Only after that should the route reach operating instruction, monitoring and management review.
+
+Use audit backward from pilot feedback showing recruiters treated top-band candidates as pre-approved. Start with the record, complaint, log or outcome in one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons, then walk back to the requirement that should have governed it. This movement keeps Oliver from accepting a general explanation for a specific sample.
+
+For CandidateFlow Screening, maintenance means SafeHire Labs can show that documents exist and have been updated. For the one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons sample, effectiveness means those documents influenced the AI use when evidence became inconvenient for the auditee. That distinction keeps Lesson 11 practical.
+
+Finding Language and Professional Boundary
+
+Professional boundary matters. The weak report phrase would be: The launch gate is satisfied because validation metrics met the internal target. That sentence may be tempting because it sounds decisive, but it reaches beyond what many audits can prove.
+
+A stronger audit phrase for CandidateFlow Screening is: For the sampled CandidateFlow launch, the organization did not demonstrate that the late confidence-band design change was assessed against intended use, recruiter behavior and human-review controls before release approval. This wording names the sample, the management-system weakness and the reason it matters without turning Oliver Grant into the system designer, regulator or sector specialist.
+
+When learners practice with CandidateFlow Screening, ask them to underline the criterion in their sentence, circle the sampled use from one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons, and mark the evidence gap. If those parts are missing, the finding is still classroom draft material.

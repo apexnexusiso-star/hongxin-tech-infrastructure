@@ -1,0 +1,19 @@
+Misunderstandings to Remove
+
+Remove this misunderstanding: 42001 certifies that every model is good. The standard addresses the management system. It does not turn the auditor into a model validator.
+
+Remove this misunderstanding: Technical experts replace auditors. Experts support technical understanding, while the auditor still owns audit criteria, evidence sufficiency and findings.
+
+Remove this misunderstanding: One authorization covers all AI audits. Authorization should consider role, AI use, sector risk, witnessed performance and boundaries of judgement.
+
+Practical Task, Reading Guidance, and Closing Dialogue
+
+Now transfer the method without copying the story. A hospital AIMS audit where a management-system auditor can test governance records but needs clinical or technical support for validation evidence interpretation. The same teaching move should work, but the evidence route must change with the industry, affected party and AI use.
+
+Here is the learner task for Lesson 2. Use AIMS Auditor Authorization Panel as the model, then choose a second AI use near your own work and compare it with Northbridge Certification Services's case. Write the second case's comfortable answer, hidden issue, first sample request and phrase to avoid. Rework that phrase in management-system language.
+
+After this lesson, Read sections 1.2, 1.3, 1.5 and 1.6, then compare the competence model with Appendix N. Read with a pencil beside you. Mark the point where the textbook becomes an audit question rather than only a concept.
+
+Learner: So the practical skill is not memorizing all examples. It is recognizing the audit pattern inside a new AI use.
+
+Instructor: Exactly. We keep the ISO/IEC 42001 framework stable, but we let the sample, evidence and professional boundary change with the real system. Lesson 3 will use the harmonized structure and PDCA logic to show how the AIMS stays alive after implementation.

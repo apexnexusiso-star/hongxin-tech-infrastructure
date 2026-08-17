@@ -1,0 +1,19 @@
+Misunderstandings to Remove
+
+Remove this misunderstanding: Annex A is separate from clauses. Annex A controls are selected and operated through main-clause processes.
+
+Remove this misunderstanding: Policy controls are generic. Policy controls need system-specific translation when the AI use affects different parties or obligations.
+
+Remove this misunderstanding: Impact controls repeat Chapter 5. Annex A impact controls ask how the assessment method is implemented and maintained for control purposes.
+
+Practical Task, Reading Guidance, and Closing Dialogue
+
+Now transfer the method without copying the story. An employee HR assistant where the same central AI policy must be translated into role-specific restrictions and affected-party analysis. The same teaching move should work, but the evidence route must change with the industry, affected party and AI use.
+
+Here is the learner task for Lesson 13. Use PolicyGuide Public Bot as the model, then choose a second AI use near your own work and compare it with GovAssist Agency's case. Write the second case's comfortable answer, hidden issue, first sample request and phrase to avoid. Rework that phrase in management-system language.
+
+After this lesson, Read sections 8.1 to 8.5 and the official control-theme index in 8.1.1. Read with a pencil beside you. Mark the point where the textbook becomes an audit question rather than only a concept.
+
+Learner: So the practical skill is not memorizing all examples. It is recognizing the audit pattern inside a new AI use.
+
+Instructor: Exactly. We keep the ISO/IEC 42001 framework stable, but we let the sample, evidence and professional boundary change with the real system. Lesson 14 continues Annex A with lifecycle, data, interested-party information, AI use and third-party controls.

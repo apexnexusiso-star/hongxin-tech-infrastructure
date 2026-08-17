@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 16 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: Is Stage 1 mainly a document review before the real audit begins at Stage 2?
+
+Instructor: For ISO/IEC 42001, Stage 1 is a readiness and reality scan. It checks whether scope, inventory, legal context, sampling and competence are solid enough for Stage 2.
+
+We are continuing from Lesson 15, and today the audit lens moves into a new part of the AIMS. Our focus is Stage 1 reality scan. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to design an AIMS audit programme and audit plan; distinguish Stage 1 readiness from Stage 2 conformity evidence; use AI inventory for sampling strategy; and allocate audit time, resources and technical experts proportionately.
+
+Lesson Positioning
+
+Our textbook boundary is 9.1-9.9. Keep that boundary clear for MetroCare Health Network: this lesson teaches a route for CareRoute AI Portfolio when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is MetroCare Health Network: CareRoute AI Portfolio. I use it because MetroCare Health Network gives us concrete people, CareRoute AI Portfolio gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for Stage 1 reality scan. In the story of CareRoute AI Portfolio, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to MetroCare Health Network, not to a generic checklist.

@@ -1,0 +1,9 @@
+Evidence conflict is handled through disciplined follow-up
+
+Conflicting evidence does not automatically mean nonconformity. It means the auditor must gather enough appropriate evidence to understand the audit significance. In PayWise Payments's ShieldScore Fraud Monitor case, this point is not abstract. The line "Evidence conflict is handled through disciplined follow-up" shapes how the auditor reads the Lesson 17 Evidence conflict is handled through disciplined follow-up sample and how payment fraud detection decisions reach people, records and management responsibility.
+
+Bring the learner back to one record before adding more concepts. Compare timestamps, owners, system versions and record purpose before drawing a conclusion. For the line "Evidence conflict is handled through disciplined follow-up", Victor Hale should turn "Evidence conflict is handled through disciplined follow-up" into different questions for fraud analyst, model operations lead, payments product owner. Their answers should meet around the Lesson 17 Evidence conflict is handled through disciplined follow-up sample, not remain separate.
+
+Evidence for the line "Evidence conflict is handled through disciplined follow-up" starts with procedure, dashboard, transaction log. If the answer sounds rehearsed in the "Evidence conflict is handled through disciplined follow-up" trail, extend the review to analyst case note, customer dispute record and ask whether those records tell the Evidence conflict is handled through disciplined follow-up story about ShieldScore Fraud Monitor.
+
+Practical takeaway: The disputed transaction may reveal logging gaps, analyst training issues or a mismatch between procedure and tool design. Use this line to test whether the Lesson 17 Evidence conflict is handled through disciplined follow-up sample connects to control, review and management responsibility.

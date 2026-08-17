@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 2 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If ISO/IEC 42001 is a management system standard, can an experienced ISO auditor handle it after reading the clauses?
+
+Instructor: An experienced management-system auditor has a valuable base, but 42001 adds AI lifecycle, data, impact, human oversight and supplier evidence. Competence has to match the sampled AI use.
+
+We are continuing from Lesson 1, and today the audit lens moves into a new part of the AIMS. Our focus is competence boundary map. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to state what ISO/IEC 42001 does and does not certify; separate management-system judgement from technical expert support; use an AI inventory to plan competence and sampling; and avoid overclaiming auditor authority in model-performance questions.
+
+Lesson Positioning
+
+Our textbook boundary is 1.2; 1.3; 1.5-1.6. Keep that boundary clear for Northbridge Certification Services: this lesson teaches a route for AIMS Auditor Authorization Panel when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is Northbridge Certification Services: AIMS Auditor Authorization Panel. I use it because Northbridge Certification Services gives us concrete people, AIMS Auditor Authorization Panel gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for competence boundary map. In the story of AIMS Auditor Authorization Panel, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to Northbridge Certification Services, not to a generic checklist.

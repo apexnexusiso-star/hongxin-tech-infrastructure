@@ -1,0 +1,13 @@
+Closing Bridge
+
+This page belongs to Lesson 02: ISO/IEC 42001 Positioning and the Auditor Competence Model.
+
+The anchor case is Northbridge Certification Services and AIMS Auditor Authorization Panel.
+
+The audit handle is competence boundary map.
+
+Use this page to connect the slide purpose, Closing bridge to the next lesson, with sampled evidence such as competence matrix, authorization record, AI system inventory from the client, audit team assignment.
+
+The comfortable answer hides this issue: Information security competence helps, but it does not automatically cover AI impact assessment, model change, data drift, human oversight or third-party AI service evidence.
+
+Keep the professional boundary in view: For the sampled audit assignment, the certification body did not demonstrate that the audit team competence matched the AI systems, impact pathways and technical boundaries in the client scope.

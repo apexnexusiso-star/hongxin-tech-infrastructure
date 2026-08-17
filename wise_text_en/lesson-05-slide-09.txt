@@ -1,0 +1,19 @@
+Misunderstandings to Remove
+
+Remove this misunderstanding: Role labels are legal decoration. Role labels guide evidence routes and responsibility boundaries in the management system.
+
+Remove this misunderstanding: Interested parties mean only direct customers. Applicants, branch staff, regulators, supplier personnel and complaint handlers may all shape needs and expectations.
+
+Remove this misunderstanding: Scope is whatever the organization writes. Scope must be consistent with actual AI use, role boundaries, context and applicable obligations.
+
+Practical Task, Reading Guidance, and Closing Dialogue
+
+Now transfer the method without copying the story. An e-commerce platform using a supplier recommendation engine; role boundaries still include configuration, ranking placement and customer disclosures. The same teaching move should work, but the evidence route must change with the industry, affected party and AI use.
+
+Here is the learner task for Lesson 5. Use PreScore Credit Navigator as the model, then choose a second AI use near your own work and compare it with HelioBank's case. Write the second case's comfortable answer, hidden issue, first sample request and phrase to avoid. Rework that phrase in management-system language.
+
+After this lesson, Read sections 3.1, 3.2 and 3.5 to 3.8, then compare them with the AI inventory template in Appendix C. Read with a pencil beside you. Mark the point where the textbook becomes an audit question rather than only a concept.
+
+Learner: So the practical skill is not memorizing all examples. It is recognizing the audit pattern inside a new AI use.
+
+Instructor: Exactly. We keep the ISO/IEC 42001 framework stable, but we let the sample, evidence and professional boundary change with the real system. Lesson 6 continues Clause 4 by adding applicable obligations, regulatory timing and scope discipline.

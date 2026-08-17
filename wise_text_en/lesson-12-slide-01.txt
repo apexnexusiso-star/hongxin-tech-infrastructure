@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 12 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If model accuracy is still above the target, can the organization ignore drift and operating change?
+
+Instructor: No. Accuracy is only one signal. Operation brings user workarounds, data drift, supplier updates, incidents, complaints, change control and retirement responsibilities.
+
+We are continuing from Lesson 11, and today the audit lens moves into a new part of the AIMS. Our focus is operation drift walk-back. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to audit AI operation after deployment; trace drift, change and incident signals back into controls; judge whether monitoring is proportionate to AI use; and connect suspension, rollback and retirement to residual responsibility.
+
+Lesson Positioning
+
+Our textbook boundary is 7.4-7.5; 7.8-7.11. Keep that boundary clear for ForgeWorks Industrial: this lesson teaches a route for DefectLens Vision Monitor when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is ForgeWorks Industrial: DefectLens Vision Monitor. I use it because ForgeWorks Industrial gives us concrete people, DefectLens Vision Monitor gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for operation drift walk-back. In the story of DefectLens Vision Monitor, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to ForgeWorks Industrial, not to a generic checklist.

@@ -1,0 +1,15 @@
+Audit Forward and Audit Backward
+
+Use audit forward from a policy update changing eligibility wording for temporary accommodation support. For CityHelp Authority, follow that change into scope, then into the risk or impact record, then into the selected control for CivicAnswer AI Desk. Only after that should the route reach operating instruction, monitoring and management review.
+
+Use audit backward from a citizen complaint that the AI-assisted answer caused a missed application deadline. Start with the record, complaint, log or outcome in one benefits inquiry where the AI assistant suggested an outdated eligibility explanation, then walk back to the requirement that should have governed it. This movement keeps Leah from accepting a general explanation for a specific sample.
+
+For CivicAnswer AI Desk, maintenance means CityHelp Authority can show that documents exist and have been updated. For the one benefits inquiry where the AI assistant suggested an outdated eligibility explanation sample, effectiveness means those documents influenced the AI use when evidence became inconvenient for the auditee. That distinction keeps Lesson 10 practical.
+
+Finding Language and Professional Boundary
+
+Professional boundary matters. The weak report phrase would be: Training attendance proves competence for all AI users. That sentence may be tempting because it sounds decisive, but it reaches beyond what many audits can prove.
+
+A stronger audit phrase for CivicAnswer AI Desk is: For the sampled CivicAnswer benefits inquiry, the organization could not show role-specific competence and current documented information for staff using AI-assisted public-service answers. This wording names the sample, the management-system weakness and the reason it matters without turning Leah Morgan into the system designer, regulator or sector specialist.
+
+When learners practice with CivicAnswer AI Desk, ask them to underline the criterion in their sentence, circle the sampled use from one benefits inquiry where the AI assistant suggested an outdated eligibility explanation, and mark the evidence gap. If those parts are missing, the finding is still classroom draft material.
