@@ -1,13 +1,13 @@
-Learner Practice Task
+Learner Practice Check
 
-This page belongs to Lesson 06: Applicable Obligations, Regulatory Timing, and AIMS Scope.
+Pause the narration, choose an evidence path, then reveal the coaching note.
 
-The anchor case is EduSpark Global and TutorPath Adaptive AI.
+In EduSpark Global - TutorPath Adaptive AI, which evidence would you sample first to test obligation timing ledger?
 
-The audit handle is obligation timing ledger.
+Option 1: Sample path. Start from one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations, then connect it to obligation register, jurisdiction map, EU AI Act timing note.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
 
-Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as obligation register, jurisdiction map, EU AI Act timing note, GPAI supplier communication.
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is obligation timing ledger.
 
-The comfortable answer hides this issue: AIMS scope and planning need to know which obligations affect which AI uses and when controls, transparency duties, governance duties or high-risk rules become relevant.
-
-Keep the professional boundary in view: For the sampled TutorPath EU deployment, the organization had not linked applicable AI obligations and effective dates to scope, transparency preparation, supplier monitoring and review triggers.
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

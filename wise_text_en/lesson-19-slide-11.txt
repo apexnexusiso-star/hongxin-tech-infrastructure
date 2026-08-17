@@ -1,13 +1,13 @@
-Learner Practice Task
+Learner Practice Check
 
-This page belongs to Lesson 19: Integrated Industry Cases: From Audit Plan to Audit Finding.
+Pause the narration, choose an evidence path, then reveal the coaching note.
 
-The anchor case is Apex Tri-Sector Exercise and CreditMedEdu Audit Lab.
+In Apex Tri-Sector Exercise - CreditMedEdu Audit Lab, which evidence would you sample first to test case comparison grid?
 
-The audit handle is case comparison grid.
+Option 1: Sample path. Start from three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute, then connect it to case comparison grid, audit plan, evidence conflict note.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
 
-Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as case comparison grid, audit plan, evidence conflict note, sample records.
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is case comparison grid.
 
-The comfortable answer hides this issue: The standard is the same, but audit sampling, evidence routes, competence needs, impact paths and finding language differ sharply across industries.
-
-Keep the professional boundary in view: For the integrated exercise, the audit team should use common ISO/IEC 42001 criteria while adapting samples, evidence and competence to credit, medical and education impact pathways.
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

@@ -1,0 +1,13 @@
+Learning Check: Keep the Audit Boundary
+
+Pause after Slide 09 and choose wording that stays evidence-based.
+
+Which conclusion style is strongest for a training audit discussion?
+
+Option 1: Bounded wording. For the sampled authorization decision, the certification body should limit or stage authorization until witnessed evidence demonstrates competence in impact assessment, lifecycle evidence and finding language for higher-impact AI systems.
+Option 2: Broad judgement. The AI system is unsafe and the organization is not ready for certification.
+Option 3: No issue. No issue exists because the organization gives a comfortable explanation.
+
+Coaching note: Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Course success is important, but it does not prove competence for every AI context, sector risk, technical boundary or finding judgement.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

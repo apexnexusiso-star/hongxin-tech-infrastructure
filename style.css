@@ -492,8 +492,39 @@ h1 {
   font-weight: 700;
 }
 
+.lesson-progress {
+  display: block;
+  height: 6px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--coral), var(--amber), var(--lime));
+  box-shadow: 0 0 16px rgba(255, 101, 0, 0.34);
+}
+
 .slide-card {
   min-height: 134px;
+}
+
+.slide-card.learning-check-card {
+  border-color: rgba(255, 178, 74, 0.42);
+  background:
+    linear-gradient(180deg, rgba(32, 21, 10, 0.72), rgba(4, 12, 18, 0.7));
+}
+
+.slide-card.learning-check-card::before {
+  background: linear-gradient(90deg, var(--amber), var(--lime), var(--cyan));
+}
+
+.slide-card.done {
+  border-color: rgba(165, 243, 201, 0.52);
 }
 
 .lesson-map-head {
@@ -509,6 +540,27 @@ h1 {
   gap: 10px;
   align-items: center;
   padding-bottom: 8px;
+}
+
+.lesson-map-progress {
+  display: grid;
+  grid-template-columns: auto auto minmax(160px, 260px);
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 18px;
+  color: rgba(246, 249, 251, 0.62);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lesson-map-progress strong {
+  color: #ffffff;
+}
+
+.lesson-map-progress .lesson-progress {
+  width: 220px;
+  margin-top: 0;
 }
 
 .secondary {
@@ -706,6 +758,118 @@ h1 {
   font-size: 22px;
   font-weight: 900;
   line-height: 1.6;
+}
+
+.check-card {
+  max-width: 1040px;
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid rgba(255, 178, 74, 0.28);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(12, 24, 34, 0.88), rgba(5, 13, 20, 0.74));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px) saturate(1.12);
+}
+
+.check-slide .slide-inner {
+  padding-top: 76px;
+}
+
+.check-kicker {
+  display: inline-flex;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.check-card .question {
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1.48;
+}
+
+.check-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.check-option {
+  min-height: 158px;
+  padding: 18px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: rgba(246, 249, 251, 0.76);
+  background: rgba(255, 255, 255, 0.055);
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.check-option:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 178, 74, 0.58);
+  background: rgba(255, 178, 74, 0.1);
+}
+
+.check-option span {
+  display: inline-flex;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.check-option strong {
+  display: block;
+  margin-top: 12px;
+  color: rgba(246, 249, 251, 0.86);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.check-option.selected {
+  border-color: rgba(255, 178, 74, 0.82);
+  background: rgba(255, 178, 74, 0.13);
+}
+
+.check-option.strongest.selected,
+.check-option.strongest:hover {
+  border-color: rgba(165, 243, 201, 0.7);
+}
+
+.check-feedback {
+  display: none;
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid rgba(165, 243, 201, 0.28);
+  border-radius: 8px;
+  color: rgba(246, 249, 251, 0.78);
+  background: rgba(165, 243, 201, 0.1);
+}
+
+.check-feedback.show {
+  display: block;
+}
+
+.check-feedback span {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.check-feedback p {
+  margin: 10px 0 0;
+  line-height: 1.66;
+}
+
+.check-feedback .primary {
+  margin-top: 18px;
 }
 
 .quiz-actions {
@@ -939,8 +1103,19 @@ h1 {
   .slide-map-grid,
   .process-grid,
   .split-grid,
-  .evidence-grid {
+  .evidence-grid,
+  .check-options {
     grid-template-columns: 1fr;
+  }
+
+  .lesson-map-progress {
+    grid-template-columns: auto auto;
+    width: 100%;
+  }
+
+  .lesson-map-progress .lesson-progress {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .lesson-map-head {

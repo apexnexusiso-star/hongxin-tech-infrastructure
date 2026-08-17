@@ -1,13 +1,13 @@
-Learner Practice Task
+Learner Practice Check
 
-This page belongs to Lesson 14: Annex A Part Two: Lifecycle, Data, Interested Parties, Use, and Third Parties.
+Pause the narration, choose an evidence path, then reveal the coaching note.
 
-The anchor case is AtlasCloud Commerce and ReplyForge Customer Engine.
+In AtlasCloud Commerce - ReplyForge Customer Engine, which evidence would you sample first to test third-party use accountability?
 
-The audit handle is third-party use accountability.
+Option 1: Sample path. Start from one merchant dispute where an AI-drafted response cited an outdated fee rule, then connect it to supplier terms, approved-use list, data input rule.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
 
-Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as supplier terms, approved-use list, data input rule, output review checklist.
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is third-party use accountability.
 
-The comfortable answer hides this issue: AtlasCloud still governs what data employees input, what outputs may be used, what customers are told, how supplier changes are monitored and how errors are escalated.
-
-Keep the professional boundary in view: For the sampled ReplyForge use, the organization did not demonstrate effective controls over approved inputs, output verification and supplier-change monitoring for merchant-dispute responses.
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

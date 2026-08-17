@@ -1,13 +1,13 @@
-Learner Practice Task
+Learner Practice Check
 
-This page belongs to Lesson 07: Leadership, AI Policy, and Governance Responsibility.
+Pause the narration, choose an evidence path, then reveal the coaching note.
 
-The anchor case is Falcon Components and VisionLine QC.
+In Falcon Components - VisionLine QC, which evidence would you sample first to test authority trail?
 
-The audit handle is authority trail.
+Option 1: Sample path. Start from one production batch where reinspection was skipped after the system reported green performance indicators, then connect it to AI policy, responsibility matrix, production deviation record.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
 
-Use this page to connect the slide purpose, Learner practice task, with sampled evidence such as AI policy, responsibility matrix, production deviation record, governance committee minutes.
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is authority trail.
 
-The comfortable answer hides this issue: A named executive and signed policy do not prove that business managers, production owners and quality leaders follow governance when delivery pressure conflicts with AI controls.
-
-Keep the professional boundary in view: For the sampled VisionLine QC process, leadership responsibilities were assigned on paper but the organization did not demonstrate authority for delaying production when AI inspection controls were weakened.
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

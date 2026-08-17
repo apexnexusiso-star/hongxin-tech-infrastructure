@@ -1,7 +1,7 @@
 {
   "courseId": "ISO42001-AUDIO-DEMO-EN-01",
   "title": "ISO/IEC 42001 Audio Learning Lab",
-  "version": "v0.4-all-lessons-docx",
+  "version": "v0.5-learning-checks",
   "audioBase": "audio_en/",
   "audioProfiles": {
     "en": {
@@ -39,7 +39,7 @@
       "subtitle": "BrightDesk Services - BrightReply Support AI / Real-Use Responsibility Trace",
       "objective": "Use real-use responsibility trace to turn why ai governance requires an artificial intelligence management system into a concrete audit route, using BrightDesk Services - BrightReply Support AI as the anchor case.",
       "duration": "20.9 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-01-map",
       "script": "lesson-01-map",
       "slides": [
@@ -111,6 +111,44 @@
               "text": "The AI draft has become part of the service process. It influences customer commitments, complaint handling and refund decisions even when a human clicks."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In BrightDesk Services - BrightReply Support AI, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from five closed complaint tickets where the agent used the assistant and the customer later challenged the answer and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use real-use responsibility trace to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-01-check-01",
+          "module": "Lesson 01",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-01-check-01",
+          "script": "lesson-01-check-01"
         },
         {
           "id": "lesson-01-slide-04",
@@ -201,6 +239,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect AI use inventory, ticket audit trail, agent training scenario with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Ai Use Inventory exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with five closed complaint tickets where the agent used the assistant and the customer later challenged the answer, then test whether AI use inventory, ticket audit trail, agent training scenario support each other.",
+          "id": "lesson-01-check-02",
+          "module": "Lesson 01",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-01-check-02",
+          "script": "lesson-01-check-02"
+        },
+        {
           "id": "lesson-01-slide-07",
           "module": "Lesson 01",
           "chapter": "Slide 07",
@@ -277,6 +353,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled BrightReply use, the organization has not shown how AI-assisted replies are identified, reviewed and fed into risk review when customer commitments are affected.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: The AI draft has become part of the service process. It influences customer commitments, complaint handling and refund decisions even when a human clicks the final button.",
+          "id": "lesson-01-check-03",
+          "module": "Lesson 01",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-01-check-03",
+          "script": "lesson-01-check-03"
+        },
+        {
           "id": "lesson-01-slide-10",
           "module": "Lesson 01",
           "chapter": "Slide 10",
@@ -308,13 +422,39 @@
           "id": "lesson-01-slide-11",
           "module": "Lesson 01",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-01-slide-11",
           "script": "lesson-01-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In BrightDesk Services - BrightReply Support AI, which evidence would you sample first to test real-use responsibility trace?",
-          "answer": "Start from five closed complaint tickets where the agent used the assistant and the customer later challenged the answer. Then connect it to AI use inventory, ticket audit trail, agent training scenario, refund approval record. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from five closed complaint tickets where the agent used the assistant and the customer later challenged the answer, then connect it to AI use inventory, ticket audit trail, agent training scenario.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is real-use responsibility trace."
         },
         {
           "id": "lesson-01-slide-12",
@@ -345,7 +485,7 @@
       "subtitle": "Northbridge Certification Services - AIMS Auditor Authorization Panel / Competence Boundary Map",
       "objective": "Use competence boundary map to turn iso/iec 42001 positioning and the auditor competence model into a concrete audit route, using Northbridge Certification Services - AIMS Auditor Authorization Panel as the anchor case.",
       "duration": "20.4 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-02-map",
       "script": "lesson-02-map",
       "slides": [
@@ -417,6 +557,44 @@
               "text": "Information security competence helps, but it does not automatically cover AI impact assessment, model change, data drift, human oversight or third-party AI service evidence."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Northbridge Certification Services - AIMS Auditor Authorization Panel, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one planned certification audit where the initial team assignment lists no technical expert despite a high-impact credit decision. and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use competence boundary map to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-02-check-01",
+          "module": "Lesson 02",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-02-check-01",
+          "script": "lesson-02-check-01"
         },
         {
           "id": "lesson-02-slide-04",
@@ -507,6 +685,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect competence matrix, authorization record, AI system inventory from the client with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Competence Matrix exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one planned certification audit where the initial team assignment lists no technical expert despite a high-impact credit decision., then test whether competence matrix, authorization record, AI system inventory from the client support each other.",
+          "id": "lesson-02-check-02",
+          "module": "Lesson 02",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-02-check-02",
+          "script": "lesson-02-check-02"
+        },
+        {
           "id": "lesson-02-slide-07",
           "module": "Lesson 02",
           "chapter": "Slide 07",
@@ -583,6 +799,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled audit assignment, the certification body did not demonstrate that the audit team competence matched the AI systems, impact pathways and technical boundaries in the client scope.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Information security competence helps, but it does not automatically cover AI impact assessment, model change, data drift, human oversight or third-party AI service evidence.",
+          "id": "lesson-02-check-03",
+          "module": "Lesson 02",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-02-check-03",
+          "script": "lesson-02-check-03"
+        },
+        {
           "id": "lesson-02-slide-10",
           "module": "Lesson 02",
           "chapter": "Slide 10",
@@ -614,13 +868,39 @@
           "id": "lesson-02-slide-11",
           "module": "Lesson 02",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-02-slide-11",
           "script": "lesson-02-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Northbridge Certification Services - AIMS Auditor Authorization Panel, which evidence would you sample first to test competence boundary map?",
-          "answer": "Start from one planned certification audit where the initial team assignment lists no technical expert despite a high-impact credit decision system. Then connect it to competence matrix, authorization record, AI system inventory from the client, audit team assignment. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one planned certification audit where the initial team assignment lists no technical expert despite a high-impact credit decision., then connect it to competence matrix, authorization record, AI system inventory from the client.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is competence boundary map."
         },
         {
           "id": "lesson-02-slide-12",
@@ -651,7 +931,7 @@
       "subtitle": "Orion Retail Group - Orion Retail Copilot / Living-Loop Audit",
       "objective": "Use living-loop audit to turn harmonized structure and pdca logic in iso/iec 42001 into a concrete audit route, using Orion Retail Group - Orion Retail Copilot as the anchor case.",
       "duration": "20.0 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-03-map",
       "script": "lesson-03-map",
       "slides": [
@@ -723,6 +1003,44 @@
               "text": "The clause shell may look complete, but the AIMS loop has not shown that it detects new AI uses, reassesses impact or updates controls."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Orion Retail Group - Orion Retail Copilot, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one seasonal campaign where the copilot began generating sustainability claims for private-label products and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use living-loop audit to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-03-check-01",
+          "module": "Lesson 03",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-03-check-01",
+          "script": "lesson-03-check-01"
         },
         {
           "id": "lesson-03-slide-04",
@@ -813,6 +1131,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect PDCA process map, change request, claim review record with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Pdca Process Map exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one seasonal campaign where the copilot began generating sustainability claims for private-label products, then test whether PDCA process map, change request, claim review record support each other.",
+          "id": "lesson-03-check-02",
+          "module": "Lesson 03",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-03-check-02",
+          "script": "lesson-03-check-02"
+        },
+        {
           "id": "lesson-03-slide-07",
           "module": "Lesson 03",
           "chapter": "Slide 07",
@@ -889,6 +1245,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled retail copilot change, the organization maintained a clause-aligned manual but did not demonstrate that the PDCA loop captured AI-assisted product claims, related interested-party needs and updated controls.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: The clause shell may look complete, but the AIMS loop has not shown that it detects new AI uses, reassesses impact or updates controls when merchandising practice changes.",
+          "id": "lesson-03-check-03",
+          "module": "Lesson 03",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-03-check-03",
+          "script": "lesson-03-check-03"
+        },
+        {
           "id": "lesson-03-slide-10",
           "module": "Lesson 03",
           "chapter": "Slide 10",
@@ -920,13 +1314,39 @@
           "id": "lesson-03-slide-11",
           "module": "Lesson 03",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-03-slide-11",
           "script": "lesson-03-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Orion Retail Group - Orion Retail Copilot, which evidence would you sample first to test living-loop audit?",
-          "answer": "Start from one seasonal campaign where the copilot began generating sustainability claims for private-label products. Then connect it to PDCA process map, change request, claim review record, Annex A control selection note. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one seasonal campaign where the copilot began generating sustainability claims for private-label products, then connect it to PDCA process map, change request, claim review record.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is living-loop audit."
         },
         {
           "id": "lesson-03-slide-12",
@@ -957,7 +1377,7 @@
       "subtitle": "NovaHire Technologies - NovaHire Rank / Evidence Sufficiency Chain",
       "objective": "Use evidence sufficiency chain to turn from requirements to audit judgement: implementation, evidence, and conclusion into a concrete audit route, using NovaHire Technologies - NovaHire Rank as the anchor case.",
       "duration": "18.8 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-04-map",
       "script": "lesson-04-map",
       "slides": [
@@ -1029,6 +1449,44 @@
               "text": "A released procedure does not prove that recruiters follow the control, that exceptions are handled or that the organization can explain ranking impact for."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In NovaHire Technologies - NovaHire Rank, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use evidence sufficiency chain to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-04-check-01",
+          "module": "Lesson 04",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-04-check-01",
+          "script": "lesson-04-check-01"
         },
         {
           "id": "lesson-04-slide-04",
@@ -1119,6 +1577,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect procedure revision history, validation report, campaign ranking export with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Procedure Revision History exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step, then test whether procedure revision history, validation report, campaign ranking export support each other.",
+          "id": "lesson-04-check-02",
+          "module": "Lesson 04",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-04-check-02",
+          "script": "lesson-04-check-02"
+        },
+        {
           "id": "lesson-04-slide-07",
           "module": "Lesson 04",
           "chapter": "Slide 07",
@@ -1195,6 +1691,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled NovaHire Rank campaign, the organization had a released procedure but did not retain evidence that required human review was performed before interview prioritization decisions.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: A released procedure does not prove that recruiters follow the control, that exceptions are handled or that the organization can explain ranking impact for sampled candidates.",
+          "id": "lesson-04-check-03",
+          "module": "Lesson 04",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-04-check-03",
+          "script": "lesson-04-check-03"
+        },
+        {
           "id": "lesson-04-slide-10",
           "module": "Lesson 04",
           "chapter": "Slide 10",
@@ -1226,13 +1760,39 @@
           "id": "lesson-04-slide-11",
           "module": "Lesson 04",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-04-slide-11",
           "script": "lesson-04-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In NovaHire Technologies - NovaHire Rank, which evidence would you sample first to test evidence sufficiency chain?",
-          "answer": "Start from one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step. Then connect it to procedure revision history, validation report, campaign ranking export, human-review checklist. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step, then connect it to procedure revision history, validation report, campaign ranking export.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is evidence sufficiency chain."
         },
         {
           "id": "lesson-04-slide-12",
@@ -1263,7 +1823,7 @@
       "subtitle": "HelioBank - PreScore Credit Navigator / Role-Boundary Map",
       "objective": "Use role-boundary map to turn organizational context, interested parties, and ai role boundaries into a concrete audit route, using HelioBank - PreScore Credit Navigator as the anchor case.",
       "duration": "19.4 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-05-map",
       "script": "lesson-05-map",
       "slides": [
@@ -1335,6 +1895,44 @@
               "text": "Supplier provision does not remove HelioBank's responsibility for deployment, customer communication, threshold decisions, monitoring and complaint handling in its own loan process."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In HelioBank - PreScore Credit Navigator, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from a rejected small-business loan pre-assessment where the applicant received an automated next-step message and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use role-boundary map to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-05-check-01",
+          "module": "Lesson 05",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-05-check-01",
+          "script": "lesson-05-check-01"
         },
         {
           "id": "lesson-05-slide-04",
@@ -1425,6 +2023,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect responsibility matrix, supplier contract schedule, threshold approval minute with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Responsibility Matrix exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with a rejected small-business loan pre-assessment where the applicant received an automated next-step message, then test whether responsibility matrix, supplier contract schedule, threshold approval minute support each other.",
+          "id": "lesson-05-check-02",
+          "module": "Lesson 05",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-05-check-02",
+          "script": "lesson-05-check-02"
+        },
+        {
           "id": "lesson-05-slide-07",
           "module": "Lesson 05",
           "chapter": "Slide 07",
@@ -1501,6 +2137,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled PreScore use, HelioBank did not define deployment responsibilities for threshold approval, customer communication and monitoring of applicant impact in the AIMS scope.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Supplier provision does not remove HelioBank's responsibility for deployment, customer communication, threshold decisions, monitoring and complaint handling in its own loan process.",
+          "id": "lesson-05-check-03",
+          "module": "Lesson 05",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-05-check-03",
+          "script": "lesson-05-check-03"
+        },
+        {
           "id": "lesson-05-slide-10",
           "module": "Lesson 05",
           "chapter": "Slide 10",
@@ -1532,13 +2206,39 @@
           "id": "lesson-05-slide-11",
           "module": "Lesson 05",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-05-slide-11",
           "script": "lesson-05-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In HelioBank - PreScore Credit Navigator, which evidence would you sample first to test role-boundary map?",
-          "answer": "Start from a rejected small-business loan pre-assessment where the applicant received an automated next-step message. Then connect it to responsibility matrix, supplier contract schedule, threshold approval minute, customer journey map. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from a rejected small-business loan pre-assessment where the applicant received an automated next-step message, then connect it to responsibility matrix, supplier contract schedule, threshold approval minute.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is role-boundary map."
         },
         {
           "id": "lesson-05-slide-12",
@@ -1569,7 +2269,7 @@
       "subtitle": "EduSpark Global - TutorPath Adaptive AI / Obligation Timing Ledger",
       "objective": "Use obligation timing ledger to turn applicable obligations, regulatory timing, and aims scope into a concrete audit route, using EduSpark Global - TutorPath Adaptive AI as the anchor case.",
       "duration": "20.2 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-06-map",
       "script": "lesson-06-map",
       "slides": [
@@ -1641,6 +2341,44 @@
               "text": "AIMS scope and planning need to know which obligations affect which AI uses and when controls, transparency duties, governance duties or high-risk rules become."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In EduSpark Global - TutorPath Adaptive AI, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use obligation timing ledger to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-06-check-01",
+          "module": "Lesson 06",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-06-check-01",
+          "script": "lesson-06-check-01"
         },
         {
           "id": "lesson-06-slide-04",
@@ -1731,6 +2469,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect obligation register, jurisdiction map, EU AI Act timing note with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Obligation Register exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations, then test whether obligation register, jurisdiction map, EU AI Act timing note support each other.",
+          "id": "lesson-06-check-02",
+          "module": "Lesson 06",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-06-check-02",
+          "script": "lesson-06-check-02"
+        },
+        {
           "id": "lesson-06-slide-07",
           "module": "Lesson 06",
           "chapter": "Slide 07",
@@ -1807,6 +2583,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled TutorPath EU deployment, the organization had not linked applicable AI obligations and effective dates to scope, transparency preparation, supplier monitoring and review triggers.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: AIMS scope and planning need to know which obligations affect which AI uses and when controls, transparency duties, governance duties or high-risk rules become relevant.",
+          "id": "lesson-06-check-03",
+          "module": "Lesson 06",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-06-check-03",
+          "script": "lesson-06-check-03"
+        },
+        {
           "id": "lesson-06-slide-10",
           "module": "Lesson 06",
           "chapter": "Slide 10",
@@ -1838,13 +2652,39 @@
           "id": "lesson-06-slide-11",
           "module": "Lesson 06",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-06-slide-11",
           "script": "lesson-06-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In EduSpark Global - TutorPath Adaptive AI, which evidence would you sample first to test obligation timing ledger?",
-          "answer": "Start from one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations. Then connect it to obligation register, jurisdiction map, EU AI Act timing note, GPAI supplier communication. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one EU school deployment where the platform uses AI to recommend learning paths and generate feedback explanations, then connect it to obligation register, jurisdiction map, EU AI Act timing note.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is obligation timing ledger."
         },
         {
           "id": "lesson-06-slide-12",
@@ -1875,7 +2715,7 @@
       "subtitle": "Falcon Components - VisionLine QC / Authority Trail",
       "objective": "Use authority trail to turn leadership, ai policy, and governance responsibility into a concrete audit route, using Falcon Components - VisionLine QC as the anchor case.",
       "duration": "18.7 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-07-map",
       "script": "lesson-07-map",
       "slides": [
@@ -1947,6 +2787,44 @@
               "text": "A named executive and signed policy do not prove that business managers, production owners and quality leaders follow governance when delivery pressure conflicts with."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Falcon Components - VisionLine QC, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one production batch where reinspection was skipped after the system reported green performance indicators and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use authority trail to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-07-check-01",
+          "module": "Lesson 07",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-07-check-01",
+          "script": "lesson-07-check-01"
         },
         {
           "id": "lesson-07-slide-04",
@@ -2037,6 +2915,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect AI policy, responsibility matrix, production deviation record with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Ai Policy exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one production batch where reinspection was skipped after the system reported green performance indicators, then test whether AI policy, responsibility matrix, production deviation record support each other.",
+          "id": "lesson-07-check-02",
+          "module": "Lesson 07",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-07-check-02",
+          "script": "lesson-07-check-02"
+        },
+        {
           "id": "lesson-07-slide-07",
           "module": "Lesson 07",
           "chapter": "Slide 07",
@@ -2113,6 +3029,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled VisionLine QC process, leadership responsibilities were assigned on paper but the organization did not demonstrate authority for delaying production when AI inspection controls were weakened.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: A named executive and signed policy do not prove that business managers, production owners and quality leaders follow governance when delivery pressure conflicts with AI controls.",
+          "id": "lesson-07-check-03",
+          "module": "Lesson 07",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-07-check-03",
+          "script": "lesson-07-check-03"
+        },
+        {
           "id": "lesson-07-slide-10",
           "module": "Lesson 07",
           "chapter": "Slide 10",
@@ -2144,13 +3098,39 @@
           "id": "lesson-07-slide-11",
           "module": "Lesson 07",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-07-slide-11",
           "script": "lesson-07-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Falcon Components - VisionLine QC, which evidence would you sample first to test authority trail?",
-          "answer": "Start from one production batch where reinspection was skipped after the system reported green performance indicators. Then connect it to AI policy, responsibility matrix, production deviation record, governance committee minutes. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one production batch where reinspection was skipped after the system reported green performance indicators, then connect it to AI policy, responsibility matrix, production deviation record.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is authority trail."
         },
         {
           "id": "lesson-07-slide-12",
@@ -2181,7 +3161,7 @@
       "subtitle": "Meridian Imaging Solutions - ClearView Chest Assist / Risk-Impact Split Screen",
       "objective": "Use risk-impact split screen to turn ai risk assessment and ai system impact assessment into a concrete audit route, using Meridian Imaging Solutions - ClearView Chest Assist as the anchor case.",
       "duration": "19.7 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-08-map",
       "script": "lesson-08-map",
       "slides": [
@@ -2253,6 +3233,44 @@
               "text": "AI prompts can still change attention, priority, trust, workflow and patient communication."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Meridian Imaging Solutions - ClearView Chest Assist, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from ClearView version 3.2 and one post-market complaint about a missed prompt and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use risk-impact split screen to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-08-check-01",
+          "module": "Lesson 08",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-08-check-01",
+          "script": "lesson-08-check-01"
         },
         {
           "id": "lesson-08-slide-04",
@@ -2343,6 +3361,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect risk register, impact assessment, validation plan with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Risk Register exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with ClearView version 3.2 and one post-market complaint about a missed prompt, then test whether risk register, impact assessment, validation plan support each other.",
+          "id": "lesson-08-check-02",
+          "module": "Lesson 08",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-08-check-02",
+          "script": "lesson-08-check-02"
+        },
+        {
           "id": "lesson-08-slide-07",
           "module": "Lesson 08",
           "chapter": "Slide 07",
@@ -2419,6 +3475,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "The organization did not include patient impact and physician over-reliance in the impact assessment for the sampled high-caution system.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: AI prompts can still change attention, priority, trust, workflow and patient communication.",
+          "id": "lesson-08-check-03",
+          "module": "Lesson 08",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-08-check-03",
+          "script": "lesson-08-check-03"
+        },
+        {
           "id": "lesson-08-slide-10",
           "module": "Lesson 08",
           "chapter": "Slide 10",
@@ -2450,13 +3544,39 @@
           "id": "lesson-08-slide-11",
           "module": "Lesson 08",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-08-slide-11",
           "script": "lesson-08-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Meridian Imaging Solutions - ClearView Chest Assist, which evidence would you sample first to test risk-impact split screen?",
-          "answer": "Start from ClearView version 3.2 and one post-market complaint about a missed prompt. Then connect it to risk register, impact assessment, validation plan, customer training material. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from ClearView version 3.2 and one post-market complaint about a missed prompt, then connect it to risk register, impact assessment, validation plan.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is risk-impact split screen."
         },
         {
           "id": "lesson-08-slide-12",
@@ -2487,7 +3607,7 @@
       "subtitle": "CrediBridge Finance - LimitWise Credit Advisor / Soa Reality Test",
       "objective": "Use SoA reality test to turn risk treatment, soa, residual risk, and continual review into a concrete audit route, using CrediBridge Finance - LimitWise Credit Advisor as the anchor case.",
       "duration": "19.2 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-09-map",
       "script": "lesson-09-map",
       "slides": [
@@ -2559,6 +3679,44 @@
               "text": "Control names in the SoA do not prove that treatment fits the current model version, affected parties, residual risks or management acceptance."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In CrediBridge Finance - LimitWise Credit Advisor, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one model update release and a sampled limit-increase campaign for young customers and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use SoA reality test to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-09-check-01",
+          "module": "Lesson 09",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-09-check-01",
+          "script": "lesson-09-check-01"
         },
         {
           "id": "lesson-09-slide-04",
@@ -2649,6 +3807,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect risk treatment plan, SoA rationale, model update notice with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Risk Treatment Plan exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one model update release and a sampled limit-increase campaign for young customers, then test whether risk treatment plan, SoA rationale, model update notice support each other.",
+          "id": "lesson-09-check-02",
+          "module": "Lesson 09",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-09-check-02",
+          "script": "lesson-09-check-02"
+        },
+        {
           "id": "lesson-09-slide-07",
           "module": "Lesson 09",
           "chapter": "Slide 07",
@@ -2725,6 +3921,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled LimitWise update, the SoA and residual-risk acceptance were not reviewed after supplier model changes that affected credit-limit recommendations and manual overrides.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Control names in the SoA do not prove that treatment fits the current model version, affected parties, residual risks or management acceptance.",
+          "id": "lesson-09-check-03",
+          "module": "Lesson 09",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-09-check-03",
+          "script": "lesson-09-check-03"
+        },
+        {
           "id": "lesson-09-slide-10",
           "module": "Lesson 09",
           "chapter": "Slide 10",
@@ -2756,13 +3990,39 @@
           "id": "lesson-09-slide-11",
           "module": "Lesson 09",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-09-slide-11",
           "script": "lesson-09-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In CrediBridge Finance - LimitWise Credit Advisor, which evidence would you sample first to test SoA reality test?",
-          "answer": "Start from one model update release and a sampled limit-increase campaign for young customers. Then connect it to risk treatment plan, SoA rationale, model update notice, residual-risk approval. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one model update release and a sampled limit-increase campaign for young customers, then connect it to risk treatment plan, SoA rationale, model update notice.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is SoA reality test."
         },
         {
           "id": "lesson-09-slide-12",
@@ -2793,7 +4053,7 @@
       "subtitle": "CityHelp Authority - CivicAnswer AI Desk / Version-Aware Support Evidence",
       "objective": "Use version-aware support evidence to turn support processes: resources, competence, awareness, communication, and documented information into a concrete audit route, using CityHelp Authority - CivicAnswer AI Desk as the anchor case.",
       "duration": "18.4 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-10-map",
       "script": "lesson-10-map",
       "slides": [
@@ -2865,6 +4125,44 @@
               "text": "General awareness does not prove that staff can recognize high-risk citizen situations, use current guidance, escalate wrong answers or preserve records for public-service accountability."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In CityHelp Authority - CivicAnswer AI Desk, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one benefits inquiry where the AI assistant suggested an outdated eligibility explanation and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use version-aware support evidence to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-10-check-01",
+          "module": "Lesson 10",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-10-check-01",
+          "script": "lesson-10-check-01"
         },
         {
           "id": "lesson-10-slide-04",
@@ -2955,6 +4253,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect competence matrix, training scenario results, knowledge-base version log with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Competence Matrix exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one benefits inquiry where the AI assistant suggested an outdated eligibility explanation, then test whether competence matrix, training scenario results, knowledge-base version log support each other.",
+          "id": "lesson-10-check-02",
+          "module": "Lesson 10",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-10-check-02",
+          "script": "lesson-10-check-02"
+        },
+        {
           "id": "lesson-10-slide-07",
           "module": "Lesson 10",
           "chapter": "Slide 07",
@@ -3031,6 +4367,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled CivicAnswer benefits inquiry, the organization could not show role-specific competence and current documented information for staff using AI-assisted public-service answers.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: General awareness does not prove that staff can recognize high-risk citizen situations, use current guidance, escalate wrong answers or preserve records for public-service accountability.",
+          "id": "lesson-10-check-03",
+          "module": "Lesson 10",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-10-check-03",
+          "script": "lesson-10-check-03"
+        },
+        {
           "id": "lesson-10-slide-10",
           "module": "Lesson 10",
           "chapter": "Slide 10",
@@ -3062,13 +4436,39 @@
           "id": "lesson-10-slide-11",
           "module": "Lesson 10",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-10-slide-11",
           "script": "lesson-10-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In CityHelp Authority - CivicAnswer AI Desk, which evidence would you sample first to test version-aware support evidence?",
-          "answer": "Start from one benefits inquiry where the AI assistant suggested an outdated eligibility explanation. Then connect it to competence matrix, training scenario results, knowledge-base version log, issue report. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one benefits inquiry where the AI assistant suggested an outdated eligibility explanation, then connect it to competence matrix, training scenario results, knowledge-base version log.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is version-aware support evidence."
         },
         {
           "id": "lesson-10-slide-12",
@@ -3099,7 +4499,7 @@
       "subtitle": "SafeHire Labs - CandidateFlow Screening / Launch Gate Walk-Through",
       "objective": "Use launch gate walk-through to turn lifecycle audit part one: from intended use to launch into a concrete audit route, using SafeHire Labs - CandidateFlow Screening as the anchor case.",
       "duration": "18.4 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-11-map",
       "script": "lesson-11-map",
       "slides": [
@@ -3171,6 +4571,44 @@
               "text": "A principle statement and validation approval do not show whether intended use, data assumptions, recruiter instructions, human review and launch criteria fit together."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In SafeHire Labs - CandidateFlow Screening, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use launch gate walk-through to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-11-check-01",
+          "module": "Lesson 11",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-11-check-01",
+          "script": "lesson-11-check-01"
         },
         {
           "id": "lesson-11-slide-04",
@@ -3261,6 +4699,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect intended-use statement, requirements trace, validation report with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Intended-Use Statement exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons, then test whether intended-use statement, requirements trace, validation report support each other.",
+          "id": "lesson-11-check-02",
+          "module": "Lesson 11",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-11-check-02",
+          "script": "lesson-11-check-02"
+        },
+        {
           "id": "lesson-11-slide-07",
           "module": "Lesson 11",
           "chapter": "Slide 07",
@@ -3337,6 +4813,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled CandidateFlow launch, the organization did not demonstrate that the late confidence-band design change was assessed against intended use, recruiter behavior and human-review controls before release approval.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: A principle statement and validation approval do not show whether intended use, data assumptions, recruiter instructions, human review and launch criteria fit together.",
+          "id": "lesson-11-check-03",
+          "module": "Lesson 11",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-11-check-03",
+          "script": "lesson-11-check-03"
+        },
+        {
           "id": "lesson-11-slide-10",
           "module": "Lesson 11",
           "chapter": "Slide 10",
@@ -3368,13 +4882,39 @@
           "id": "lesson-11-slide-11",
           "module": "Lesson 11",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-11-slide-11",
           "script": "lesson-11-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In SafeHire Labs - CandidateFlow Screening, which evidence would you sample first to test launch gate walk-through?",
-          "answer": "Start from one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons. Then connect it to intended-use statement, requirements trace, validation report, pilot feedback. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons, then connect it to intended-use statement, requirements trace, validation report.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is launch gate walk-through."
         },
         {
           "id": "lesson-11-slide-12",
@@ -3405,7 +4945,7 @@
       "subtitle": "ForgeWorks Industrial - DefectLens Vision Monitor / Operation Drift Walk-Back",
       "objective": "Use operation drift walk-back to turn lifecycle audit part two: operation, monitoring, change, drift, and retirement into a concrete audit route, using ForgeWorks Industrial - DefectLens Vision Monitor as the anchor case.",
       "duration": "18.5 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-12-map",
       "script": "lesson-12-map",
       "slides": [
@@ -3477,6 +5017,44 @@
               "text": "Aggregate accuracy can hide line-specific drift, user workarounds, changed operating conditions and weak escalation of borderline defect decisions."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In ForgeWorks Industrial - DefectLens Vision Monitor, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one production line where lighting changed and operators began overriding defect alerts manually and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use operation drift walk-back to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-12-check-01",
+          "module": "Lesson 12",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-12-check-01",
+          "script": "lesson-12-check-01"
         },
         {
           "id": "lesson-12-slide-04",
@@ -3567,6 +5145,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect monitoring dashboard, override log, change-control record with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Monitoring Dashboard exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one production line where lighting changed and operators began overriding defect alerts manually, then test whether monitoring dashboard, override log, change-control record support each other.",
+          "id": "lesson-12-check-02",
+          "module": "Lesson 12",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-12-check-02",
+          "script": "lesson-12-check-02"
+        },
+        {
           "id": "lesson-12-slide-07",
           "module": "Lesson 12",
           "chapter": "Slide 07",
@@ -3643,6 +5259,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled DefectLens Line 4 operation, the organization did not demonstrate that environmental change and increased overrides triggered AI monitoring review, change control or residual-risk reassessment.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Aggregate accuracy can hide line-specific drift, user workarounds, changed operating conditions and weak escalation of borderline defect decisions.",
+          "id": "lesson-12-check-03",
+          "module": "Lesson 12",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-12-check-03",
+          "script": "lesson-12-check-03"
+        },
+        {
           "id": "lesson-12-slide-10",
           "module": "Lesson 12",
           "chapter": "Slide 10",
@@ -3674,13 +5328,39 @@
           "id": "lesson-12-slide-11",
           "module": "Lesson 12",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-12-slide-11",
           "script": "lesson-12-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In ForgeWorks Industrial - DefectLens Vision Monitor, which evidence would you sample first to test operation drift walk-back?",
-          "answer": "Start from one production line where lighting changed and operators began overriding defect alerts manually. Then connect it to monitoring dashboard, override log, change-control record, incident record. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one production line where lighting changed and operators began overriding defect alerts manually, then connect it to monitoring dashboard, override log, change-control record.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is operation drift walk-back."
         },
         {
           "id": "lesson-12-slide-12",
@@ -3711,7 +5391,7 @@
       "subtitle": "GovAssist Agency - PolicyGuide Public Bot / Control-to-Clause Bridge",
       "objective": "Use control-to-clause bridge to turn annex a part one: control logic, policy, organization, resources, and impact assessment into a concrete audit route, using GovAssist Agency - PolicyGuide Public Bot as the anchor case.",
       "duration": "19.1 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-13-map",
       "script": "lesson-13-map",
       "slides": [
@@ -3783,6 +5463,44 @@
               "text": "A single policy may not address public-facing communication, grant eligibility sensitivity, role authority, resource needs or impact assessment for this specific chatbot."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In GovAssist Agency - PolicyGuide Public Bot, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use control-to-clause bridge to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-13-check-01",
+          "module": "Lesson 13",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-13-check-01",
+          "script": "lesson-13-check-01"
         },
         {
           "id": "lesson-13-slide-04",
@@ -3873,6 +5591,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect SoA rationale, AI policy, responsibility table with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Soa Rationale exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply, then test whether SoA rationale, AI policy, responsibility table support each other.",
+          "id": "lesson-13-check-02",
+          "module": "Lesson 13",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-13-check-02",
+          "script": "lesson-13-check-02"
+        },
+        {
           "id": "lesson-13-slide-07",
           "module": "Lesson 13",
           "chapter": "Slide 07",
@@ -3949,6 +5705,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled PolicyGuide bot, the organization had a central AI policy but did not demonstrate system-specific responsibilities, resources and impact-assessment controls for grant eligibility consultations.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: A single policy may not address public-facing communication, grant eligibility sensitivity, role authority, resource needs or impact assessment for this specific chatbot.",
+          "id": "lesson-13-check-03",
+          "module": "Lesson 13",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-13-check-03",
+          "script": "lesson-13-check-03"
+        },
+        {
           "id": "lesson-13-slide-10",
           "module": "Lesson 13",
           "chapter": "Slide 10",
@@ -3980,13 +5774,39 @@
           "id": "lesson-13-slide-11",
           "module": "Lesson 13",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-13-slide-11",
           "script": "lesson-13-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In GovAssist Agency - PolicyGuide Public Bot, which evidence would you sample first to test control-to-clause bridge?",
-          "answer": "Start from one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply. Then connect it to SoA rationale, AI policy, responsibility table, resource plan. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply, then connect it to SoA rationale, AI policy, responsibility table.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is control-to-clause bridge."
         },
         {
           "id": "lesson-13-slide-12",
@@ -4017,7 +5837,7 @@
       "subtitle": "AtlasCloud Commerce - ReplyForge Customer Engine / Third-Party Use Accountability",
       "objective": "Use third-party use accountability to turn annex a part two: lifecycle, data, interested parties, use, and third parties into a concrete audit route, using AtlasCloud Commerce - ReplyForge Customer Engine as the anchor case.",
       "duration": "19.1 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-14-map",
       "script": "lesson-14-map",
       "slides": [
@@ -4089,6 +5909,44 @@
               "text": "AtlasCloud still governs what data employees input, what outputs may be used, what customers are told, how supplier changes are monitored and how errors."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In AtlasCloud Commerce - ReplyForge Customer Engine, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one merchant dispute where an AI-drafted response cited an outdated fee rule and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use third-party use accountability to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-14-check-01",
+          "module": "Lesson 14",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-14-check-01",
+          "script": "lesson-14-check-01"
         },
         {
           "id": "lesson-14-slide-04",
@@ -4179,6 +6037,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect supplier terms, approved-use list, data input rule with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Supplier Terms exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one merchant dispute where an AI-drafted response cited an outdated fee rule, then test whether supplier terms, approved-use list, data input rule support each other.",
+          "id": "lesson-14-check-02",
+          "module": "Lesson 14",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-14-check-02",
+          "script": "lesson-14-check-02"
+        },
+        {
           "id": "lesson-14-slide-07",
           "module": "Lesson 14",
           "chapter": "Slide 07",
@@ -4255,6 +6151,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled ReplyForge use, the organization did not demonstrate effective controls over approved inputs, output verification and supplier-change monitoring for merchant-dispute responses.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: AtlasCloud still governs what data employees input, what outputs may be used, what customers are told, how supplier changes are monitored and how errors are escalated.",
+          "id": "lesson-14-check-03",
+          "module": "Lesson 14",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-14-check-03",
+          "script": "lesson-14-check-03"
+        },
+        {
           "id": "lesson-14-slide-10",
           "module": "Lesson 14",
           "chapter": "Slide 10",
@@ -4286,13 +6220,39 @@
           "id": "lesson-14-slide-11",
           "module": "Lesson 14",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-14-slide-11",
           "script": "lesson-14-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In AtlasCloud Commerce - ReplyForge Customer Engine, which evidence would you sample first to test third-party use accountability?",
-          "answer": "Start from one merchant dispute where an AI-drafted response cited an outdated fee rule. Then connect it to supplier terms, approved-use list, data input rule, output review checklist. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one merchant dispute where an AI-drafted response cited an outdated fee rule, then connect it to supplier terms, approved-use list, data input rule.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is third-party use accountability."
         },
         {
           "id": "lesson-14-slide-12",
@@ -4323,7 +6283,7 @@
       "subtitle": "LumenBridge Advisory - NexaOffice AI Suite / Control-to-Finding Drill",
       "objective": "Use control-to-finding drill to turn how to audit annex a controls in practice into a concrete audit route, using LumenBridge Advisory - NexaOffice AI Suite as the anchor case.",
       "duration": "19.2 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-15-map",
       "script": "lesson-15-map",
       "slides": [
@@ -4395,6 +6355,44 @@
               "text": "A screenshot proves a setting existed; it does not prove employees understood, used, reviewed and escalated controls during real work."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In LumenBridge Advisory - NexaOffice AI Suite, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from Project Mariner, where NexaOffice supported a client market-entry memo and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use control-to-finding drill to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-15-check-01",
+          "module": "Lesson 15",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-15-check-01",
+          "script": "lesson-15-check-01"
         },
         {
           "id": "lesson-15-slide-04",
@@ -4485,6 +6483,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect SoA, AI Usage Rules, training dashboard with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Soa exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with Project Mariner, where NexaOffice supported a client market-entry memo, then test whether SoA, AI Usage Rules, training dashboard support each other.",
+          "id": "lesson-15-check-02",
+          "module": "Lesson 15",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-15-check-02",
+          "script": "lesson-15-check-02"
+        },
+        {
           "id": "lesson-15-slide-07",
           "module": "Lesson 15",
           "chapter": "Slide 07",
@@ -4561,6 +6597,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "The sampled use-control route did not demonstrate implementation evidence for restricted input understanding and AI-output review.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: A screenshot proves a setting existed; it does not prove employees understood, used, reviewed and escalated controls during real work.",
+          "id": "lesson-15-check-03",
+          "module": "Lesson 15",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-15-check-03",
+          "script": "lesson-15-check-03"
+        },
+        {
           "id": "lesson-15-slide-10",
           "module": "Lesson 15",
           "chapter": "Slide 10",
@@ -4592,13 +6666,39 @@
           "id": "lesson-15-slide-11",
           "module": "Lesson 15",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-15-slide-11",
           "script": "lesson-15-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In LumenBridge Advisory - NexaOffice AI Suite, which evidence would you sample first to test control-to-finding drill?",
-          "answer": "Start from Project Mariner, where NexaOffice supported a client market-entry memo. Then connect it to SoA, AI Usage Rules, training dashboard, enterprise console. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from Project Mariner, where NexaOffice supported a client market-entry memo, then connect it to SoA, AI Usage Rules, training dashboard.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is control-to-finding drill."
         },
         {
           "id": "lesson-15-slide-12",
@@ -4629,7 +6729,7 @@
       "subtitle": "MetroCare Health Network - CareRoute AI Portfolio / Stage 1 Reality Scan",
       "objective": "Use Stage 1 reality scan to turn audit programme, stage 1, stage 2, and audit preparation into a concrete audit route, using MetroCare Health Network - CareRoute AI Portfolio as the anchor case.",
       "duration": "19.4 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-16-map",
       "script": "lesson-16-map",
       "slides": [
@@ -4701,6 +6801,44 @@
               "text": "Without a credible inventory, scope boundary, obligation view and competence plan, Stage 2 sampling may miss the systems that define the AIMS risk profile."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In MetroCare Health Network - CareRoute AI Portfolio, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one hospital pilot of an appointment triage assistant missing from the central AI inventory and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use Stage 1 reality scan to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-16-check-01",
+          "module": "Lesson 16",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-16-check-01",
+          "script": "lesson-16-check-01"
         },
         {
           "id": "lesson-16-slide-04",
@@ -4791,6 +6929,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect audit programme, Stage 1 readiness notes, AI inventory with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Audit Programme exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one hospital pilot of an appointment triage assistant missing from the central AI inventory, then test whether audit programme, Stage 1 readiness notes, AI inventory support each other.",
+          "id": "lesson-16-check-02",
+          "module": "Lesson 16",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-16-check-02",
+          "script": "lesson-16-check-02"
+        },
+        {
           "id": "lesson-16-slide-07",
           "module": "Lesson 16",
           "chapter": "Slide 07",
@@ -4867,6 +7043,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the MetroCare Stage 1 review, the audit team identified that the declared scope and AI inventory did not support reliable Stage 2 sampling for multi-site AI use.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Without a credible inventory, scope boundary, obligation view and competence plan, Stage 2 sampling may miss the systems that define the AIMS risk profile.",
+          "id": "lesson-16-check-03",
+          "module": "Lesson 16",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-16-check-03",
+          "script": "lesson-16-check-03"
+        },
+        {
           "id": "lesson-16-slide-10",
           "module": "Lesson 16",
           "chapter": "Slide 10",
@@ -4898,13 +7112,39 @@
           "id": "lesson-16-slide-11",
           "module": "Lesson 16",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-16-slide-11",
           "script": "lesson-16-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In MetroCare Health Network - CareRoute AI Portfolio, which evidence would you sample first to test Stage 1 reality scan?",
-          "answer": "Start from one hospital pilot of an appointment triage assistant missing from the central AI inventory. Then connect it to audit programme, Stage 1 readiness notes, AI inventory, multi-site sampling plan. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one hospital pilot of an appointment triage assistant missing from the central AI inventory, then connect it to audit programme, Stage 1 readiness notes, AI inventory.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is Stage 1 reality scan."
         },
         {
           "id": "lesson-16-slide-12",
@@ -4935,7 +7175,7 @@
       "subtitle": "PayWise Payments - ShieldScore Fraud Monitor / Triangulation Ladder",
       "objective": "Use triangulation ladder to turn on-site audit techniques and evidence cross-verification into a concrete audit route, using PayWise Payments - ShieldScore Fraud Monitor as the anchor case.",
       "duration": "18.5 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-17-map",
       "script": "lesson-17-map",
       "slides": [
@@ -5007,6 +7247,44 @@
               "text": "An interview and dashboard are useful but incomplete. The audit needs to connect rules, model output, analyst action, exception handling, logs and one actual."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In PayWise Payments - ShieldScore Fraud Monitor, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one disputed transaction that was blocked after a high fraud score and later reversed and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use triangulation ladder to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-17-check-01",
+          "module": "Lesson 17",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-17-check-01",
+          "script": "lesson-17-check-01"
         },
         {
           "id": "lesson-17-slide-04",
@@ -5097,6 +7375,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect procedure, dashboard, transaction log with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Procedure exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one disputed transaction that was blocked after a high fraud score and later reversed, then test whether procedure, dashboard, transaction log support each other.",
+          "id": "lesson-17-check-02",
+          "module": "Lesson 17",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-17-check-02",
+          "script": "lesson-17-check-02"
+        },
+        {
           "id": "lesson-17-slide-07",
           "module": "Lesson 17",
           "chapter": "Slide 07",
@@ -5173,6 +7489,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled ShieldScore transaction, the organization did not reconcile interview evidence, system logs and dispute records sufficiently to support the conclusion that fraud-score review controls operated as defined.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: An interview and dashboard are useful but incomplete. The audit needs to connect rules, model output, analyst action, exception handling, logs and one actual transaction trail.",
+          "id": "lesson-17-check-03",
+          "module": "Lesson 17",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-17-check-03",
+          "script": "lesson-17-check-03"
+        },
+        {
           "id": "lesson-17-slide-10",
           "module": "Lesson 17",
           "chapter": "Slide 10",
@@ -5204,13 +7558,39 @@
           "id": "lesson-17-slide-11",
           "module": "Lesson 17",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-17-slide-11",
           "script": "lesson-17-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In PayWise Payments - ShieldScore Fraud Monitor, which evidence would you sample first to test triangulation ladder?",
-          "answer": "Start from one disputed transaction that was blocked after a high fraud score and later reversed. Then connect it to procedure, dashboard, transaction log, analyst case note. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one disputed transaction that was blocked after a high fraud score and later reversed, then connect it to procedure, dashboard, transaction log.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is triangulation ladder."
         },
         {
           "id": "lesson-17-slide-12",
@@ -5241,7 +7621,7 @@
       "subtitle": "EduScore Analytics - EssayMark Auto-Scoring / Finding Anatomy",
       "objective": "Use finding anatomy to turn audit findings, nonconformities, corrective action, and reports into a concrete audit route, using EduScore Analytics - EssayMark Auto-Scoring as the anchor case.",
       "duration": "18.3 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-18-map",
       "script": "lesson-18-map",
       "slides": [
@@ -5313,6 +7693,44 @@
               "text": "Immediate correction may be useful, but the audit still has to decide whether impact assessment, monitoring, teacher review or corrective action processes failed."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In EduScore Analytics - EssayMark Auto-Scoring, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one scoring period where feedback templates were changed manually after teacher complaints and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use finding anatomy to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-18-check-01",
+          "module": "Lesson 18",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-18-check-01",
+          "script": "lesson-18-check-01"
         },
         {
           "id": "lesson-18-slide-04",
@@ -5403,6 +7821,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect complaint log, impact assessment, monitoring report with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Complaint Log exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one scoring period where feedback templates were changed manually after teacher complaints, then test whether complaint log, impact assessment, monitoring report support each other.",
+          "id": "lesson-18-check-02",
+          "module": "Lesson 18",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-18-check-02",
+          "script": "lesson-18-check-02"
+        },
+        {
           "id": "lesson-18-slide-07",
           "module": "Lesson 18",
           "chapter": "Slide 07",
@@ -5479,6 +7935,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled EssayMark scoring period, the organization did not demonstrate that repeated teacher complaints triggered impact-assessment review and corrective action for feedback affecting English-language learners.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Immediate correction may be useful, but the audit still has to decide whether impact assessment, monitoring, teacher review or corrective action processes failed.",
+          "id": "lesson-18-check-03",
+          "module": "Lesson 18",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-18-check-03",
+          "script": "lesson-18-check-03"
+        },
+        {
           "id": "lesson-18-slide-10",
           "module": "Lesson 18",
           "chapter": "Slide 10",
@@ -5510,13 +8004,39 @@
           "id": "lesson-18-slide-11",
           "module": "Lesson 18",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-18-slide-11",
           "script": "lesson-18-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In EduScore Analytics - EssayMark Auto-Scoring, which evidence would you sample first to test finding anatomy?",
-          "answer": "Start from one scoring period where feedback templates were changed manually after teacher complaints. Then connect it to complaint log, impact assessment, monitoring report, teacher review record. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one scoring period where feedback templates were changed manually after teacher complaints, then connect it to complaint log, impact assessment, monitoring report.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is finding anatomy."
         },
         {
           "id": "lesson-18-slide-12",
@@ -5547,7 +8067,7 @@
       "subtitle": "Apex Tri-Sector Exercise - CreditMedEdu Audit Lab / Case Comparison Grid",
       "objective": "Use case comparison grid to turn integrated industry cases: from audit plan to audit finding into a concrete audit route, using Apex Tri-Sector Exercise - CreditMedEdu Audit Lab as the anchor case.",
       "duration": "19.0 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-19-map",
       "script": "lesson-19-map",
       "slides": [
@@ -5619,6 +8139,44 @@
               "text": "The standard is the same, but audit sampling, evidence routes, competence needs, impact paths and finding language differ sharply across industries."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Apex Tri-Sector Exercise - CreditMedEdu Audit Lab, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use case comparison grid to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-19-check-01",
+          "module": "Lesson 19",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-19-check-01",
+          "script": "lesson-19-check-01"
         },
         {
           "id": "lesson-19-slide-04",
@@ -5709,6 +8267,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect case comparison grid, audit plan, evidence conflict note with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Case Comparison Grid exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute, then test whether case comparison grid, audit plan, evidence conflict note support each other.",
+          "id": "lesson-19-check-02",
+          "module": "Lesson 19",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-19-check-02",
+          "script": "lesson-19-check-02"
+        },
+        {
           "id": "lesson-19-slide-07",
           "module": "Lesson 19",
           "chapter": "Slide 07",
@@ -5785,6 +8381,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the integrated exercise, the audit team should use common ISO/IEC 42001 criteria while adapting samples, evidence and competence to credit, medical and education impact pathways.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: The standard is the same, but audit sampling, evidence routes, competence needs, impact paths and finding language differ sharply across industries.",
+          "id": "lesson-19-check-03",
+          "module": "Lesson 19",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-19-check-03",
+          "script": "lesson-19-check-03"
+        },
+        {
           "id": "lesson-19-slide-10",
           "module": "Lesson 19",
           "chapter": "Slide 10",
@@ -5816,13 +8450,39 @@
           "id": "lesson-19-slide-11",
           "module": "Lesson 19",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-19-slide-11",
           "script": "lesson-19-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Apex Tri-Sector Exercise - CreditMedEdu Audit Lab, which evidence would you sample first to test case comparison grid?",
-          "answer": "Start from three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute. Then connect it to case comparison grid, audit plan, evidence conflict note, sample records. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute, then connect it to case comparison grid, audit plan, evidence conflict note.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is case comparison grid."
         },
         {
           "id": "lesson-19-slide-12",
@@ -5853,7 +8513,7 @@
       "subtitle": "Apex Certification Technology Research Center - AIMS Auditor Panel / Authorization Evidence Path",
       "objective": "Use authorization evidence path to turn iso/iec 42001 auditor competence development and course closure into a concrete audit route, using Apex Certification Technology Research Center - AIMS Auditor Panel as the anchor case.",
       "duration": "19.8 min",
-      "status": "Loaded",
+      "status": "Interactive",
       "audio": "lesson-20-map",
       "script": "lesson-20-map",
       "slides": [
@@ -5925,6 +8585,44 @@
               "text": "Course success is important, but it does not prove competence for every AI context, sector risk, technical boundary or finding judgement."
             }
           ]
+        },
+        {
+          "title": "Learning Check: Find the First Audit Move",
+          "subtitle": "Pause after Slide 03 and test the case direction.",
+          "question": "In Apex Certification Technology Research Center - AIMS Auditor Panel, what is the strongest first move before judging the AIMS?",
+          "options": [
+            {
+              "id": "real-use",
+              "label": "Trace real use",
+              "text": "Start from one witnessed audit file where the candidate handled a generative AI office tool well but struggled with impact-assessment. and observe how the AI changes work, responsibility or decision flow.",
+              "correct": true,
+              "feedback": "Good route. It turns the discussion from general assurance into sampled evidence."
+            },
+            {
+              "id": "policy-first",
+              "label": "Collect policies first",
+              "text": "Ask for all AI policies and procedures before selecting a real use sample.",
+              "correct": false,
+              "feedback": "Policies matter, but starting only from documents can miss how AI is actually used."
+            },
+            {
+              "id": "accept-answer",
+              "label": "Accept the answer",
+              "text": "Accept the comfortable answer without testing how AI affects the actual workflow.",
+              "correct": false,
+              "feedback": "That answer may be true in form, but the auditor still needs evidence of real use and impact."
+            }
+          ],
+          "coaching": "Use authorization evidence path to move from the comfortable answer to one concrete sample. The point is not to challenge every document at once; it is to find the first evidence route.",
+          "id": "lesson-20-check-01",
+          "module": "Lesson 20",
+          "chapter": "Learning Check 01",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 1,
+          "sourceAfter": "Slide 03",
+          "audio": "lesson-20-check-01",
+          "script": "lesson-20-check-01"
         },
         {
           "id": "lesson-20-slide-04",
@@ -6015,6 +8713,44 @@
           ]
         },
         {
+          "title": "Learning Check: Build the Evidence Chain",
+          "subtitle": "Pause after Slide 06 and connect records instead of listing them.",
+          "question": "Which evidence route is most useful for this point in the lesson?",
+          "options": [
+            {
+              "id": "chain",
+              "label": "Connected chain",
+              "text": "Connect competence matrix, course exam, witnessed audit record with interviews and the sampled decision or review record.",
+              "correct": true,
+              "feedback": "Yes. A connected chain lets the auditor test whether the management system is operating."
+            },
+            {
+              "id": "single-record",
+              "label": "One record",
+              "text": "Check whether Competence Matrix exists and stop there.",
+              "correct": false,
+              "feedback": "Existence is only a starting point. The stronger question is whether the record affects decisions."
+            },
+            {
+              "id": "verbal",
+              "label": "Verbal assurance",
+              "text": "Rely on the process owner's explanation if the answer sounds mature and consistent.",
+              "correct": false,
+              "feedback": "Interviews are useful, but they need support from records and sampled operating evidence."
+            }
+          ],
+          "coaching": "The practical move is to connect records, roles and decisions. In this case, start with one witnessed audit file where the candidate handled a generative AI office tool well but struggled with impact-assessment., then test whether competence matrix, course exam, witnessed audit record support each other.",
+          "id": "lesson-20-check-02",
+          "module": "Lesson 20",
+          "chapter": "Learning Check 02",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 2,
+          "sourceAfter": "Slide 06",
+          "audio": "lesson-20-check-02",
+          "script": "lesson-20-check-02"
+        },
+        {
           "id": "lesson-20-slide-07",
           "module": "Lesson 20",
           "chapter": "Slide 07",
@@ -6091,6 +8827,44 @@
           ]
         },
         {
+          "title": "Learning Check: Keep the Audit Boundary",
+          "subtitle": "Pause after Slide 09 and choose wording that stays evidence-based.",
+          "question": "Which conclusion style is strongest for a training audit discussion?",
+          "options": [
+            {
+              "id": "bounded",
+              "label": "Bounded wording",
+              "text": "For the sampled authorization decision, the certification body should limit or stage authorization until witnessed evidence demonstrates competence in impact assessment, lifecycle evidence and finding language for higher-impact AI systems.",
+              "correct": true,
+              "feedback": "Strong. It names the sample, the evidence gap and the audit boundary."
+            },
+            {
+              "id": "overreach",
+              "label": "Broad judgement",
+              "text": "The AI system is unsafe and the organization is not ready for certification.",
+              "correct": false,
+              "feedback": "That overreaches. The auditor should not jump beyond the sampled evidence."
+            },
+            {
+              "id": "no-issue",
+              "label": "No issue",
+              "text": "No issue exists because the organization gives a comfortable explanation.",
+              "correct": false,
+              "feedback": "A comfortable answer does not remove the need to test implementation and impact."
+            }
+          ],
+          "coaching": "Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Course success is important, but it does not prove competence for every AI context, sector risk, technical boundary or finding judgement.",
+          "id": "lesson-20-check-03",
+          "module": "Lesson 20",
+          "chapter": "Learning Check 03",
+          "layout": "check",
+          "kind": "check",
+          "checkNumber": 3,
+          "sourceAfter": "Slide 09",
+          "audio": "lesson-20-check-03",
+          "script": "lesson-20-check-03"
+        },
+        {
           "id": "lesson-20-slide-10",
           "module": "Lesson 20",
           "chapter": "Slide 10",
@@ -6122,13 +8896,39 @@
           "id": "lesson-20-slide-11",
           "module": "Lesson 20",
           "chapter": "Slide 11",
-          "title": "Learner Practice Task",
+          "title": "Learner Practice Check",
           "subtitle": "Pause the narration, choose an evidence path, then reveal the coaching note.",
-          "layout": "quiz",
+          "layout": "check",
           "audio": "lesson-20-slide-11",
           "script": "lesson-20-slide-11",
+          "kind": "check",
+          "checkNumber": 4,
+          "sourceAfter": "Slide 10",
           "question": "In Apex Certification Technology Research Center - AIMS Auditor Panel, which evidence would you sample first to test authorization evidence path?",
-          "answer": "Start from one witnessed audit file where the candidate handled a generative AI office tool well but struggled with impact-assessment evidence in a credit model. Then connect it to competence matrix, course exam, witnessed audit record, workpaper review. A good answer forms one evidence chain rather than listing documents."
+          "options": [
+            {
+              "id": "sample-path",
+              "label": "Sample path",
+              "text": "Start from one witnessed audit file where the candidate handled a generative AI office tool well but struggled with impact-assessment., then connect it to competence matrix, course exam, witnessed audit record.",
+              "correct": true,
+              "feedback": "Good. This gives the auditor a practical route rather than a document request list."
+            },
+            {
+              "id": "training-only",
+              "label": "Training only",
+              "text": "Check the latest training record and conclude whether people were aware of the policy.",
+              "correct": false,
+              "feedback": "Training may support the route, but it rarely proves the whole AI use is controlled."
+            },
+            {
+              "id": "supplier-only",
+              "label": "Supplier only",
+              "text": "Ask the supplier or technical team to confirm that the AI system is acceptable.",
+              "correct": false,
+              "feedback": "Supplier input can help, but the organization still needs its own AIMS evidence."
+            }
+          ],
+          "coaching": "A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is authorization evidence path."
         },
         {
           "id": "lesson-20-slide-12",

@@ -8,7 +8,8 @@ const state = {
   audioTryIndex: 0,
   audioCandidates: [],
   audioBlocked: false,
-  audioProfile: "en"
+  audioProfile: "en",
+  checkResponses: {}
 };
 
 const $ = selector => document.querySelector(selector);
@@ -31,6 +32,8 @@ const placeholderSequence = [
   "Lesson Summary"
 ];
 
+const CHECK_STORAGE_KEY = "iso42001-learning-check-progress-v1";
+
 async function init() {
   if (window.COURSE_MANIFEST) {
     state.manifest = window.COURSE_MANIFEST;
@@ -38,6 +41,7 @@ async function init() {
     const res = await fetch("data/course_manifest.json", { cache: "no-store" });
     state.manifest = await res.json();
   }
+  state.checkResponses = loadCheckResponses();
   bindEvents();
   render();
 }
@@ -175,6 +179,7 @@ function bindStageLocalEvents() {
       if (button.dataset.action === "course-map") goCourseMap();
       if (button.dataset.action === "lesson-map") goLessonMap(state.lessonIndex);
       if (button.dataset.action === "start-lesson") goSlide(state.lessonIndex, 0);
+      if (button.dataset.action === "next-slide") goNext();
     });
   });
   stage.querySelectorAll("[data-lesson-index]").forEach(button => {
@@ -189,6 +194,9 @@ function bindStageLocalEvents() {
       if (answer) answer.classList.add("show");
       stage.querySelectorAll("[data-answer]").forEach(btn => { btn.disabled = true; });
     });
+  });
+  stage.querySelectorAll("[data-check-option]").forEach(button => {
+    button.addEventListener("click", () => recordCheckAnswer(activeSlide(), button.dataset.checkOption));
   });
 }
 
@@ -210,19 +218,24 @@ function renderHome() {
 
 function renderCourseMap() {
   const map = state.manifest.courseMap;
-  const cards = state.manifest.lessons.map((lesson, index) => `
-    <button class="map-card lesson-card" type="button" data-lesson-index="${index}">
-      <span class="lesson-top">
-        <span class="lesson-no">Lesson ${escapeHtml(lesson.number)}</span>
-        <span class="lesson-status">${escapeHtml(lesson.status || "Draft")}</span>
-      </span>
-      <span class="t">${escapeHtml(lesson.title)}</span>
-      <span class="s">${escapeHtml(lesson.subtitle || "")}</span>
-      <span class="lesson-meta">
-        <span>${getLessonSlides(lesson).length} slide slots</span>
-        <span>${escapeHtml(lesson.duration || "20 min")}</span>
-      </span>
-    </button>`).join("");
+  const cards = state.manifest.lessons.map((lesson, index) => {
+    const stats = lessonCheckStats(lesson);
+    const contentPages = getLessonSlides(lesson).filter(slide => !isLearningCheck(slide)).length;
+    return `
+      <button class="map-card lesson-card" type="button" data-lesson-index="${index}">
+        <span class="lesson-top">
+          <span class="lesson-no">Lesson ${escapeHtml(lesson.number)}</span>
+          <span class="lesson-status">${stats.completed}/${stats.total} checks</span>
+        </span>
+        <span class="t">${escapeHtml(lesson.title)}</span>
+        <span class="s">${escapeHtml(lesson.subtitle || "")}</span>
+        <span class="lesson-meta">
+          <span>${contentPages} slides + ${stats.total} checks</span>
+          <span>${escapeHtml(lesson.duration || "20 min")}</span>
+        </span>
+        <span class="lesson-progress" aria-hidden="true"><span style="width:${stats.percent}%"></span></span>
+      </button>`;
+  }).join("");
 
   return `
     <section class="slide slide-scroll">
@@ -237,12 +250,20 @@ function renderCourseMap() {
 
 function renderLessonMap(lesson) {
   const slides = getLessonSlides(lesson);
-  const cards = slides.map((slide, index) => `
-    <button class="map-card slide-card" type="button" data-slide-index="${index}">
-      <span class="m">Slide ${String(index + 1).padStart(2, "0")}</span>
-      <span class="t">${escapeHtml(slide.title)}</span>
-      <span class="s">${escapeHtml(slide.subtitle || "")}</span>
-    </button>`).join("");
+  let checkCount = 0;
+  const cards = slides.map((slide, index) => {
+    const isCheck = isLearningCheck(slide);
+    if (isCheck) checkCount += 1;
+    const label = isCheck ? `Check ${String(checkCount).padStart(2, "0")}` : `Slide ${String(index + 1).padStart(2, "0")}`;
+    const done = isCheck && isCheckComplete(slide.id);
+    return `
+      <button class="map-card slide-card ${isCheck ? "learning-check-card" : ""} ${done ? "done" : ""}" type="button" data-slide-index="${index}">
+        <span class="m">${label}${done ? " / Done" : ""}</span>
+        <span class="t">${escapeHtml(slide.title)}</span>
+        <span class="s">${escapeHtml(slide.subtitle || "")}</span>
+      </button>`;
+  }).join("");
+  const stats = lessonCheckStats(lesson);
 
   return `
     <section class="slide slide-scroll">
@@ -252,6 +273,11 @@ function renderLessonMap(lesson) {
             <div class="eyebrow">Lesson ${escapeHtml(lesson.number)} / Internal Map</div>
             <h1>${escapeHtml(lesson.title)}</h1>
             ${renderSubtitle(lesson.objective || lesson.subtitle)}
+            <div class="lesson-map-progress">
+              <span>Learning checks</span>
+              <strong>${stats.completed}/${stats.total}</strong>
+              <span class="lesson-progress" aria-hidden="true"><span style="width:${stats.percent}%"></span></span>
+            </div>
           </div>
           <div class="lesson-actions">
             <button class="secondary" type="button" data-action="course-map">Course Map</button>
@@ -298,6 +324,10 @@ function renderSlide(slide) {
     return `<section class="slide"><div class="slide-inner">${meta}${title}${subtitle}<div class="split-grid">${panels}</div></div></section>`;
   }
 
+  if (slide.layout === "check") {
+    return renderLearningCheck(slide, meta, title, subtitle);
+  }
+
   if (slide.layout === "quiz") {
     return `
       <section class="slide">
@@ -324,6 +354,42 @@ function renderSlide(slide) {
         <div class="content-card">
           <ul>${bullets}</ul>
           ${chips ? `<div class="chips">${chips}</div>` : ""}
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderLearningCheck(slide, meta, title, subtitle) {
+  const response = state.checkResponses[slide.id] || null;
+  const selectedId = response ? response.choice : null;
+  const selected = (slide.options || []).find(option => option.id === selectedId) || null;
+  const options = (slide.options || []).map(option => {
+    const selectedClass = selectedId === option.id ? "selected" : "";
+    const correctnessClass = selectedId && option.correct ? "strongest" : "";
+    return `
+      <button class="check-option ${selectedClass} ${correctnessClass}" type="button" data-check-option="${escapeHtml(option.id)}" aria-pressed="${selectedId === option.id}">
+        <span>${escapeHtml(option.label)}</span>
+        <strong>${escapeHtml(option.text)}</strong>
+      </button>`;
+  }).join("");
+  const feedback = selected ? `
+    <div class="check-feedback show" id="checkFeedback">
+      <span>${selected.correct ? "Strongest route" : "Useful thought, strengthen the route"}</span>
+      <p>${escapeHtml(selected.feedback)}</p>
+      <p>${escapeHtml(slide.coaching || "")}</p>
+      <button class="primary compact" type="button" data-action="next-slide">Continue</button>
+    </div>` : `
+    <div class="check-feedback" id="checkFeedback"></div>`;
+
+  return `
+    <section class="slide slide-scroll check-slide">
+      <div class="slide-inner">
+        ${meta}${title}${subtitle}
+        <div class="check-card">
+          <div class="check-kicker">${escapeHtml(slide.sourceAfter || "Learning pause")}</div>
+          <div class="question">${escapeHtml(slide.question || "")}</div>
+          <div class="check-options">${options}</div>
+          ${feedback}
         </div>
       </div>
     </section>`;
@@ -386,6 +452,73 @@ function getLessonSlides(lesson) {
   });
 }
 
+function isLearningCheck(slide) {
+  return slide && (slide.kind === "check" || slide.layout === "check");
+}
+
+function lessonCheckStats(lesson) {
+  const checks = getLessonSlides(lesson).filter(isLearningCheck);
+  const completed = checks.filter(slide => isCheckComplete(slide.id)).length;
+  return {
+    total: checks.length,
+    completed,
+    percent: checks.length ? Math.round(completed / checks.length * 100) : 0
+  };
+}
+
+function isCheckComplete(id) {
+  return Boolean(state.checkResponses[id]);
+}
+
+function loadCheckResponses() {
+  try {
+    return JSON.parse(localStorage.getItem(CHECK_STORAGE_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveCheckResponses() {
+  try {
+    localStorage.setItem(CHECK_STORAGE_KEY, JSON.stringify(state.checkResponses));
+  } catch {
+    // Local progress is optional. The training flow still works if storage is blocked.
+  }
+}
+
+function recordCheckAnswer(slide, optionId) {
+  if (!isLearningCheck(slide)) return;
+  const selected = (slide.options || []).find(option => option.id === optionId);
+  if (!selected) return;
+  state.checkResponses[slide.id] = {
+    choice: selected.id,
+    correct: Boolean(selected.correct),
+    updatedAt: new Date().toISOString()
+  };
+  saveCheckResponses();
+  renderCheckSelection(slide, selected);
+}
+
+function renderCheckSelection(slide, selected) {
+  stage.querySelectorAll("[data-check-option]").forEach(button => {
+    const option = (slide.options || []).find(item => item.id === button.dataset.checkOption);
+    button.classList.toggle("selected", option && option.id === selected.id);
+    button.classList.toggle("strongest", Boolean(option && option.correct));
+    button.setAttribute("aria-pressed", option && option.id === selected.id ? "true" : "false");
+  });
+  const feedback = $("#checkFeedback");
+  if (!feedback) return;
+  feedback.classList.add("show");
+  feedback.innerHTML = `
+    <span>${selected.correct ? "Strongest route" : "Useful thought, strengthen the route"}</span>
+    <p>${escapeHtml(selected.feedback)}</p>
+    <p>${escapeHtml(slide.coaching || "")}</p>
+    <button class="primary compact" type="button" data-action="next-slide">Continue</button>`;
+  const continueButton = feedback.querySelector("[data-action='next-slide']");
+  if (continueButton) continueButton.addEventListener("click", goNext);
+  feedback.scrollIntoView({ block: "center", behavior: "smooth" });
+}
+
 function updateChrome(item) {
   $("#counterText").textContent = counterText();
   $("#progress").style.width = `${progressValue()}%`;
@@ -399,7 +532,9 @@ function counterText() {
   if (state.view === "courseMap") return `${state.manifest.lessons.length} Lessons`;
   const lesson = activeLesson();
   if (state.view === "lessonMap") return `Lesson ${lesson.number} / Map`;
-  return `Lesson ${lesson.number} / Slide ${state.slideIndex + 1} / ${getLessonSlides(lesson).length}`;
+  const slide = activeSlide();
+  const label = isLearningCheck(slide) ? "Check" : "Slide";
+  return `Lesson ${lesson.number} / ${label} ${state.slideIndex + 1} / ${getLessonSlides(lesson).length}`;
 }
 
 function progressValue() {
