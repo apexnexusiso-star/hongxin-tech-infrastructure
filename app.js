@@ -1,929 +1,1748 @@
-const state = {
-  manifest: null,
-  view: "home",
-  lessonIndex: 0,
-  slideIndex: 0,
-  autoplay: true,
-  notesOpen: false,
-  audioTryIndex: 0,
-  audioCandidates: [],
-  audioBlocked: false,
-  audioProfile: "en",
-  checkResponses: {}
-};
-
-const $ = selector => document.querySelector(selector);
-const stage = $("#stage");
-const audio = $("#audio");
-const playBtn = $("#playBtn");
-const seek = $("#seek");
-const audioTitle = $("#audioTitle");
-const audioNow = $("#audioNow");
-const audioDuration = $("#audioDuration");
-const prevBtn = $("#prevBtn");
-const nextBtn = $("#nextBtn");
-
-const placeholderSequence = [
-  "Opening and Learning Target",
-  "Key Concept Framework",
-  "Clause Logic and Governance Point",
-  "Evidence and Audit Trail",
-  "Case Practice or Reflection",
-  "Lesson Summary"
+﻿const modules = [
+  {
+    id: "governance",
+    no: "01",
+    title: "内部文件库",
+    summary: "管理手册、程序文件、三级文件、四级表格和内部运行制度。",
+    hero:
+      "把认证机构自己的管理体系文件集中管理，形成版本受控、职责清晰、可追溯的内部制度底座。",
+    sections: [
+      ["一级文件", "管理手册、公正性声明、质量方针、组织职责和认证活动总要求。"],
+      ["二级程序", "申请评审、审核实施、认证决定、人员管理、申投诉、证书管理等程序。"],
+      ["三级作业", "各岗位作业指导、技术委员会运行、卷宗审定、远程审核控制要求。"],
+      ["四级表格", "申请评审表、审核计划、审核报告、复核记录、认证决定记录。"],
+      ["运行记录", "内审、管评、人员评价、能力保持、风险评估和纠正措施记录。"],
+      ["公开文件", "认证流程、收费规则、证书与标志使用、申投诉渠道和公正性承诺。"],
+    ],
+    tags: ["管理手册", "程序文件", "MR", "表单", "公正性"],
+  },
+  {
+    id: "rules",
+    no: "02",
+    title: "认证规则库",
+    summary: "各认证领域的认证方案、审核人日、抽样、多场所和证后规则。",
+    hero:
+      "把不同体系和服务认证规则沉淀为可执行的认证方案，支撑申请评审、派组、审核和证后管理。",
+    sections: [
+      ["QMS 方案", "质量管理体系及建设施工质量管理体系认证方案、范围界定和审核人日规则。"],
+      ["EMS 方案", "环境管理体系认证范围、环境因素风险、法规合规性和现场审核要求。"],
+      ["OHSMS 方案", "职业健康安全管理体系风险等级、危险源审核和法规符合性审查。"],
+      ["服务认证", "服务特性、服务蓝图、顾客体验、服务能力和暗访抽样要求。"],
+      ["能源管理", "能源绩效参数、能源基准、主要能源使用和节能机会识别。"],
+      ["证后规则", "监督、再认证、扩大缩小范围、暂停、恢复、撤销和注销。"],
+    ],
+    tags: ["认证方案", "审核人日", "抽样", "多场所", "证后监督"],
+  },
+  {
+    id: "specialties",
+    no: "03",
+    title: "技术领域分析",
+    summary: "围绕认证领域、行业场景、专业边界、风险特征和人员能力开展技术分析。",
+    hero:
+      "面向技术委员会、技术人员和专业能力评价，建立覆盖各认证领域的技术分析文件。",
+    sections: [
+      ["领域目录", "按 QMS、EMS、OHSMS、50430、能源管理、服务认证等方向建立技术领域台账。"],
+      ["行业分析", "梳理不同行业的典型过程、关键活动、外包边界和认证风险。"],
+      ["专业边界", "明确认证范围、专业能力、类似行业迁移和复杂组织场景的判断依据。"],
+      ["风险特征", "识别各领域质量、环境、职业健康安全、能源和法规合规的高风险节点。"],
+      ["能力模型", "定义审核员、技术专家、复核人员和认证决定人员的能力要求。"],
+      ["更新机制", "跟踪标准变化、监管要求和行业发展对技术领域分析文件的影响。"],
+    ],
+    tags: ["技术领域", "行业分析", "专业边界", "风险特征", "能力模型"],
+  },
+  {
+    id: "audit",
+    no: "04",
+    title: "审核作业指导书",
+    summary: "面向审核员提供不同领域、行业和专业场景下的审核作业指导。",
+    hero:
+      "让审核员在进场前理解行业特点、明确审核路径、掌握证据要求，并形成一致的审核方法。",
+    sections: [
+      ["行业指导书", "机械加工、建筑施工、物业服务、软件服务、教育培训等专业审核作业指导。"],
+      ["条款审核法", "按 ISO 9001、14001、45001 条款建立问题链和证据链。"],
+      ["过程审核法", "以订单、项目、产品、服务或风险事件为主线实施穿行审核。"],
+      ["现场证据", "记录、现场观察、访谈、抽样、照片和数据核验的证据要求。"],
+      ["远程审核", "远程审核适用条件、技术手段、证据可信度和限制条件。"],
+      ["审核复盘", "审核组内部复盘、优秀报告样例和常见弱项纠偏。"],
+    ],
+    tags: ["作业指导书", "审核检查表", "证据链", "过程方法", "远程审核"],
+  },
+  {
+    id: "laws",
+    no: "05",
+    title: "法律法规库",
+    summary: "与认证活动、客户行业和审核领域相关的法律法规及合规要求。",
+    hero:
+      "建立法规清单、适用性判断和修订影响分析，支撑审核、复核和认证决定中的合规判断。",
+    sections: [
+      ["认证监管", "认证认可条例、认证机构管理办法、认监委监管文件和专项整治要求。"],
+      ["质量法规", "产品质量、计量、特种设备、工程建设等与质量管理相关的法规要求。"],
+      ["环境法规", "环境保护、排污许可、固废、危废、环评和污染防治相关法规。"],
+      ["职业健康安全", "安全生产、职业病防治、消防、应急管理和劳动保护相关法规。"],
+      ["行业法规", "按重点行业维护适用法规清单和审核关注点。"],
+      ["修订影响", "法规变化对审核检查表、作业指导书和认证决定复核的影响分析。"],
+    ],
+    tags: ["认监委", "质量法规", "环境法规", "安全生产", "法规影响"],
+  },
+  {
+    id: "standards",
+    no: "06",
+    title: "标准规范库",
+    summary: "ISO、GB/T、CNAS、CCAA 及行业标准的受控版本、条款解释和引用关系资料库。",
+    hero:
+      "以受控方式管理认证依据标准、认可准则、应用说明和条款解释，支撑审核、复核和认证决定中的技术判断。",
+    sections: [
+      ["标准清单", "ISO、GB/T、GB、行业标准、团体标准和认证依据版本台账。"],
+      ["CNAS 要求", "认可规则、认可准则、应用说明、转换安排和见证评审关注点。"],
+      ["CCAA 要求", "审核员注册、继续教育、人员能力和考试相关要求。"],
+      ["条款解释", "对关键条款、易混条款和审核证据要求进行解释说明。"],
+      ["修订影响", "新标准发布后的认证方案、模板、审核方法和证书转换影响分析。"],
+      ["引用关系", "把标准条款与审核检查表、作业指导书和法规依据建立关联。"],
+    ],
+    tags: ["ISO", "GB/T", "CNAS", "CCAA", "条款解释"],
+  },
+  {
+    id: "cases",
+    no: "07",
+    title: "优秀案例库",
+    summary: "优秀审核报告、专业分析、监管案例、技术争议处理和经验复盘样例。",
+    hero:
+      "将优秀实践和真实案例沉淀为机构能力，帮助审核员、技术人员和认证决定人员统一判断尺度。",
+    sections: [
+      ["监管案例", "双随机、一公开、专项整治、现场检查和监管通报的案例学习。"],
+      ["不符合案例", "按标准条款、行业过程和严重程度归类的典型不符合。"],
+      ["申投诉案例", "客户投诉、证书争议、审核行为投诉和处理闭环。"],
+      ["优秀样例", "优秀审核计划、审核报告、专业分析和认证决定记录样例。"],
+      ["争议判断", "范围边界、人员能力、审核人日、远程审核和证据充分性的争议案例。"],
+      ["经验复盘", "每月技术例会、审核复盘和年度质量分析报告。"],
+    ],
+    tags: ["优秀报告", "监管案例", "不符合", "申投诉", "复盘"],
+  },
+  {
+    id: "audit-cards",
+    no: "08",
+    title: "审核现场手卡",
+    summary: "面向审核员现场使用的条款提示、证据清单、风险要点和快速判断卡。",
+    hero:
+      "把长篇作业指导书中的关键要求提炼成现场可随查、可携带、可快速调用的审核指导手卡，提高审核一致性和现场效率。",
+    sections: [
+      ["条款手卡", "按 ISO 9001、14001、45001、50001 条款提炼审核问题、证据样例和常见偏差。"],
+      ["行业手卡", "按高频行业整理关键过程、现场观察点、专业术语和风险提示。"],
+      ["法规手卡", "把适用法规要求转化为现场可核查的问题和证据清单。"],
+      ["证据手卡", "针对记录、访谈、现场观察、数据抽样和照片证据给出快速判断提示。"],
+      ["风险手卡", "提示高风险场景、易漏审环节、重大不符合线索和升级复核条件。"],
+      ["移动端形态", "未来可做成手机端、二维码、离线包或审核任务随身卡。"],
+    ],
+    tags: ["现场手卡", "条款提示", "证据清单", "风险要点", "移动端"],
+  },
 ];
 
-const CHECK_STORAGE_KEY = "iso42001-learning-check-progress-v1";
-
-async function init() {
-  if (window.COURSE_MANIFEST) {
-    state.manifest = window.COURSE_MANIFEST;
-  } else {
-    const res = await fetch("data/course_manifest.json", { cache: "no-store" });
-    state.manifest = await res.json();
-  }
-  state.checkResponses = loadCheckResponses();
-  bindEvents();
-  render();
-}
-
-function bindEvents() {
-  prevBtn.addEventListener("click", goPrevious);
-  nextBtn.addEventListener("click", goNext);
-  $("#mapBtn").addEventListener("click", goCourseMap);
-  $("#notesBtn").addEventListener("click", toggleNotes);
-  $("#drawerClose").addEventListener("click", closeDrawer);
-  $("#audioModeBtn").addEventListener("click", () => {
-    state.autoplay = !state.autoplay;
-    updateAutoplayButton();
-    if (state.autoplay) requestAudioPlay();
-  });
-  $("#voiceSelect").addEventListener("change", event => {
-    state.audioProfile = event.target.value;
-    loadItemAudio(currentAudioItem());
-    if (state.notesOpen) renderNotes(currentAudioItem());
-  });
-  $("#fullscreenBtn").addEventListener("click", () => {
-    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-    else document.exitFullscreen();
-  });
-  playBtn.addEventListener("click", togglePlay);
-  $("#rateSelect").addEventListener("change", event => {
-    audio.playbackRate = Number(event.target.value);
-  });
-  audio.addEventListener("loadedmetadata", syncAudioTime);
-  audio.addEventListener("timeupdate", syncAudioTime);
-  audio.addEventListener("play", () => { playBtn.textContent = "Pause"; });
-  audio.addEventListener("pause", () => { playBtn.textContent = "Play"; });
-  audio.addEventListener("error", showAudioMissing);
-  seek.addEventListener("input", () => {
-    if (!Number.isFinite(audio.duration)) return;
-    audio.currentTime = Number(seek.value) / 100 * audio.duration;
-  });
-  document.addEventListener("keydown", event => {
-    if (event.key === "ArrowLeft") goPrevious();
-    if (event.key === "ArrowRight") goNext();
-    if (event.key.toLowerCase() === "m") goCourseMap();
-    if (event.key === " ") {
-      event.preventDefault();
-      togglePlay();
-    }
-  });
-  document.addEventListener("pointerdown", resumeBlockedAudio, { capture: true });
-  document.addEventListener("keydown", resumeBlockedAudio, { capture: true });
-  updateAutoplayButton();
-}
-
-function render() {
-  if (state.view === "courseMap") stage.innerHTML = renderCourseMap();
-  else if (state.view === "lessonMap") stage.innerHTML = renderLessonMap(activeLesson());
-  else if (state.view === "slide") stage.innerHTML = renderSlide(activeSlide());
-  else stage.innerHTML = renderHome();
-
-  bindStageLocalEvents();
-  updateChrome(currentAudioItem());
-  loadItemAudio(currentAudioItem());
-
-  if (state.notesOpen) renderNotes(currentAudioItem());
-}
-
-function goHome() {
-  state.view = "home";
-  state.slideIndex = 0;
-  closeDrawer();
-  render();
-}
-
-function goCourseMap() {
-  state.view = "courseMap";
-  state.slideIndex = 0;
-  closeDrawer();
-  render();
-}
-
-function goLessonMap(index = state.lessonIndex) {
-  const lessons = state.manifest.lessons;
-  state.lessonIndex = clamp(index, 0, lessons.length - 1);
-  state.slideIndex = 0;
-  state.view = "lessonMap";
-  closeDrawer();
-  render();
-}
-
-function goSlide(lessonIndex = state.lessonIndex, slideIndex = 0) {
-  const lessons = state.manifest.lessons;
-  state.lessonIndex = clamp(lessonIndex, 0, lessons.length - 1);
-  const slides = getLessonSlides(activeLesson());
-  state.slideIndex = clamp(slideIndex, 0, slides.length - 1);
-  state.view = "slide";
-  render();
-}
-
-function goPrevious() {
-  if (state.view === "home") return;
-  if (state.view === "courseMap") {
-    goHome();
-    return;
-  }
-  if (state.view === "lessonMap") {
-    goCourseMap();
-    return;
-  }
-  if (state.slideIndex > 0) goSlide(state.lessonIndex, state.slideIndex - 1);
-  else goLessonMap(state.lessonIndex);
-}
-
-function goNext() {
-  if (state.view === "home") {
-    goCourseMap();
-    return;
-  }
-  if (state.view === "courseMap") {
-    goLessonMap(0);
-    return;
-  }
-  if (state.view === "lessonMap") {
-    goSlide(state.lessonIndex, 0);
-    return;
-  }
-  const slides = getLessonSlides(activeLesson());
-  if (state.slideIndex < slides.length - 1) {
-    goSlide(state.lessonIndex, state.slideIndex + 1);
-    return;
-  }
-  if (state.lessonIndex < state.manifest.lessons.length - 1) goLessonMap(state.lessonIndex + 1);
-}
-
-function bindStageLocalEvents() {
-  stage.querySelectorAll("[data-action]").forEach(button => {
-    button.addEventListener("click", () => {
-      if (button.dataset.action === "course-map") goCourseMap();
-      if (button.dataset.action === "lesson-map") goLessonMap(state.lessonIndex);
-      if (button.dataset.action === "start-lesson") goSlide(state.lessonIndex, 0);
-      if (button.dataset.action === "next-slide") goNext();
-    });
-  });
-  stage.querySelectorAll("[data-lesson-index]").forEach(button => {
-    button.addEventListener("click", () => goLessonMap(Number(button.dataset.lessonIndex)));
-  });
-  stage.querySelectorAll("[data-slide-index]").forEach(button => {
-    button.addEventListener("click", () => goSlide(state.lessonIndex, Number(button.dataset.slideIndex)));
-  });
-  stage.querySelectorAll("[data-answer]").forEach(button => {
-    button.addEventListener("click", () => {
-      const answer = $("#quizAnswer");
-      if (answer) answer.classList.add("show");
-      stage.querySelectorAll("[data-answer]").forEach(btn => { btn.disabled = true; });
-    });
-  });
-  stage.querySelectorAll("[data-check-option]").forEach(button => {
-    button.addEventListener("click", () => recordCheckAnswer(activeSlide(), button.dataset.checkOption));
-  });
-}
-
-function renderHome() {
-  const home = state.manifest.home;
-  return `
-    <section class="slide">
-      <div class="slide-inner cover-grid">
-        <div>
-          ${renderMeta(home)}
-          <h1>${escapeHtml(home.title)}</h1>
-          ${renderSubtitle(home.subtitle)}
-          <button class="primary" type="button" data-action="course-map">Enter Course Map</button>
-        </div>
-        <div class="cover-symbol" aria-hidden="true"></div>
-      </div>
-    </section>`;
-}
-
-function renderCourseMap() {
-  const map = state.manifest.courseMap;
-  const cards = state.manifest.lessons.map((lesson, index) => {
-    const stats = lessonCheckStats(lesson);
-    const contentPages = getLessonSlides(lesson).filter(slide => !isLearningCheck(slide)).length;
-    return `
-      <button class="map-card lesson-card" type="button" data-lesson-index="${index}">
-        <span class="lesson-top">
-          <span class="lesson-no">Lesson ${escapeHtml(lesson.number)}</span>
-          <span class="lesson-status">${stats.completed}/${stats.total} checks</span>
-        </span>
-        <span class="t">${escapeHtml(lesson.title)}</span>
-        <span class="s">${escapeHtml(lesson.subtitle || "")}</span>
-        <span class="lesson-meta">
-          <span>${contentPages} slides + ${stats.total} checks</span>
-          <span>${escapeHtml(lesson.duration || "20 min")}</span>
-        </span>
-        <span class="lesson-progress" aria-hidden="true"><span style="width:${stats.percent}%"></span></span>
-      </button>`;
-  }).join("");
-
-  return `
-    <section class="slide slide-scroll">
-      <div class="slide-inner">
-        ${renderMeta(map)}
-        <h1>${escapeHtml(map.title)}</h1>
-        ${renderSubtitle(map.subtitle)}
-        <div class="lesson-grid">${cards}</div>
-      </div>
-    </section>`;
-}
-
-function renderLessonMap(lesson) {
-  const slides = getLessonSlides(lesson);
-  let checkCount = 0;
-  const cards = slides.map((slide, index) => {
-    const isCheck = isLearningCheck(slide);
-    if (isCheck) checkCount += 1;
-    const label = isCheck ? `Check ${String(checkCount).padStart(2, "0")}` : `Slide ${String(index + 1).padStart(2, "0")}`;
-    const done = isCheck && isCheckComplete(slide.id);
-    return `
-      <button class="map-card slide-card ${isCheck ? "learning-check-card" : ""} ${done ? "done" : ""}" type="button" data-slide-index="${index}">
-        <span class="m">${label}${done ? " / Done" : ""}</span>
-        <span class="t">${escapeHtml(slide.title)}</span>
-        <span class="s">${escapeHtml(slide.subtitle || "")}</span>
-      </button>`;
-  }).join("");
-  const stats = lessonCheckStats(lesson);
-
-  return `
-    <section class="slide slide-scroll">
-      <div class="slide-inner">
-        <div class="lesson-map-head">
-          <div>
-            <div class="eyebrow">Lesson ${escapeHtml(lesson.number)} / Internal Map</div>
-            <h1>${escapeHtml(lesson.title)}</h1>
-            ${renderSubtitle(lesson.objective || lesson.subtitle)}
-            <div class="lesson-map-progress">
-              <span>Learning checks</span>
-              <strong>${stats.completed}/${stats.total}</strong>
-              <span class="lesson-progress" aria-hidden="true"><span style="width:${stats.percent}%"></span></span>
-            </div>
-          </div>
-          <div class="lesson-actions">
-            <button class="secondary" type="button" data-action="course-map">Course Map</button>
-            <button class="primary compact" type="button" data-action="start-lesson">Start Lesson</button>
-          </div>
-        </div>
-        <div class="slide-map-grid">${cards}</div>
-      </div>
-    </section>`;
-}
-
-function renderSlide(slide) {
-  const meta = renderMeta(slide);
-  const title = `<h1>${escapeHtml(slide.title)}</h1>`;
-  const subtitle = renderSubtitle(slide.subtitle);
-
-  if (slide.visual) {
-    return renderVisualSlide(slide, meta, title, subtitle);
-  }
-
-  if (slide.layout === "process") {
-    const steps = (slide.steps || []).map((step, i) => `
-      <article class="process-step">
-        <div class="num">${i + 1}</div>
-        <h3>${escapeHtml(step.name)}</h3>
-        <p>${escapeHtml(step.desc)}</p>
-      </article>`).join("");
-    return `<section class="slide"><div class="slide-inner">${meta}${title}${subtitle}<div class="process-grid">${steps}</div></div></section>`;
-  }
-
-  if (slide.layout === "evidence") {
-    const items = (slide.evidence || []).map(item => `
-      <article class="evidence-item">
-        <strong>${escapeHtml(item.label)}</strong>
-        <p>${escapeHtml(item.text)}</p>
-      </article>`).join("");
-    return `<section class="slide"><div class="slide-inner">${meta}${title}${subtitle}<div class="evidence-grid">${items}</div></div></section>`;
-  }
-
-  if (slide.layout === "split") {
-    const panels = (slide.panels || []).map(panel => `
-      <article class="split-panel">
-        <span class="m">${escapeHtml(panel.kicker || "")}</span>
-        <h3>${escapeHtml(panel.title)}</h3>
-        <p>${escapeHtml(panel.text || "")}</p>
-        ${(panel.bullets || []).length ? `<ul>${panel.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
-      </article>`).join("");
-    return `<section class="slide"><div class="slide-inner">${meta}${title}${subtitle}<div class="split-grid">${panels}</div></div></section>`;
-  }
-
-  if (slide.layout === "check") {
-    return renderLearningCheck(slide, meta, title, subtitle);
-  }
-
-  if (slide.layout === "quiz") {
-    return `
-      <section class="slide">
-        <div class="slide-inner">
-          ${meta}${title}${subtitle}
-          <div class="quiz-card">
-            <div class="question">${escapeHtml(slide.question)}</div>
-            <div class="quiz-actions">
-              <button type="button" data-answer="think">Think First</button>
-              <button type="button" data-answer="coach">Show Coaching</button>
-            </div>
-            <div class="answer" id="quizAnswer">${escapeHtml(slide.answer)}</div>
-          </div>
-        </div>
-      </section>`;
-  }
-
-  const bullets = (slide.bullets || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
-  const chips = (slide.tags || []).map(tag => `<span class="chip">${escapeHtml(tag)}</span>`).join("");
-  return `
-    <section class="slide">
-      <div class="slide-inner">
-        ${meta}${title}${subtitle}
-        <div class="content-card">
-          <ul>${bullets}</ul>
-          ${chips ? `<div class="chips">${chips}</div>` : ""}
-        </div>
-      </div>
-    </section>`;
-}
-
-function renderVisualSlide(slide, meta, title, subtitle) {
-  const visual = slide.visual || {};
-  const theme = visual.theme ? ` visual-${cssToken(visual.theme)}` : "";
-  const hero = renderVisualHero(visual.hero);
-  const coach = renderVisualCoach(visual.coach);
-  const blocks = (visual.blocks || []).map(renderVisualBlock).join("");
-
-  return `
-    <section class="slide slide-scroll visual-slide${theme}">
-      <div class="slide-inner visual-inner">
-        ${meta}
-        <div class="visual-heading">
-          <div>${title}${subtitle}</div>
-          ${visual.badge ? `<div class="visual-badge">${escapeHtml(visual.badge)}</div>` : ""}
-        </div>
-        ${hero}
-        ${coach}
-        <div class="visual-board">${blocks}</div>
-      </div>
-    </section>`;
-}
-
-function renderVisualHero(hero) {
-  if (!hero) return "";
-  const chips = (hero.chips || []).map(chip => `<span>${escapeHtml(chip)}</span>`).join("");
-  return `
-    <section class="visual-hero">
-      <div>
-        <span class="visual-hero-label">${escapeHtml(hero.label || "")}</span>
-        <strong>${escapeHtml(hero.value || "")}</strong>
-        ${hero.note ? `<p>${escapeHtml(hero.note)}</p>` : ""}
-      </div>
-      ${chips ? `<div class="visual-hero-chips">${chips}</div>` : ""}
-    </section>`;
-}
-
-function renderVisualCoach(coach) {
-  if (!coach) return "";
-  const items = [
-    ["Think", coach.think],
-    ["Why it matters", coach.why],
-    ["Listen for", coach.listen]
-  ].filter(([, value]) => value);
-  if (!items.length) return "";
-  return `
-    <section class="visual-coach">
-      ${items.map(([label, value]) => `
-        <div>
-          <span>${escapeHtml(label)}</span>
-          <strong>${escapeHtml(value)}</strong>
-        </div>`).join("")}
-    </section>`;
-}
-
-function renderVisualBlock(block) {
-  const type = block.type || "cards";
-  if (type === "signal-strip") return renderSignalStrip(block);
-  if (type === "split-screen") return renderSplitScreen(block);
-  if (type === "pathway") return renderPathway(block);
-  if (type === "matrix") return renderMatrix(block);
-  if (type === "evidence-chain") return renderEvidenceChain(block);
-  if (type === "role-map") return renderRoleMap(block);
-  if (type === "finding") return renderFinding(block);
-  if (type === "mistake-board") return renderMistakeBoard(block);
-  return renderCardBoard(block);
-}
-
-function renderBlockHead(block) {
-  if (!block.title && !block.label) return "";
-  return `
-    <div class="visual-block-head">
-      ${block.label ? `<span>${escapeHtml(block.label)}</span>` : ""}
-      ${block.title ? `<strong>${escapeHtml(block.title)}</strong>` : ""}
-    </div>`;
-}
-
-function renderSignalStrip(block) {
-  const items = (block.items || []).map(item => `
-    <div class="signal-item">
-      <span>${escapeHtml(item.label)}</span>
-      <strong>${escapeHtml(item.value)}</strong>
-      ${item.note ? `<p>${escapeHtml(item.note)}</p>` : ""}
-    </div>`).join("");
-  return `<section class="signal-strip">${items}</section>`;
-}
-
-function renderSplitScreen(block) {
-  const panels = (block.panels || []).map(panel => `
-    <article class="visual-panel ${panel.tone ? `tone-${cssToken(panel.tone)}` : ""}">
-      <span>${escapeHtml(panel.label || "")}</span>
-      <h3>${escapeHtml(panel.title || "")}</h3>
-      ${panel.text ? `<p>${escapeHtml(panel.text)}</p>` : ""}
-      ${renderVisualList(panel.items)}
-    </article>`).join("");
-  return `<section class="visual-split-screen">${panels}</section>`;
-}
-
-function renderPathway(block) {
-  const steps = (block.steps || []).map((step, index) => `
-    <article class="path-step">
-      <div class="path-index">${String(index + 1).padStart(2, "0")}</div>
-      <h3>${escapeHtml(step.title || "")}</h3>
-      <p>${escapeHtml(step.text || "")}</p>
-      ${step.output ? `<span class="path-output">${escapeHtml(step.output)}</span>` : ""}
-    </article>`).join("");
-  return `
-    <section class="visual-pathway">
-      ${renderBlockHead(block)}
-      <div class="pathway-rail">${steps}</div>
-    </section>`;
-}
-
-function renderMatrix(block) {
-  const columns = block.columns || [];
-  const rows = block.rows || [];
-  const gridCols = Math.max(columns.length, 1);
-  const header = [`<div class="matrix-corner">${escapeHtml(block.corner || "")}</div>`]
-    .concat(columns.map(column => `<div class="matrix-head">${escapeHtml(column)}</div>`))
-    .join("");
-  const body = rows.map(row => {
-    const cells = (row.cells || []).map(cell => `<div class="matrix-cell">${escapeHtml(cell)}</div>`).join("");
-    return `<div class="matrix-row-label">${escapeHtml(row.label || "")}</div>${cells}`;
-  }).join("");
-  return `
-    <section class="visual-matrix" style="--matrix-cols:${gridCols}">
-      ${renderBlockHead(block)}
-      <div class="matrix-grid">${header}${body}</div>
-    </section>`;
-}
-
-function renderEvidenceChain(block) {
-  const nodes = (block.nodes || []).map(node => `
-    <article class="chain-node">
-      <span>${escapeHtml(node.label || "")}</span>
-      <strong>${escapeHtml(node.title || "")}</strong>
-      ${node.text ? `<p>${escapeHtml(node.text)}</p>` : ""}
-    </article>`).join("");
-  return `
-    <section class="evidence-chain">
-      ${renderBlockHead(block)}
-      <div class="chain-track">${nodes}</div>
-    </section>`;
-}
-
-function renderRoleMap(block) {
-  const roles = (block.roles || []).map(role => `
-    <div class="role-row">
-      <span>${escapeHtml(role.role)}</span>
-      <strong>${escapeHtml(role.responsibility)}</strong>
-    </div>`).join("");
-  const evidence = (block.evidence || []).map(item => `
-    <div class="evidence-row">
-      <span>${escapeHtml(item.label)}</span>
-      <strong>${escapeHtml(item.text)}</strong>
-    </div>`).join("");
-  return `
-    <section class="role-map">
-      ${renderBlockHead(block)}
-      <div class="role-map-grid">
-        <div>${roles}</div>
-        <div>${evidence}</div>
-      </div>
-    </section>`;
-}
-
-function renderFinding(block) {
-  const facets = (block.facets || []).map(facet => `
-    <div>
-      <span>${escapeHtml(facet.label)}</span>
-      <strong>${escapeHtml(facet.text)}</strong>
-    </div>`).join("");
-  return `
-    <section class="finding-board">
-      ${renderBlockHead(block)}
-      <blockquote>${escapeHtml(block.text || "")}</blockquote>
-      <div class="finding-facets">${facets}</div>
-    </section>`;
-}
-
-function renderMistakeBoard(block) {
-  const items = (block.items || []).map(item => `
-    <article class="mistake-item">
-      <span>${escapeHtml(item.label || "")}</span>
-      <h3>${escapeHtml(item.mistake || "")}</h3>
-      <p>${escapeHtml(item.correction || "")}</p>
-    </article>`).join("");
-  return `
-    <section class="mistake-board">
-      ${renderBlockHead(block)}
-      <div class="mistake-grid">${items}</div>
-    </section>`;
-}
-
-function renderCardBoard(block) {
-  const items = (block.items || []).map(item => `
-    <article class="visual-card">
-      <span>${escapeHtml(item.label || "")}</span>
-      <h3>${escapeHtml(item.title || "")}</h3>
-      <p>${escapeHtml(item.text || "")}</p>
-    </article>`).join("");
-  return `
-    <section class="visual-card-board">
-      ${renderBlockHead(block)}
-      <div class="visual-card-grid">${items}</div>
-    </section>`;
-}
-
-function renderVisualList(items) {
-  return (items || []).length
-    ? `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
-    : "";
-}
-
-function renderLearningCheck(slide, meta, title, subtitle) {
-  const response = state.checkResponses[slide.id] || null;
-  const selectedId = response ? response.choice : null;
-  const selected = (slide.options || []).find(option => option.id === selectedId) || null;
-  const options = (slide.options || []).map(option => {
-    const selectedClass = selectedId === option.id ? "selected" : "";
-    const correctnessClass = selectedId && option.correct ? "strongest" : "";
-    return `
-      <button class="check-option ${selectedClass} ${correctnessClass}" type="button" data-check-option="${escapeHtml(option.id)}" aria-pressed="${selectedId === option.id}">
-        <span>${escapeHtml(option.label)}</span>
-        <strong>${escapeHtml(option.text)}</strong>
-      </button>`;
-  }).join("");
-  const feedback = selected ? `
-    <div class="check-feedback show" id="checkFeedback">
-      <span>${selected.correct ? "Strongest route" : "Useful thought, strengthen the route"}</span>
-      <p>${escapeHtml(selected.feedback)}</p>
-      <p>${escapeHtml(slide.coaching || "")}</p>
-      <button class="primary compact" type="button" data-action="next-slide">Continue</button>
-    </div>` : `
-    <div class="check-feedback" id="checkFeedback"></div>`;
-
-  return `
-    <section class="slide slide-scroll check-slide">
-      <div class="slide-inner">
-        ${meta}${title}${subtitle}
-        <div class="check-card">
-          <div class="check-kicker">${escapeHtml(slide.sourceAfter || "Learning pause")}</div>
-          <div class="question">${escapeHtml(slide.question || "")}</div>
-          <div class="check-options">${options}</div>
-          ${feedback}
-        </div>
-      </div>
-    </section>`;
-}
-
-function renderMeta(item) {
-  return `<div class="eyebrow">${escapeHtml(item.module)} / ${escapeHtml(item.chapter)}</div>`;
-}
-
-function renderSubtitle(text) {
-  return text ? `<p class="subtitle">${escapeHtml(text)}</p>` : "";
-}
-
-function activeLesson() {
-  return state.manifest.lessons[state.lessonIndex];
-}
-
-function activeSlide() {
-  return getLessonSlides(activeLesson())[state.slideIndex];
-}
-
-function currentAudioItem() {
-  if (state.view === "courseMap") return state.manifest.courseMap;
-  if (state.view === "lessonMap") {
-    const lesson = activeLesson();
-    return {
-      id: `${lesson.id}-map`,
-      module: `Lesson ${lesson.number}`,
-      chapter: "Internal Map",
-      title: lesson.title,
-      audio: lesson.audio || null,
-      script: lesson.script || lesson.audio || null
-    };
-  }
-  if (state.view === "slide") return activeSlide();
-  return state.manifest.home;
-}
-
-function getLessonSlides(lesson) {
-  if (Array.isArray(lesson.slides) && lesson.slides.length) return lesson.slides;
-  const count = lesson.slideCount || placeholderSequence.length;
-  return Array.from({ length: count }, (_, index) => {
-    const sequenceTitle = placeholderSequence[index % placeholderSequence.length];
-    const slideNo = String(index + 1).padStart(2, "0");
-    return {
-      id: `${lesson.id}-slide-${slideNo}`,
-      module: `Lesson ${lesson.number}`,
-      chapter: `Slide ${slideNo}`,
-      title: `${lesson.title}: ${sequenceTitle}`,
-      subtitle: "Draft slide slot for the finalized lesson script, PPT page, and narration segment.",
-      layout: "content",
-      audio: null,
-      tags: ["Draft", "PPT Slot", "Audio Pending"],
-      bullets: [
-        "This page will be replaced with the finalized slide content after the lesson script is confirmed.",
-        "A matched narration file can be attached to this slide by using the same slide id in the audio folder.",
-        "The learner can enter the lesson from this page or continue through the previous and next controls."
-      ]
-    };
-  });
-}
-
-function isLearningCheck(slide) {
-  return slide && (slide.kind === "check" || slide.layout === "check");
-}
-
-function lessonCheckStats(lesson) {
-  const checks = getLessonSlides(lesson).filter(isLearningCheck);
-  const completed = checks.filter(slide => isCheckComplete(slide.id)).length;
-  return {
-    total: checks.length,
-    completed,
-    percent: checks.length ? Math.round(completed / checks.length * 100) : 0
-  };
-}
-
-function isCheckComplete(id) {
-  return Boolean(state.checkResponses[id]);
-}
-
-function loadCheckResponses() {
-  try {
-    return JSON.parse(localStorage.getItem(CHECK_STORAGE_KEY) || "{}");
-  } catch {
-    return {};
-  }
-}
-
-function saveCheckResponses() {
-  try {
-    localStorage.setItem(CHECK_STORAGE_KEY, JSON.stringify(state.checkResponses));
-  } catch {
-    // Local progress is optional. The training flow still works if storage is blocked.
-  }
-}
-
-function recordCheckAnswer(slide, optionId) {
-  if (!isLearningCheck(slide)) return;
-  const selected = (slide.options || []).find(option => option.id === optionId);
-  if (!selected) return;
-  state.checkResponses[slide.id] = {
-    choice: selected.id,
-    correct: Boolean(selected.correct),
-    updatedAt: new Date().toISOString()
-  };
-  saveCheckResponses();
-  renderCheckSelection(slide, selected);
-}
-
-function renderCheckSelection(slide, selected) {
-  stage.querySelectorAll("[data-check-option]").forEach(button => {
-    const option = (slide.options || []).find(item => item.id === button.dataset.checkOption);
-    button.classList.toggle("selected", option && option.id === selected.id);
-    button.classList.toggle("strongest", Boolean(option && option.correct));
-    button.setAttribute("aria-pressed", option && option.id === selected.id ? "true" : "false");
-  });
-  const feedback = $("#checkFeedback");
-  if (!feedback) return;
-  feedback.classList.add("show");
-  feedback.innerHTML = `
-    <span>${selected.correct ? "Strongest route" : "Useful thought, strengthen the route"}</span>
-    <p>${escapeHtml(selected.feedback)}</p>
-    <p>${escapeHtml(slide.coaching || "")}</p>
-    <button class="primary compact" type="button" data-action="next-slide">Continue</button>`;
-  const continueButton = feedback.querySelector("[data-action='next-slide']");
-  if (continueButton) continueButton.addEventListener("click", goNext);
-  feedback.scrollIntoView({ block: "center", behavior: "smooth" });
-}
-
-function updateChrome(item) {
-  $("#counterText").textContent = counterText();
-  $("#progress").style.width = `${progressValue()}%`;
-  prevBtn.disabled = state.view === "home";
-  nextBtn.disabled = false;
-  document.title = `${item.title} / ${state.manifest.title}`;
-}
-
-function counterText() {
-  if (state.view === "home") return "Cover";
-  if (state.view === "courseMap") return `${state.manifest.lessons.length} Lessons`;
-  const lesson = activeLesson();
-  if (state.view === "lessonMap") return `Lesson ${lesson.number} / Map`;
-  const slide = activeSlide();
-  const label = isLearningCheck(slide) ? "Check" : "Slide";
-  return `Lesson ${lesson.number} / ${label} ${state.slideIndex + 1} / ${getLessonSlides(lesson).length}`;
-}
-
-function progressValue() {
-  if (state.view === "home") return 0;
-  const lessons = state.manifest.lessons;
-  if (state.view === "courseMap") return 4;
-  const lessonUnit = 96 / Math.max(lessons.length, 1);
-  if (state.view === "lessonMap") return 4 + state.lessonIndex * lessonUnit;
-  const slides = getLessonSlides(activeLesson());
-  return 4 + state.lessonIndex * lessonUnit + (state.slideIndex + 1) / Math.max(slides.length, 1) * lessonUnit;
-}
-
-function loadItemAudio(item) {
-  audio.pause();
-  audio.removeAttribute("src");
-  audio.load();
-  playBtn.textContent = "Play";
-  playBtn.disabled = false;
-  seek.value = 0;
-  audioNow.textContent = "00:00";
-  audioDuration.textContent = "00:00";
-  state.audioBlocked = false;
-
-  if (!item || !item.audio) {
-    state.audioCandidates = [];
-    playBtn.disabled = true;
-    audioTitle.textContent = "Audio pending for this page.";
-    return;
-  }
-
-  const profile = currentAudioProfile();
-  const base = profile.audioBase || state.manifest.audioBase || "audio/";
-  const extensions = state.manifest.audioExtensions || [state.manifest.audioFallbackExt || ".mp3"];
-  const audioName = item.audio;
-  state.audioCandidates = extensions.map(ext => `${base}${audioName}${ext}`);
-  state.audioTryIndex = 0;
-  const src = state.audioCandidates[state.audioTryIndex];
-  setAudioSource(src);
-  audio.playbackRate = Number($("#rateSelect").value);
-  audioTitle.textContent = `Audio: ${src}`;
-
-  if (state.autoplay) requestAudioPlay();
-}
-
-function showAudioMissing() {
-  if (state.audioTryIndex < state.audioCandidates.length - 1) {
-    state.audioTryIndex += 1;
-    const nextSrc = state.audioCandidates[state.audioTryIndex];
-    setAudioSource(nextSrc);
-    audioTitle.textContent = `Audio: ${nextSrc}`;
-    if (state.autoplay) requestAudioPlay();
-    return;
-  }
-  playBtn.disabled = true;
-  audioTitle.textContent = "Audio pending for this page.";
-}
-
-function togglePlay() {
-  if (!audio.src || playBtn.disabled) return;
-  if (audio.paused) requestAudioPlay();
-  else {
-    state.audioBlocked = false;
-    audio.pause();
-  }
-}
-
-function setAudioSource(src) {
-  audio.src = src;
-  audio.load();
-  audio.addEventListener("canplay", () => {
-    if (state.autoplay) requestAudioPlay();
-  }, { once: true });
-}
-
-function updateAutoplayButton() {
-  $("#audioModeBtn").textContent = `Auto: ${state.autoplay ? "On" : "Off"}`;
-}
-
-function requestAudioPlay() {
-  if (!audio.src || playBtn.disabled || !state.autoplay) return;
-  audio.play().then(() => {
-    state.audioBlocked = false;
-    audioTitle.textContent = `Audio: ${state.audioCandidates[state.audioTryIndex] || audio.src}`;
-  }).catch(() => {
-    state.audioBlocked = true;
-    audioTitle.textContent = "Click anywhere once to enable autoplay.";
-  });
-}
-
-function resumeBlockedAudio() {
-  if (!state.audioBlocked || !state.autoplay || !audio.paused) return;
-  requestAudioPlay();
-}
-
-function syncAudioTime() {
-  if (!Number.isFinite(audio.duration)) return;
-  audioNow.textContent = formatTime(audio.currentTime);
-  audioDuration.textContent = formatTime(audio.duration);
-  seek.value = audio.duration ? String(audio.currentTime / audio.duration * 100) : "0";
-}
-
-function formatTime(seconds) {
-  const s = Math.max(0, Math.floor(seconds || 0));
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${String(m).padStart(2, "0")}:${String(r).padStart(2, "0")}`;
-}
-
-async function toggleNotes() {
-  state.notesOpen = !state.notesOpen;
-  if (!state.notesOpen) {
-    closeDrawer();
-    return;
-  }
-  renderNotes(currentAudioItem());
-  $("#drawer").classList.add("open");
-  $("#drawer").setAttribute("aria-hidden", "false");
-}
-
-async function renderNotes(item) {
-  $("#drawerTitle").textContent = `Script: ${item.id}`;
-  if (!item.audio && !item.script) {
-    $("#drawerBody").textContent = "Script will be added after this lesson page is finalized.";
-    return;
-  }
-  try {
-    const profile = currentAudioProfile();
-    const textBase = profile.textBase || "wise_text/";
-    const scriptName = item.script || item.audio;
-    if (window.COURSE_SCRIPTS && window.COURSE_SCRIPTS[scriptName]) {
-      $("#drawerBody").textContent = window.COURSE_SCRIPTS[scriptName];
-      return;
-    }
-    const res = await fetch(`${textBase}${scriptName}.txt`, { cache: "no-store" });
-    if (!res.ok) throw new Error("missing");
-    $("#drawerBody").textContent = await res.text();
-  } catch {
-    $("#drawerBody").textContent = "No script file is available for this page yet.";
-  }
-}
-
-function currentAudioProfile() {
-  const profiles = state.manifest.audioProfiles || {};
-  return profiles[state.audioProfile] || profiles.en || {};
-}
-
-function closeDrawer() {
-  state.notesOpen = false;
-  $("#drawer").classList.remove("open");
-  $("#drawer").setAttribute("aria-hidden", "true");
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
+const architectureGrid = document.querySelector("#architecture-grid");
+const workspaceView = document.querySelector("#workspace-view");
+const navLinks = document.querySelectorAll("[data-route]");
+const views = {
+  home: document.querySelector("#home-view"),
+  book: document.querySelector("#book-view"),
+  workspace: workspaceView,
+};
+const routeAliases = {
+  tools: "rules",
+};
+
+const guidanceCatalog = Array.isArray(window.HXLC_GUIDANCE_CATALOG)
+  ? window.HXLC_GUIDANCE_CATALOG
+  : [];
+const auditCardCatalog = Array.isArray(window.HXLC_AUDIT_CARD_CATALOG)
+  ? window.HXLC_AUDIT_CARD_CATALOG
+  : [];
+const internalFileCatalog = Array.isArray(window.HXLC_INTERNAL_FILE_CATALOG)
+  ? window.HXLC_INTERNAL_FILE_CATALOG
+  : [];
+const standardCatalog = Array.isArray(window.HXLC_STANDARD_CATALOG)
+  ? window.HXLC_STANDARD_CATALOG
+  : [];
+
+const guidanceSystems = [
+  ["all", "全部作业指导书"],
+  ["ISO9001", "质量管理体系"],
+  ["ISO14001", "环境管理体系"],
+  ["ISO45001", "职业健康安全"],
+  ["ISO50001", "能源管理体系"],
+];
+
+const guidanceSystemOrder = Object.fromEntries(
+  guidanceSystems.map(([system], index) => [system, index]),
+);
 
 function escapeHtml(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
-function cssToken(value) {
-  return String(value || "").toLowerCase().replace(/[^a-z0-9_-]/g, "");
+function guidanceSystemCount(system, catalog = guidanceCatalog) {
+  if (system === "all") return catalog.length;
+  return catalog.filter((item) => item.system === system).length;
 }
 
-init().catch(error => {
-  const directFileHint = location.protocol === "file:"
-    ? "This course must be opened through START_LOCAL_PREVIEW.bat, not by double-clicking index.html directly."
-    : error.message;
-  stage.innerHTML = `<section class="slide"><div class="slide-inner"><h1>Loading failed</h1><p class="subtitle">${escapeHtml(directFileHint)}</p></div></section>`;
+function compareGuidanceItems(a, b) {
+  const bySystem =
+    (guidanceSystemOrder[a.system] ?? 99) - (guidanceSystemOrder[b.system] ?? 99);
+  if (bySystem) return bySystem;
+  return `${a.code || ""} ${a.title || ""}`.localeCompare(
+    `${b.code || ""} ${b.title || ""}`,
+    "zh-CN",
+    { numeric: true },
+  );
+}
+
+function renderGuidanceCard(item, mode = "guidance") {
+  const isHandCard = mode === "hand-card";
+  const title = item.title || (isHandCard ? "未命名审核现场手卡" : "未命名作业指导书");
+  const displayTitle = isHandCard
+    ? `${cleanGuidanceTitle(title) || title} 审核现场手卡`
+    : title;
+  const meta = [item.fileNo, `目录 ${item.tocItems || 0} 项`].filter(Boolean).join(" · ");
+  return `
+    <a class="guidance-card" href="${escapeHtml(item.url)}" title="${escapeHtml(title)}">
+      <div class="doc-icon"></div>
+      <span class="pill">${escapeHtml(item.system || "ISO")}</span>
+      <strong>${escapeHtml(displayTitle)}</strong>
+      <small>${escapeHtml(meta)}</small>
+      <footer><span>${isHandCard ? `现场速查 · 证据提示 ${escapeHtml(item.tables || 0)} 项` : `HTML 全文 · 表格 ${escapeHtml(item.tables || 0)} 个`}</span><b></b></footer>
+    </a>
+  `;
+}
+
+function getGuidanceRecommendations(catalog = guidanceCatalog) {
+  const quota = { ISO9001: 2, ISO14001: 2, ISO45001: 1, ISO50001: 1 };
+  const picked = [];
+  Object.entries(quota).forEach(([system, count]) => {
+    picked.push(
+      ...catalog
+        .filter((item) => item.system === system)
+        .sort(compareGuidanceItems)
+        .slice(0, count),
+    );
+  });
+  return picked.slice(0, 6);
+}
+
+function getCodeTokens(code) {
+  const tokens = String(code || "").match(/\d{1,2}(?:\.\d{1,2}){0,2}[A-Za-z]?(?:-\d{1,2}(?:\.\d{1,2}){0,2}[A-Za-z]?)?/g);
+  return tokens?.length ? [...new Set(tokens)] : [String(code || "未分类")];
+}
+
+function getItemCodeLevels(item) {
+  return getCodeTokens(item.code).map((token) => {
+    const firstCode = token.split("-")[0];
+    const parts = firstCode.split(".");
+    const major = parts[0] || "未分类";
+    const middle = parts.length >= 2
+      ? parts.length === 2 && token.includes("-")
+        ? token
+        : `${parts[0]}.${parts[1]}`
+      : major;
+    const small = parts.length >= 3 ? token : middle;
+    return { major, middle, small, depth: parts.length, token };
+  });
+}
+
+const guidanceMajorNames = {
+  "01": "农业、林业和渔业",
+  "02": "采矿和采石",
+  "03": "食品、饮料和烟草",
+  "04": "纺织品及纺织制品",
+  "05": "皮革及皮革制品",
+  "06": "木材和木制品",
+  "07": "纸浆、纸和纸制品",
+  "08": "出版业",
+  "09": "印刷业",
+  "10": "焦炭和精炼石油产品",
+  "11": "化学品、化工产品和纤维",
+  "12": "药品",
+  "13": "橡胶和塑料制品",
+  "14": "非金属矿物制品",
+  "15": "混凝土、水泥、石灰和石膏",
+  "16": "基础金属",
+  "17": "金属制品制造与维修",
+  "18": "机械设备",
+  "19": "电气和光学设备",
+  "20": "造船",
+  "21": "航空航天",
+  "22": "其他运输设备",
+  "23": "其他制造业",
+  "24": "回收业",
+  "25": "电力供应",
+  "26": "燃气供应",
+  "27": "供水",
+  "28": "建设工程",
+  "29": "批发零售与车辆维修",
+  "30": "住宿餐饮",
+  "31": "运输、仓储和通信",
+  "32": "金融、房地产和租赁",
+  "33": "信息技术",
+  "34": "工程与专业技术服务",
+  "35": "其他服务",
+  "36": "公共管理",
+  "37": "教育",
+  "38": "卫生和社会工作",
+  "39": "污水、废弃物和公共服务",
+};
+
+function cleanGuidanceTitle(title) {
+  return String(title || "")
+    .replace(/质量管理|环境管理|职业健康安全管理|能源管理/g, "")
+    .replace(/审核作业指导书/g, "")
+    .replace(/作业指导书/g, "")
+    .replace(/[（）()]/g, "")
+    .trim();
+}
+
+function itemsMatchingLevel(items, level, code) {
+  return items.filter((item) =>
+    getItemCodeLevels(item).some((levels) => levels[level] === code),
+  );
+}
+
+function labelForCode(code, level, items) {
+  if (level === "major") {
+    return guidanceMajorNames[code] || "专业大类";
+  }
+  const matched = itemsMatchingLevel(items, level, code);
+  if (level === "middle") {
+    const hasThirdLevel = matched.some((item) =>
+      getItemCodeLevels(item).some((levels) => levels.middle === code && levels.depth >= 3),
+    );
+    if (hasThirdLevel) return `${matched.length} 个小类`;
+  }
+  return cleanGuidanceTitle(matched[0]?.title) || "专业小类";
+}
+
+function countBy(items, keyFn) {
+  const counts = new Map();
+  items.forEach((item) => {
+    getItemCodeLevels(item).forEach((levels) => {
+      const key = keyFn(levels, item);
+      counts.set(key, (counts.get(key) || 0) + 1);
+    });
+  });
+  return counts;
+}
+
+function sortCodes(values) {
+  return [...values].sort((a, b) => String(a).localeCompare(String(b), "zh-CN", { numeric: true }));
+}
+
+function renderCodeButton(code, count, level, activeCode, items = guidanceCatalog) {
+  return `
+    <button class="${code === activeCode ? "active" : ""}" type="button" data-code-level="${level}" data-code-value="${escapeHtml(code)}">
+      <span>${escapeHtml(code)}</span>
+      <strong>${escapeHtml(labelForCode(code, level, items))}</strong>
+      <b>${count}</b>
+    </button>
+  `;
+}
+
+function uniqueSorted(values) {
+  return sortCodes(new Set(values));
+}
+
+function optionLabel(code, level, items) {
+  return `${code} ${labelForCode(code, level, items)}`;
+}
+
+function renderGuidanceSelect(label, name, options, value, items, level) {
+  return `
+    <label>
+      <span>${escapeHtml(label)}</span>
+      <select data-guidance-filter="${escapeHtml(name)}">
+        ${options
+          .map(
+            (code) => `
+              <option value="${escapeHtml(code)}" ${code === value ? "selected" : ""}>
+                ${escapeHtml(optionLabel(code, level, items))}
+              </option>
+            `,
+          )
+          .join("")}
+      </select>
+    </label>
+  `;
+}
+
+function hydrateGuidanceCatalog(options = {}) {
+  const mode = options.mode || "guidance";
+  const isHandCard = mode === "hand-card";
+  const activeCatalog = isHandCard ? auditCardCatalog : guidanceCatalog;
+
+  const domainList = workspaceView.querySelector(".domain-list");
+  const cards = workspaceView.querySelector(".guidance-cards");
+  const browser = workspaceView.querySelector(".guidance-browser");
+  const searchInput = workspaceView.querySelector(".guidance-search input");
+  const searchButton = workspaceView.querySelector(".search-action");
+  const intro = workspaceView.querySelector(".recommend-head p");
+  const sampleLink = workspaceView.querySelector(".guidance-note a");
+  let activeSystem = "all";
+  let selectedMajor = "";
+  let selectedMiddle = "";
+  let selectedSmall = "";
+
+  if (intro) {
+    if (isHandCard) {
+      intro.textContent = activeCatalog.length
+        ? "精选展示 6 张现场手卡，完整目录请从左侧体系进入大类、中类、小类逐级浏览。"
+        : "当前暂无审核现场手卡，待导入真实内容后在这里展示推荐与最新发布。";
+    } else {
+      intro.textContent = "精选展示 6 项，完整目录请从左侧体系进入大类、中类、小类逐级浏览。";
+    }
+  }
+
+  if (sampleLink && activeCatalog[0]) {
+    sampleLink.href = activeCatalog[0].url;
+  } else if (sampleLink && isHandCard) {
+    sampleLink.href = "#audit-cards";
+  }
+
+  if (domainList) {
+    domainList.innerHTML = guidanceSystems
+      .map(([system, label], index) => {
+        const count = guidanceSystemCount(system, activeCatalog);
+        const displayLabel = isHandCard && system === "all" ? "全部审核现场手卡" : label;
+        return `
+          <button class="${index === 0 ? "active" : ""}" type="button" data-guidance-system="${system}">
+            <span>${displayLabel}</span><b>${count}</b>
+          </button>
+        `;
+      })
+      .join("");
+    if (!workspaceView.querySelector(".guidance-filter")) {
+      domainList.insertAdjacentHTML("afterend", '<div class="guidance-filter"></div>');
+    }
+  }
+
+  const renderRecommendations = () => {
+    if (!cards) return;
+    const keyword = (searchInput?.value || "").trim().toLowerCase();
+    if (keyword) {
+      const filtered = activeCatalog
+        .filter((item) => {
+          const haystack = `${item.system} ${item.code} ${item.title} ${item.fileNo}`.toLowerCase();
+          return haystack.includes(keyword);
+        })
+        .sort(compareGuidanceItems)
+        .slice(0, 12);
+      cards.innerHTML = filtered.length
+        ? filtered.map((item) => renderGuidanceCard(item, mode)).join("")
+        : `<div class="guidance-empty">没有找到匹配的${isHandCard ? "审核现场手卡" : "作业指导书"}。</div>`;
+      return;
+    }
+
+    const recommended = getGuidanceRecommendations(activeCatalog);
+    cards.innerHTML = recommended.length
+      ? recommended.map((item) => renderGuidanceCard(item, mode)).join("")
+      : `<div class="guidance-empty">${isHandCard ? "审核现场手卡内容待导入，当前暂无可展示条目。" : "暂无可展示条目。"}</div>`;
+  };
+
+  const renderSidebarFilter = () => {
+    const filter = workspaceView.querySelector(".guidance-filter");
+    if (!filter) return;
+    if (activeSystem === "all") {
+      filter.innerHTML = `
+        <div class="filter-title">专业代码筛选</div>
+        <p>先选择 Q / E / S / 能源体系，再定位现场适用手卡。</p>
+      `;
+      return;
+    }
+
+    const systemItems = activeCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    if (!systemItems.length) {
+      filter.innerHTML = `
+        <div class="filter-title">专业代码筛选</div>
+        <p>${isHandCard ? "该体系下暂无审核现场手卡，待导入真实内容后启用筛选。" : "该体系下暂无可筛选文件。"}</p>
+      `;
+      return;
+    }
+    if (activeSystem === "ISO50001") {
+      filter.innerHTML = `
+        <div class="filter-title">能源领域</div>
+        <label>
+          <span>${isHandCard ? "现场手卡" : "领域文件"}</span>
+          <select data-guidance-file>
+            <option value="">${isHandCard ? "选择能源现场手卡" : "选择能源领域"}</option>
+            ${systemItems
+              .map(
+                (item) => `
+                  <option value="${escapeHtml(item.url)}">
+                    ${escapeHtml(item.code)} ${escapeHtml(cleanGuidanceTitle(item.title) || item.title)}
+                  </option>
+                `,
+              )
+              .join("")}
+          </select>
+        </label>
+      `;
+      return;
+    }
+
+    const allLevels = systemItems.flatMap((item) =>
+      getItemCodeLevels(item).map((levels) => ({ ...levels, item })),
+    );
+    const majorOptions = uniqueSorted(allLevels.map((levels) => levels.major));
+    if (!selectedMajor || !majorOptions.includes(selectedMajor)) {
+      selectedMajor = majorOptions[0] || "";
+    }
+    const majorLevels = allLevels.filter((levels) => levels.major === selectedMajor);
+    const majorItems = systemItems.filter((item) =>
+      getItemCodeLevels(item).some((levels) => levels.major === selectedMajor),
+    );
+    const middleOptions = uniqueSorted(majorLevels.map((levels) => levels.middle));
+    if (!selectedMiddle || !middleOptions.includes(selectedMiddle)) {
+      selectedMiddle = middleOptions[0] || "";
+    }
+    const fileLevels = majorLevels.filter((levels) => levels.middle === selectedMiddle);
+    const seenFiles = new Set();
+    const fileOptions = fileLevels.filter((levels) => {
+      const key = `${levels.item.url}::${levels.small}`;
+      if (seenFiles.has(key)) return false;
+      seenFiles.add(key);
+      return true;
+    });
+
+    filter.innerHTML = `
+      <div class="filter-title">专业代码筛选</div>
+      ${renderGuidanceSelect("大类", "major", majorOptions, selectedMajor, systemItems, "major")}
+      ${renderGuidanceSelect("中类", "middle", middleOptions, selectedMiddle, majorItems, "middle")}
+      <label>
+        <span>小类 / 文件</span>
+        <select data-guidance-file>
+          <option value="">${isHandCard ? "选择后打开现场手卡" : "选择后打开文件"}</option>
+          ${fileOptions
+            .map(
+              (levels) => `
+                <option value="${escapeHtml(levels.item.url)}">
+                  ${escapeHtml(levels.small)} ${escapeHtml(cleanGuidanceTitle(levels.item.title) || levels.item.title)}
+                </option>
+              `,
+            )
+            .join("")}
+        </select>
+      </label>
+    `;
+  };
+
+  const renderBrowser = () => {
+    if (!browser) return;
+    if (activeSystem === "all") {
+      browser.innerHTML = `
+        <div class="browser-empty">
+          <strong>请选择左侧一个管理体系</strong>
+          <p>进入后可按专业代码逐级选择大类、中类和小类，最后打开对应${isHandCard ? "审核现场手卡" : "作业指导书全文"}。</p>
+        </div>
+      `;
+      return;
+    }
+
+    const systemItems = activeCatalog.filter((item) => item.system === activeSystem).sort(compareGuidanceItems);
+    const browserSystemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+    if (!systemItems.length) {
+      browser.innerHTML = `
+        <div class="browser-empty">
+          <strong>${escapeHtml(browserSystemLabel)}暂无内容</strong>
+          <p>${isHandCard ? "当前审核现场手卡库尚未导入该体系文件，后续导入后将在这里按专业代码展开。" : "当前没有可展示文件。"}</p>
+        </div>
+      `;
+      return;
+    }
+    browser.innerHTML = `
+      <div class="browser-empty">
+        <strong>${escapeHtml(browserSystemLabel)}已加载</strong>
+        <p>请在左侧“专业代码筛选”中依次选择大类、中类和小类${isHandCard ? "手卡" : "文件"}。</p>
+      </div>
+    `;
+    return;
+    if (activeSystem === "ISO50001") {
+      const systemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+      browser.innerHTML = `
+        <div class="browser-head">
+          <div>
+            <span>${escapeHtml(activeSystem)}</span>
+            <h3>${escapeHtml(systemLabel)}领域文件</h3>
+            <p>能源管理体系按独立能源领域直接定位，不拆成大类、中类、小类三级。</p>
+          </div>
+          <a href="${escapeHtml(systemItems[0]?.url || "#")}">打开第一份文件 <i></i></a>
+        </div>
+        <div class="energy-browser">
+          <section>
+            <h4>能源领域</h4>
+            <div class="file-list">
+              ${systemItems
+                .map(
+                  (item) => `
+                    <a href="${escapeHtml(item.url)}">
+                      <span>${escapeHtml(item.code || "")}</span>
+                      <strong>${escapeHtml(cleanGuidanceTitle(item.title) || item.title)}</strong>
+                      <small>${escapeHtml(item.fileNo)} · HTML 全文</small>
+                    </a>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        </div>
+      `;
+      return;
+    }
+    const majorCounts = countBy(systemItems, (levels) => levels.major);
+    if (!selectedMajor || !majorCounts.has(selectedMajor)) {
+      selectedMajor = sortCodes(majorCounts.keys())[0] || "";
+    }
+
+    const majorItems = systemItems.filter((item) =>
+      getItemCodeLevels(item).some((levels) => levels.major === selectedMajor),
+    );
+    const middleCounts = countBy(majorItems, (levels) => levels.middle);
+    if (!selectedMiddle || !middleCounts.has(selectedMiddle)) {
+      selectedMiddle = sortCodes(middleCounts.keys())[0] || "";
+    }
+
+    const middleItems = majorItems.filter((item) =>
+      getItemCodeLevels(item).some((levels) => levels.middle === selectedMiddle),
+    );
+    const hasThirdLevel = majorItems.some((item) =>
+      getItemCodeLevels(item).some((levels) => levels.depth >= 3),
+    );
+    if (!hasThirdLevel) {
+      const systemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+      browser.innerHTML = `
+        <div class="browser-head">
+          <div>
+            <span>${escapeHtml(activeSystem)}</span>
+            <h3>${escapeHtml(systemLabel)}专业目录</h3>
+            <p>当前体系采用两级专业代码：大类 ${majorCounts.size} 项，当前大类下专业小类 ${middleCounts.size} 项，当前文件 ${middleItems.length} 份。</p>
+          </div>
+          <a href="${escapeHtml(systemItems[0]?.url || "#")}">打开本体系首页 <i></i></a>
+        </div>
+        <div class="code-browser is-two-level">
+          <section>
+            <h4>大类</h4>
+            <div class="code-list">
+              ${sortCodes(majorCounts.keys()).map((code) => renderCodeButton(code, majorCounts.get(code), "major", selectedMajor, systemItems)).join("")}
+            </div>
+          </section>
+          <section>
+            <h4>专业小类与文件</h4>
+            <div class="small-list">
+              ${sortCodes(middleCounts.keys()).map((code) => renderCodeButton(code, middleCounts.get(code), "middle", selectedMiddle, majorItems)).join("")}
+            </div>
+            <div class="file-list">
+              ${middleItems
+                .map(
+                  (item) => `
+                    <a href="${escapeHtml(item.url)}">
+                      <span>${escapeHtml(item.code || selectedMiddle)}</span>
+                      <strong>${escapeHtml(item.title)}</strong>
+                      <small>${escapeHtml(item.fileNo)} · HTML 全文</small>
+                    </a>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        </div>
+      `;
+      return;
+    }
+    const smallCounts = countBy(middleItems, (levels) => levels.small);
+    if (!selectedSmall || !smallCounts.has(selectedSmall)) {
+      selectedSmall = sortCodes(smallCounts.keys())[0] || "";
+    }
+
+    const smallItems = middleItems.filter((item) =>
+      getItemCodeLevels(item).some((levels) => levels.small === selectedSmall),
+    );
+    const systemLabel = guidanceSystems.find(([system]) => system === activeSystem)?.[1] || activeSystem;
+    browser.innerHTML = `
+      <div class="browser-head">
+        <div>
+          <span>${escapeHtml(activeSystem)}</span>
+          <h3>${escapeHtml(systemLabel)}分类浏览</h3>
+          <p>按专业代码逐级定位：大类 ${majorCounts.size} 项，中类 ${middleCounts.size} 项，当前小类 ${smallItems.length} 份文件。</p>
+        </div>
+        <a href="${escapeHtml(systemItems[0]?.url || "#")}">打开本体系首项 <i></i></a>
+      </div>
+      <div class="code-browser">
+        <section>
+          <h4>大类</h4>
+          <div class="code-list">
+            ${sortCodes(majorCounts.keys()).map((code) => renderCodeButton(code, majorCounts.get(code), "major", selectedMajor, systemItems)).join("")}
+          </div>
+        </section>
+        <section>
+          <h4>中类</h4>
+          <div class="code-list">
+            ${sortCodes(middleCounts.keys()).map((code) => renderCodeButton(code, middleCounts.get(code), "middle", selectedMiddle, majorItems)).join("")}
+          </div>
+        </section>
+        <section>
+          <h4>小类与文件</h4>
+          <div class="small-list">
+            ${sortCodes(smallCounts.keys())
+              .map((code) => {
+                const matched = middleItems.filter((item) =>
+                  getItemCodeLevels(item).some((levels) => levels.small === code),
+                );
+                return `
+                  <button class="${code === selectedSmall ? "active" : ""}" type="button" data-code-level="small" data-code-value="${escapeHtml(code)}">
+                    <span>${escapeHtml(code)}</span>
+                    <strong>${escapeHtml(labelForCode(code, "small", middleItems))}</strong>
+                    <b>${matched.length}</b>
+                  </button>
+                `;
+              })
+              .join("")}
+          </div>
+          <div class="file-list">
+            ${smallItems
+              .map(
+                (item) => `
+                  <a href="${escapeHtml(item.url)}">
+                    <span>${escapeHtml(item.code || selectedSmall)}</span>
+                    <strong>${escapeHtml(item.title)}</strong>
+                    <small>${escapeHtml(item.fileNo)} · HTML 全文</small>
+                  </a>
+                `,
+              )
+              .join("")}
+          </div>
+        </section>
+      </div>
+    `;
+  };
+
+  const applyFilter = () => {
+    renderRecommendations();
+    renderSidebarFilter();
+    renderBrowser();
+  };
+
+  const applySearchOnly = () => {
+    const keyword = (searchInput?.value || "").trim().toLowerCase();
+    renderRecommendations();
+    if (keyword && browser) {
+      browser.innerHTML = `
+        <div class="browser-empty">
+          <strong>检索结果已显示在上方</strong>
+          <p>清空搜索框后，可继续使用左侧体系分类进行大类、中类、小类浏览。</p>
+        </div>
+      `;
+    } else {
+      renderBrowser();
+    }
+  };
+
+  domainList?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-guidance-system]");
+    if (!button) return;
+    activeSystem = button.dataset.guidanceSystem;
+    selectedMajor = "";
+    selectedMiddle = "";
+    selectedSmall = "";
+    domainList
+      .querySelectorAll("button")
+      .forEach((item) => item.classList.toggle("active", item === button));
+    applyFilter();
+  });
+
+  workspaceView.addEventListener("change", (event) => {
+    const filter = event.target.closest("[data-guidance-filter]");
+    if (filter) {
+      if (filter.dataset.guidanceFilter === "major") {
+        selectedMajor = filter.value;
+        selectedMiddle = "";
+        selectedSmall = "";
+      }
+      if (filter.dataset.guidanceFilter === "middle") {
+        selectedMiddle = filter.value;
+        selectedSmall = "";
+      }
+      renderSidebarFilter();
+      renderBrowser();
+      return;
+    }
+    const fileSelect = event.target.closest("[data-guidance-file]");
+    if (fileSelect?.value) {
+      window.location.href = fileSelect.value;
+    }
+  });
+
+  browser?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-code-level]");
+    if (!button) return;
+    const level = button.dataset.codeLevel;
+    const value = button.dataset.codeValue;
+    if (level === "major") {
+      selectedMajor = value;
+      selectedMiddle = "";
+      selectedSmall = "";
+    } else if (level === "middle") {
+      selectedMiddle = value;
+      selectedSmall = "";
+    } else if (level === "small") {
+      selectedSmall = value;
+    }
+    renderBrowser();
+  });
+
+  searchInput?.addEventListener("input", applySearchOnly);
+  searchButton?.addEventListener("click", applySearchOnly);
+  applyFilter();
+}
+
+function renderArchitecture() {
+  architectureGrid.innerHTML = modules
+    .map(
+      (item) => `
+        <button class="architecture-card" type="button" data-route="${item.id}">
+          <b>${item.no}</b>
+          <strong>${item.title}</strong>
+          <span>${item.summary}</span>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+const regulationFrameworks = [
+  {
+    code: "00",
+    title: "控制文件",
+    range: "5-8",
+    note: "管法规库本身，不算外部法规",
+    focus: ["法规库管理规则", "版本与有效性控制", "修订影响评估", "引用与废止机制"],
+    examples: "法规入库、更新、作废、引用、责任人和复核频次。",
+  },
+  {
+    code: "01",
+    title: "认证监管",
+    range: "20-28",
+    note: "认证认可条例、认证机构管理、证书标志、信息报送与年度报告",
+    focus: ["认证认可监管", "机构资质", "证书标志", "信息报送"],
+    examples: "认证认可条例、认证机构管理办法、认证证书和认证标志管理办法、认证认可业务信息报送要求。",
+  },
+  {
+    code: "02",
+    title: "认可与技术规范",
+    range: "35-50",
+    note: "CNAS、CCAA、GB/T 27021、Global ACI/IAF/ILAC",
+    focus: ["认可规则", "审核与认证规范", "人员注册规范", "国际互认文件"],
+    examples: "CNAS-CC01、CNAS-SC 系列、CCAA 文件、IAF MD 系列、ILAC/IAF 相关要求。",
+  },
+  {
+    code: "03",
+    title: "审核通用法规",
+    range: "55-75",
+    note: "45001、14001、9001、22000、27001 等审核常用法规",
+    focus: ["质量通用法规", "环境合规要求", "职业健康安全", "食品与信息安全"],
+    examples: "产品质量、计量、环评排污、安全生产、职业病防治、食品安全、网络安全等常用依据。",
+  },
+  {
+    code: "04",
+    title: "重点行业扩展法规",
+    range: "15-25",
+    note: "只按高频客户行业扩展",
+    focus: ["建设工程", "化工与危化", "食品与冷链", "医疗器械与电子信息"],
+    examples: "围绕常审客户行业维护，不追求全行业覆盖，重点解决审核证据和风险判断。",
+  },
+  {
+    code: "05",
+    title: "地方属地法规",
+    range: "10-20",
+    note: "只维护常审地区的高频地方规则",
+    focus: ["重点省市规则", "园区与监管口径", "地方排污与安全要求", "属地更新提醒"],
+    examples: "北京、天津、河北、山东、江苏等常审区域的高频地方要求和监管口径。",
+  },
+];
+
+function renderRegulationWorkspace() {
+  if (typeof window.renderHxlcRegulationWorkspace === "function") {
+    window.renderHxlcRegulationWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const totalMin = regulationFrameworks.reduce((sum, item) => sum + Number(item.range.split("-")[0]), 0);
+  const totalMax = regulationFrameworks.reduce((sum, item) => sum + Number(item.range.split("-")[1]), 0);
+  workspaceView.innerHTML = `
+    <section class="regulation-page">
+      <div class="regulation-hero">
+        <div>
+          <div class="breadcrumb">首页 / 法律法规库 / 认证监管</div>
+          <h1>法律法规库</h1>
+          <p>把认证监管、认可规范、审核常用法规、重点行业和属地要求，整理成可维护、可检索、可引用的法规依据体系。</p>
+        </div>
+        <aside class="regulation-summary">
+          <span>建议规模</span>
+          <strong>${totalMin}-${totalMax}</strong>
+          <small>项受控法规与规范文件</small>
+        </aside>
+      </div>
+
+      <div class="regulation-layout">
+        <aside class="regulation-sidebar">
+          <h2>六类框架</h2>
+          <p>先按维护边界分层，再逐步补充真实法规条目。</p>
+          ${regulationFrameworks
+            .map(
+              (item, index) => `
+                <a class="${index === 0 ? "active" : ""}" href="#reg-${item.code}">
+                  <span>${item.code}</span>
+                  <strong>${item.title}</strong>
+                  <b>${item.range}</b>
+                </a>
+              `,
+            )
+            .join("")}
+        </aside>
+
+        <section class="regulation-main">
+          <div class="regulation-toolbar">
+            <div>
+              <span>REGULATION CONTROL MAP</span>
+              <h2>法规库建设结构</h2>
+            </div>
+            <button type="button">导入法规清单</button>
+          </div>
+
+          <div class="regulation-grid">
+            ${regulationFrameworks
+              .map(
+                (item) => `
+                  <article class="regulation-card" id="reg-${item.code}">
+                    <div class="reg-card-head">
+                      <span>${item.code}</span>
+                      <div>
+                        <h3>${item.title}</h3>
+                        <p>${item.note}</p>
+                      </div>
+                      <b>${item.range} 项</b>
+                    </div>
+                    <div class="reg-focus">
+                      ${item.focus.map((focus) => `<em>${focus}</em>`).join("")}
+                    </div>
+                    <p class="reg-example">${item.examples}</p>
+                    <footer>
+                      <span>状态：框架待建库</span>
+                      <a href="#">查看分类</a>
+                    </footer>
+                  </article>
+                `,
+              )
+              .join("")}
+          </div>
+
+          <div class="regulation-note">
+            <strong>建设原则</strong>
+            <p>法规库不追求“大而全”，先保证认证机构常用、常审、常被监管关注的法规和认可要求可控。后续每个法规条目建议绑定适用体系、适用行业、引用场景、更新频次和责任人。</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  `;
+}
+
+function renderStandardWorkspace() {
+  if (typeof window.renderHxlcStandardWorkspace === "function") {
+    window.renderHxlcStandardWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const item = modules.find((module) => module.id === "standards");
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>07 / 标准规范库</div>
+        <h1>标准规范库</h1>
+        <p>${item?.hero || "以受控方式维护认证机构常用标准元数据，支撑审核、复核和认证决定。"}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>${standardCatalog.length || "待导入"} 项标准元数据</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+  `;
+}
+
+function renderTechnicalFieldWorkspace() {
+  if (typeof window.renderHxlcTechnicalFieldWorkspace === "function") {
+    window.renderHxlcTechnicalFieldWorkspace(workspaceView, escapeHtml);
+    return;
+  }
+  const item = modules.find((module) => module.id === "specialties");
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>03 / 技术领域分析</div>
+        <h1>技术领域分析</h1>
+        <p>${item?.hero || "围绕专业小类共同基础、差异边界和审核能力迁移建立技术领域分析文件。"}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>QMS 第17大类样例</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+  `;
+}
+
+function renderAuditWorkspace(mode = "guidance") {
+  const isHandCard = mode === "hand-card";
+  workspaceView.innerHTML = `
+    <section class="guidance-page">
+      <div class="guidance-hero">
+        <div class="guidance-copy">
+          <div class="breadcrumb">首页 / 专业知识库 / 作业指导书</div>
+          <h1>作业指导书专栏</h1>
+          <p>将行业经验转化为结构化、可检索、可执行的审核方法</p>
+          <div class="section-label"><span></span>WORK GUIDANCE LIBRARY</div>
+        </div>
+        <aside class="guidance-banner is-visual-only" aria-label="作业指导书技术图"></aside>
+      </div>
+
+      <div class="guidance-search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input type="search" aria-label="检索作业指导书" placeholder="搜索指导书名称、专业代码、审核要点或适用行业......" />
+        <button class="filter-button" type="button">体系范围 <b>全部体系</b><i></i></button>
+        <button class="filter-button" type="button">文件状态 <b>现行有效</b><i></i></button>
+        <button class="search-action" type="button">检索指导书</button>
+      </div>
+
+      <div class="guidance-layout">
+        <aside class="guidance-sidebar">
+          <h2>专业领域</h2>
+          <p>按管理体系与技术领域浏览</p>
+          <div class="domain-list">
+            <button class="active" type="button"><span>全部作业指导书</span><b>168</b></button>
+            <button type="button"><span>质量管理体系</span><b>74</b></button>
+            <button type="button"><span>环境管理体系</span><b>46</b></button>
+            <button type="button"><span>职业健康安全</span><b>39</b></button>
+            <button type="button"><span>医疗器械质量</span><b>9</b></button>
+          </div>
+          <div class="quick-links">
+            <strong>快速入口</strong>
+            <a href="#specialties" data-route="specialties">专业代码对照表</a>
+            <a href="#rules" data-route="rules">指导书编制规则</a>
+          </div>
+        </aside>
+
+        <section class="guidance-main">
+          <div class="recommend-head">
+            <div>
+              <h2>推荐与最新发布</h2>
+              <p>优先展示现行有效、使用频率高的指导书</p>
+            </div>
+            <div class="segmented">
+              <button class="active" type="button">全部</button>
+              <button type="button">最新</button>
+              <button type="button">下载最多</button>
+            </div>
+          </div>
+
+          <div class="guidance-cards">
+            <a class="guidance-card" href="books/iso45001-31-12-warehouse.html">
+              <div class="doc-icon"></div>
+              <span class="pill">ISO 45001</span>
+              <strong>仓储和存储<br />职业健康安全审核指导书</strong>
+              <small>HLC-OHS-31.12 · V1.0</small>
+              <footer><span>2026-07-03 更新 · HTML 全文</span><b></b></footer>
+            </a>
+            <a class="guidance-card" href="books/iso45001-31-12-warehouse.html">
+              <div class="doc-icon"></div>
+              <span class="pill">ISO 9001</span>
+              <strong>通用机械制造<br />质量管理审核指导书</strong>
+              <small>HLC-QMS-18.01 · V2.1</small>
+              <footer><span>2026-07-28 更新 · PDF 3.8 MB</span><b></b></footer>
+            </a>
+            <a class="guidance-card" href="books/iso45001-31-12-warehouse.html">
+              <div class="doc-icon"></div>
+              <span class="pill">ISO 14001</span>
+              <strong>电子信息产品制造<br />环境管理审核指导书</strong>
+              <small>HLC-EMS-19.02 · V2.0</small>
+              <footer><span>2026-07-08 更新 · PDF 3.4 MB</span><b></b></footer>
+            </a>
+          </div>
+
+          <div class="guidance-browser"></div>
+
+          <div class="guidance-note">
+            <div>
+              <h2>编制与使用说明</h2>
+              <p>每份指导书均关联适用专业小类、典型风险、审核证据与版本记录。 如发现现场适用性问题，可提交技术反馈并进入修订流程。</p>
+            </div>
+            <a href="books/iso45001-31-12-warehouse.html">查看真实全文样例 <span></span></a>
+          </div>
+        </section>
+      </div>
+      <div class="guidance-foot">
+        <span>HLC CERTIFICATION · INTERNAL TECHNICAL KNOWLEDGE PORTAL</span>
+        <span>受控文件 · 登录后查看完整内容</span>
+      </div>
+    </section>
+  `;
+  if (isHandCard) {
+    const breadcrumb = workspaceView.querySelector(".breadcrumb");
+    const title = workspaceView.querySelector(".guidance-copy h1");
+    const intro = workspaceView.querySelector(".guidance-copy p");
+    const label = workspaceView.querySelector(".section-label");
+    const banner = workspaceView.querySelector(".guidance-banner");
+    const searchInput = workspaceView.querySelector(".guidance-search input");
+    const searchButton = workspaceView.querySelector(".search-action");
+    const sidebarIntro = workspaceView.querySelector(".guidance-sidebar p");
+    const quickRule = workspaceView.querySelector(".quick-links a:last-child");
+    const recommendIntro = workspaceView.querySelector(".recommend-head p");
+    const noteTitle = workspaceView.querySelector(".guidance-note h2");
+    const noteText = workspaceView.querySelector(".guidance-note p");
+    const noteLink = workspaceView.querySelector(".guidance-note a");
+    const footLeft = workspaceView.querySelector(".guidance-foot span:first-child");
+
+    if (breadcrumb) breadcrumb.textContent = "首页 / 专业知识库 / 审核现场手卡";
+    if (title) title.textContent = "审核现场手卡专栏";
+    if (intro) intro.textContent = "把作业指导书压缩为现场可速查、可提示、可执行的审核要点卡";
+    if (label) label.innerHTML = "<span></span>AUDIT FIELD CARD LIBRARY";
+    if (banner) banner.setAttribute("aria-label", "审核现场手卡技术图");
+    if (searchInput) {
+      searchInput.setAttribute("aria-label", "检索审核现场手卡");
+      searchInput.setAttribute("placeholder", "搜索手卡名称、专业代码、现场证据、风险要点或适用行业......");
+    }
+    if (searchButton) searchButton.textContent = "检索手卡";
+    if (sidebarIntro) sidebarIntro.textContent = "按管理体系与现场审核场景浏览";
+    if (quickRule) quickRule.textContent = "现场手卡编制规则";
+    if (recommendIntro) recommendIntro.textContent = "优先展示现场使用频率高、证据提示清晰的审核手卡";
+    if (noteTitle) noteTitle.textContent = "编制与使用说明";
+    if (noteText) {
+      noteText.textContent =
+        "每张手卡均从作业指导书中提炼关键过程、现场证据、法规关注点和高风险提示。它不是替代完整作业指导书，而是帮助审核员在现场快速确认审核方向。";
+    }
+    if (noteLink) noteLink.innerHTML = "查看真实全文来源 <span></span>";
+    if (footLeft) footLeft.textContent = "HLC CERTIFICATION · FIELD AUDIT CARD PORTAL";
+  }
+  hydrateGuidanceCatalog({ mode });
+}
+
+function knowledgeGraphStats() {
+  const guidance = Array.isArray(window.HXLC_GUIDANCE_CATALOG) ? window.HXLC_GUIDANCE_CATALOG : [];
+  const standards = Array.isArray(window.HXLC_STANDARD_CATALOG) ? window.HXLC_STANDARD_CATALOG : [];
+  const regulations = Array.isArray(window.HXLC_REGULATION_CATALOG) ? window.HXLC_REGULATION_CATALOG : [];
+  const technicalFields = Array.isArray(window.HXLC_TECHNICAL_FIELD_CATALOG)
+    ? window.HXLC_TECHNICAL_FIELD_CATALOG
+    : [];
+  return {
+    guidance: guidance.length,
+    auditCards: auditCardCatalog.length,
+    standards: standards.length,
+    regulations: regulations.length,
+    technicalGroups: technicalFields.reduce((sum, item) => sum + (item.totalGroups || 0), 0),
+    technicalDocs: technicalFields.reduce((sum, item) => sum + (item.totalDocuments || 0), 0),
+  };
+}
+
+function buildKnowledgeGraphNodes(stats) {
+  const nodes = [
+    { id: "core", label: "宏信知识中枢", type: "core", value: 42, route: "home", x: 0, y: 0, z: 0 },
+  ];
+  const links = [];
+  const main = [
+    ["governance", "内部文件库", "制度 / 表单 / 记录", 18],
+    ["rules", "认证规则库", "规则 / 证据 / 决定", 20],
+    ["specialties", "技术领域分析", `${stats.technicalGroups || 0} 组 / ${stats.technicalDocs || 0} 份`, 24],
+    ["audit", "作业指导书", `${stats.guidance || 0} 份电子书`, 26],
+    ["laws", "法律法规库", `${stats.regulations || 0} 项法规`, 22],
+    ["standards", "标准规范库", `${stats.standards || 0} 项标准`, 22],
+    ["cases", "优秀案例库", "报告 / 投诉 / 复盘", 16],
+    ["audit-cards", "审核现场手卡", `${stats.auditCards || 0} 张手卡`, 16],
+  ];
+  const children = {
+    governance: ["管理手册", "程序文件", "记录表格"],
+    rules: ["范围判定", "审核证据", "认证决定"],
+    specialties: ["QMS 分组", "EMS 分组", "OHSMS 分组", "能源领域"],
+    audit: ["ISO9001", "ISO14001", "ISO45001", "ISO50001"],
+    laws: ["认证监管", "认可规范", "行业法规"],
+    standards: ["ISO 标准", "GB/T 标准", "CNAS 要求"],
+    cases: ["优秀报告", "风险案例", "经验复盘"],
+    "audit-cards": ["条款提示", "证据清单", "风险要点"],
+  };
+  const radius = 280;
+  main.forEach(([id, label, meta, value], index) => {
+    const angle = (Math.PI * 2 * index) / main.length - Math.PI / 2;
+    const y = index % 2 === 0 ? -74 : 74;
+    nodes.push({
+      id,
+      label,
+      meta,
+      type: "module",
+      value,
+      route: id,
+      x: Math.cos(angle) * radius,
+      y,
+      z: Math.sin(angle) * radius,
+    });
+    links.push(["core", id]);
+    (children[id] || []).forEach((childLabel, childIndex) => {
+      const childAngle = angle + (childIndex - ((children[id] || []).length - 1) / 2) * 0.22;
+      const childId = `${id}-${childIndex}`;
+      nodes.push({
+        id: childId,
+        label: childLabel,
+        type: "leaf",
+        value: 10,
+        route: id,
+        x: Math.cos(childAngle) * (radius + 118),
+        y: y + (childIndex % 2 === 0 ? -48 : 48),
+        z: Math.sin(childAngle) * (radius + 118),
+      });
+      links.push([id, childId]);
+    });
+  });
+  return { nodes, links };
+}
+
+function renderKnowledgeGraphWorkspace() {
+  const stats = knowledgeGraphStats();
+  workspaceView.innerHTML = `
+    <section class="knowledge-graph-page">
+      <div class="kg-hero">
+        <div>
+          <div class="kg-breadcrumb">首页 / 知识图谱 / Knowledge Graph</div>
+          <h1>宏信联诚知识图谱</h1>
+          <p>把标准、法规、规则、作业指导书、技术领域分析、审核现场手卡和案例经验连接成可探索的认证技术网络。</p>
+        </div>
+        <div class="kg-actions">
+          <button type="button" data-kg-action="reset">复位视角</button>
+          <button type="button" data-kg-action="spin">暂停旋转</button>
+        </div>
+      </div>
+      <div class="kg-stage">
+        <div class="kg-canvas-shell">
+          <canvas id="knowledge-graph-canvas" aria-label="宏信联诚知识图谱"></canvas>
+          <div class="kg-hint">拖拽旋转 · 点击节点进入对应知识库</div>
+        </div>
+        <aside class="kg-inspector">
+          <span>KNOWLEDGE INDEX</span>
+          <h2>认证技术网络</h2>
+          <p>中心节点代表宏信知识中枢，外圈节点代表八项技术底盘，外围节点代表可继续展开的知识对象。</p>
+          <div class="kg-stat-grid">
+            <b>${escapeHtml(stats.guidance)}</b><small>作业指导书</small>
+            <b>${escapeHtml(stats.standards)}</b><small>标准条目</small>
+            <b>${escapeHtml(stats.regulations)}</b><small>法规文件</small>
+            <b>${escapeHtml(stats.technicalGroups)}</b><small>技术领域组</small>
+          </div>
+          <div class="kg-legend">
+            <i class="core"></i><span>知识中枢</span>
+            <i class="module"></i><span>技术底盘</span>
+            <i class="leaf"></i><span>知识对象</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  `;
+  requestAnimationFrame(() => {
+    initKnowledgeGraph(workspaceView.querySelector("#knowledge-graph-canvas"));
+  });
+}
+
+function initKnowledgeGraph(canvas) {
+  if (!canvas) return;
+  const shell = canvas.closest(".kg-canvas-shell");
+  const ctx = canvas.getContext("2d");
+  const graph = buildKnowledgeGraphNodes(knowledgeGraphStats());
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let rotationY = -0.42;
+  let rotationX = 0.22;
+  let velocityY = 0.0032;
+  let isDragging = false;
+  let spin = true;
+  let lastX = 0;
+  let lastY = 0;
+  let moved = 0;
+  let projected = [];
+
+  function resize() {
+    const rect = shell.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(320, rect.width);
+    height = Math.max(360, rect.height);
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function rotatePoint(node) {
+    const cosY = Math.cos(rotationY);
+    const sinY = Math.sin(rotationY);
+    const cosX = Math.cos(rotationX);
+    const sinX = Math.sin(rotationX);
+    const x1 = node.x * cosY - node.z * sinY;
+    const z1 = node.x * sinY + node.z * cosY;
+    const y1 = node.y * cosX - z1 * sinX;
+    const z2 = node.y * sinX + z1 * cosX;
+    const scale = 760 / (760 + z2);
+    return {
+      ...node,
+      sx: width / 2 + x1 * scale,
+      sy: height / 2 + y1 * scale,
+      z: z2,
+      scale,
+      radius: (node.type === "core" ? 28 : node.type === "module" ? 18 : 9) * scale,
+    };
+  }
+
+  function draw() {
+    if (!document.body.contains(canvas)) return;
+    if (spin && !isDragging) rotationY += velocityY;
+    ctx.clearRect(0, 0, width, height);
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, "#171a20");
+    gradient.addColorStop(0.52, "#252932");
+    gradient.addColorStop(1, "#111318");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.strokeStyle = "rgba(255,255,255,0.045)";
+    ctx.lineWidth = 1;
+    for (let x = 0; x < width; x += 44) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+    }
+    for (let y = 0; y < height; y += 44) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+    }
+
+    projected = graph.nodes.map(rotatePoint);
+    const byId = new Map(projected.map((node) => [node.id, node]));
+
+    graph.links
+      .map(([from, to]) => [byId.get(from), byId.get(to)])
+      .filter(([from, to]) => from && to)
+      .sort((a, b) => (a[0].z + a[1].z) - (b[0].z + b[1].z))
+      .forEach(([from, to]) => {
+        const alpha = Math.max(0.16, Math.min(0.72, (from.scale + to.scale) / 2));
+        ctx.strokeStyle = `rgba(183, 199, 213, ${alpha * 0.34})`;
+        ctx.lineWidth = Math.max(0.8, 1.6 * alpha);
+        ctx.beginPath();
+        ctx.moveTo(from.sx, from.sy);
+        ctx.lineTo(to.sx, to.sy);
+        ctx.stroke();
+      });
+
+    projected
+      .sort((a, b) => a.z - b.z)
+      .forEach((node) => {
+        const alpha = Math.max(0.35, Math.min(1, node.scale));
+        const color = node.type === "core" ? "#ffffff" : node.type === "module" ? "#c60032" : "#8fb7d8";
+        ctx.shadowColor = node.type === "core" ? "rgba(255,255,255,0.4)" : "rgba(198,0,50,0.34)";
+        ctx.shadowBlur = node.type === "leaf" ? 8 : 18;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.arc(node.sx, node.sy, node.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+
+        if (node.type !== "leaf" || node.scale > 0.78) {
+          ctx.font = `${node.type === "core" ? 18 : 13}px Microsoft YaHei, Arial`;
+          ctx.textAlign = "center";
+          ctx.fillStyle = node.type === "core" ? "#ffffff" : "#f4f1ea";
+          ctx.fillText(node.label, node.sx, node.sy - node.radius - 12);
+          if (node.meta && node.scale > 0.82) {
+            ctx.font = "11px Microsoft YaHei, Arial";
+            ctx.fillStyle = "rgba(235,239,244,0.72)";
+            ctx.fillText(node.meta, node.sx, node.sy - node.radius + 5);
+          }
+        }
+      });
+
+    requestAnimationFrame(draw);
+  }
+
+  function hitTest(x, y) {
+    return [...projected]
+      .reverse()
+      .find((node) => Math.hypot(node.sx - x, node.sy - y) <= Math.max(16, node.radius + 6));
+  }
+
+  canvas.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    moved = 0;
+    lastX = event.offsetX;
+    lastY = event.offsetY;
+    canvas.setPointerCapture(event.pointerId);
+  });
+  canvas.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    const dx = event.offsetX - lastX;
+    const dy = event.offsetY - lastY;
+    moved += Math.abs(dx) + Math.abs(dy);
+    rotationY += dx * 0.006;
+    rotationX = Math.max(-0.9, Math.min(0.9, rotationX + dy * 0.004));
+    lastX = event.offsetX;
+    lastY = event.offsetY;
+  });
+  canvas.addEventListener("pointerup", (event) => {
+    isDragging = false;
+    canvas.releasePointerCapture(event.pointerId);
+    if (moved < 8) {
+      const node = hitTest(event.offsetX, event.offsetY);
+      if (node?.route && node.route !== "home") setActiveView(node.route);
+    }
+  });
+
+  workspaceView.querySelector('[data-kg-action="reset"]')?.addEventListener("click", () => {
+    rotationY = -0.42;
+    rotationX = 0.22;
+  });
+  workspaceView.querySelector('[data-kg-action="spin"]')?.addEventListener("click", (event) => {
+    spin = !spin;
+    event.currentTarget.textContent = spin ? "暂停旋转" : "继续旋转";
+  });
+
+  window.addEventListener("resize", resize);
+  resize();
+  draw();
+}
+
+function initKnowledgePreview(canvas) {
+  if (!canvas) return;
+  const shell = canvas.closest(".knowledge-preview");
+  const ctx = canvas.getContext("2d");
+  const points = [
+    { label: "HLC", type: "core", angle: 0, radius: 0, size: 25 },
+    { label: "Standards", angle: -1.7, radius: 104, size: 13 },
+    { label: "Evidence", angle: -0.7, radius: 128, size: 11 },
+    { label: "Review", angle: 0.25, radius: 116, size: 12 },
+    { label: "Decision", angle: 1.25, radius: 130, size: 11 },
+    { label: "Audit", angle: 2.25, radius: 112, size: 12 },
+  ];
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let t = 0;
+
+  function resize() {
+    const rect = shell.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(320, rect.width);
+    height = Math.max(168, rect.height);
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function project(point) {
+    if (point.type === "core") {
+      return { ...point, x: width * 0.52, y: height * 0.53, depth: 1, alpha: 1 };
+    }
+    const angle = point.angle + t;
+    const x = width * 0.52 + Math.cos(angle) * point.radius;
+    const y = height * 0.53 + Math.sin(angle) * point.radius * 0.36;
+    const depth = 0.72 + Math.sin(angle) * 0.28;
+    return { ...point, x, y, depth, alpha: 0.5 + depth * 0.5 };
+  }
+
+  function draw() {
+    if (!document.body.contains(canvas)) return;
+    t += 0.004;
+    ctx.clearRect(0, 0, width, height);
+    const gradient = ctx.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, "rgba(255,253,250,0.05)");
+    gradient.addColorStop(0.52, "rgba(255,255,255,0.62)");
+    gradient.addColorStop(1, "rgba(239,236,229,0.15)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    const projected = points.map(project);
+    const core = projected[0];
+    projected.slice(1).forEach((point) => {
+      ctx.strokeStyle = `rgba(176,0,40,${0.18 * point.alpha})`;
+      ctx.lineWidth = Math.max(0.7, 1.4 * point.depth);
+      ctx.beginPath();
+      ctx.moveTo(core.x, core.y);
+      ctx.lineTo(point.x, point.y);
+      ctx.stroke();
+    });
+
+    projected
+      .slice()
+      .sort((a, b) => a.depth - b.depth)
+      .forEach((point) => {
+        const radius = point.type === "core" ? point.size : point.size * point.depth;
+        ctx.shadowColor = point.type === "core" ? "rgba(176,0,40,0.28)" : "rgba(32,35,41,0.12)";
+        ctx.shadowBlur = point.type === "core" ? 20 : 10;
+        ctx.fillStyle = point.type === "core" ? "#b00028" : point.depth > 0.82 ? "#202329" : "#d7d2c8";
+        ctx.globalAlpha = point.alpha;
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+        ctx.font = `${point.type === "core" ? 13 : 10}px Arial, Microsoft YaHei, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.fillStyle = point.type === "core" ? "#ffffff" : "#202329";
+        ctx.fillText(point.label, point.x, point.y + (point.type === "core" ? 4 : radius + 15));
+      });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+  draw();
+}
+
+function renderInternalFilesWorkspace() {
+  const item = modules.find((module) => module.id === "governance") || modules[0];
+  const procedureRows = internalFileCatalog.length
+    ? internalFileCatalog
+        .map(
+          (file) => `
+            <a class="internal-file-row" href="${escapeHtml(file.url)}">
+              <span>${escapeHtml(file.code)}</span>
+              <strong>${escapeHtml(file.title)}</strong>
+              <small>${escapeHtml(file.fileNo)} · ${escapeHtml(file.version || "B0")} · HTML 全文</small>
+            </a>
+          `,
+        )
+        .join("")
+    : '<div class="internal-empty">程序文件待导入</div>';
+
+  const internalTiers = [
+    {
+      name: "管理手册",
+      code: "Manual",
+      count: 0,
+      desc: "机构最高层级管理体系文件，承接方针、组织职责、公正性和认证活动总体要求。",
+      status: "待导入",
+    },
+    {
+      name: "程序文件",
+      code: "Procedure",
+      count: internalFileCatalog.length,
+      desc: "认证实施、人员管理、文件记录控制、申投诉、风险、公正性等过程控制文件。",
+      status: "B0 已入库",
+      active: true,
+    },
+    {
+      name: "三级文件",
+      code: "Work Rules",
+      count: 0,
+      desc: "岗位作业、专业评定、技术委员会运行、抽样和复核等细化操作文件。",
+      status: "待导入",
+    },
+    {
+      name: "四级表格",
+      code: "Forms",
+      count: 0,
+      desc: "申请评审、审核计划、报告、决定、人员评价和运行记录使用的受控表单。",
+      status: "待导入",
+    },
+  ];
+
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>01 / 内部文件库</div>
+        <h1>内部文件库</h1>
+        <p>${escapeHtml(item.hero)}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>${internalFileCatalog.length || "待导入"} 份程序文件</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+    <section class="internal-workspace">
+      <div class="internal-tier-grid">
+        ${internalTiers
+          .map(
+            (tier) => `
+              <article class="internal-tier-card ${tier.active ? "active" : ""}">
+                <div>
+                  <span>${tier.code}</span>
+                  <b>${tier.count}</b>
+                </div>
+                <strong>${tier.name}</strong>
+                <p>${tier.desc}</p>
+                <small>${tier.status}</small>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+
+      <section class="internal-file-panel">
+        <div class="content-head">
+          <div>
+            <h2>程序文件 B0 版</h2>
+            <p>归入宏信联诚自身管理体系文件，作为内部制度、流程控制和认证活动运行的受控文件入口。</p>
+          </div>
+          <span class="open-book">${internalFileCatalog.length} 份已入库</span>
+        </div>
+        <div class="internal-file-list">
+          ${procedureRows}
+        </div>
+        <div class="tag-row">
+          <span>程序文件</span><span>B0 版</span><span>受控文件</span><span>内部体系</span>
+        </div>
+      </section>
+    </section>
+  `;
+}
+
+function renderWorkspace(moduleId) {
+  const item = modules.find((module) => module.id === moduleId) || modules[0];
+  if (item.id === "governance") {
+    renderInternalFilesWorkspace();
+    return;
+  }
+  if (item.id === "audit") {
+    renderAuditWorkspace();
+    return;
+  }
+  if (item.id === "audit-cards") {
+    renderAuditWorkspace("hand-card");
+    return;
+  }
+  if (item.id === "laws") {
+    renderRegulationWorkspace();
+    return;
+  }
+  if (item.id === "standards") {
+    renderStandardWorkspace();
+    return;
+  }
+  if (item.id === "specialties") {
+    renderTechnicalFieldWorkspace();
+    return;
+  }
+  workspaceView.innerHTML = `
+    <div class="workspace-hero">
+      <div>
+        <div class="eyebrow"><span></span>${item.no} / ${item.title}</div>
+        <h1>${item.title}</h1>
+        <p>${item.hero}</p>
+      </div>
+      <div class="workspace-badge">
+        <span>HXLC 技术底盘</span>
+        <img src="assets/hxlc-logo.png" alt="宏信联诚认证 Logo" />
+      </div>
+    </div>
+    <div class="workspace-layout">
+      <aside class="side-menu">
+        ${modules
+          .map(
+            (module) => `
+              <button type="button" class="${module.id === item.id ? "active" : ""}" data-route="${module.id}">
+                ${module.no} ${module.title}
+              </button>
+            `,
+          )
+          .join("")}
+      </aside>
+      <section class="content-panel">
+        <div class="content-head">
+          <div>
+            <h2>${item.title}架构</h2>
+            <p>${item.summary}</p>
+          </div>
+          <a class="open-book" href="books/iso45001-31-12-warehouse.html">真实电子书样例</a>
+        </div>
+        <div class="library-grid">
+          ${item.sections
+            .map(
+              ([title, description]) => `
+                <article class="library-card">
+                  <strong>${title}</strong>
+                  <p>${description}</p>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+        <div class="tag-row">
+          ${item.tags.map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+      </section>
+    </div>
+  `;
+}
+
+function setActiveView(rawRoute) {
+  const route = routeAliases[rawRoute] || rawRoute;
+  const isBook = route === "book";
+  const isHome = route === "home" || !route;
+  const isKnowledgeGraph = route === "knowledge-graph";
+  const isModule = modules.some((module) => module.id === route);
+
+  Object.values(views).forEach((view) => view.classList.remove("active"));
+
+  if (isBook) {
+    views.book.classList.add("active");
+  } else if (isKnowledgeGraph) {
+    views.workspace.classList.add("active");
+    renderKnowledgeGraphWorkspace();
+  } else if (isModule) {
+    renderWorkspace(route);
+    views.workspace.classList.add("active");
+  } else {
+    views.home.classList.add("active");
+  }
+
+  navLinks.forEach((link) => {
+    const target = link.dataset.route;
+    const canonicalTarget = routeAliases[target] || target;
+    link.classList.toggle("active", canonicalTarget === route || target === rawRoute);
+  });
+
+  if (window.location.hash.slice(1) !== rawRoute) {
+    window.history.replaceState(null, "", `#${isHome ? "home" : rawRoute}`);
+  }
+}
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-route]");
+  if (!trigger) return;
+  const route = trigger.dataset.route;
+  if (!route) return;
+  event.preventDefault();
+  setActiveView(route);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  const trigger = event.target.closest("[data-route]");
+  if (!trigger || trigger.tagName === "A" || trigger.tagName === "BUTTON") return;
+  const route = trigger.dataset.route;
+  if (!route) return;
+  event.preventDefault();
+  setActiveView(route);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("hashchange", () => {
+  setActiveView(window.location.hash.slice(1) || "home");
+});
+
+renderArchitecture();
+initKnowledgePreview(document.querySelector("#knowledge-preview-canvas"));
+setActiveView(window.location.hash.slice(1) || "home");
+

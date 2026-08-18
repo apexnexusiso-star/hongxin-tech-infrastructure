@@ -1,9 +1,0 @@
-Practical Task And Transfer
-
-Here is your practical task. Choose one Annex A control theme for one AI system. Do not write a checklist. Write five lines: control purpose, audit criterion, sampled system, evidence route, and possible finding language. If you cannot write the sample line, you are probably still auditing at the control-theme level.
-
-Now transfer the method to a different industry. Imagine a manufacturing visual inspection system. The SoA says lifecycle and monitoring controls are implemented. A site changed lighting conditions on one production line, and false rejects increased. The method is the same: do not ask only whether the control exists. Trace the selected control to the system version, site condition, monitoring record, retest decision, quality review, and management action. Different industry, same control-to-finding discipline.
-
-After this lesson, read textbook sections 8.11 to 8.19 again, and then look at Appendix L. Read the tables as workpaper tools, not as scripts to recite. The question is always: what control purpose, what sample, what evidence, what conclusion?
-
-If you are using this in a classroom, ask each group to choose a different Annex A theme. One group may choose data control, another user information, another third-party relationship, and another monitoring. Give every group the same sampled AI system, then compare the evidence routes. The exercise will show that Annex A themes are connected, but each theme still needs a clear control purpose and a defensible evidence route.
