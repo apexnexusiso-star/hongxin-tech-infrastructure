@@ -1,9 +1,0 @@
-Monitoring must reflect the real operating environment
-
-A single green dashboard can hide local changes. AI systems operate inside equipment, users, data sources and process conditions. In ForgeWorks Industrial's DefectLens Vision Monitor case, this point is not abstract. The line "Monitoring must reflect the real operating environment" shapes how the auditor reads one production line where lighting changed and operators began overriding defect alerts manually and how manufacturing visual inspection operation decisions reach people, records and management responsibility.
-
-Bring the learner back to one record before adding more concepts. Ask whether monitoring is segmented enough for the sampled use. For the line "Monitoring must reflect the real operating environment", Tomas Iversen should turn "Monitoring must reflect the real operating environment" into different questions for line supervisor, quality engineer, model operations engineer. Their answers should meet around one production line where lighting changed and operators began overriding defect alerts manually, not remain separate.
-
-Evidence for the line "Monitoring must reflect the real operating environment" starts with monitoring dashboard, override log, change-control record. If the answer sounds rehearsed in the "Monitoring must reflect the real operating environment" trail, extend the review to incident record, rollback plan and ask whether those records tell the Monitoring must reflect the real operating environment story about DefectLens Vision Monitor.
-
-Practical takeaway: Line 4 lighting and overrides give the audit a more precise signal than aggregate accuracy. Use this line to test whether one production line where lighting changed and operators began overriding defect alerts manually connects to control, review and management responsibility.

@@ -1,9 +1,0 @@
-Risk treatment begins after assessment, not before it
-
-Treatment should respond to identified AI risks and impacts. If controls are chosen before the organization understands the system, the SoA may look complete but behave randomly. In CrediBridge Finance's LimitWise Credit Advisor case, this point is not abstract. The line "Risk treatment begins after assessment, not before it" shapes how the auditor reads one model update release and a sampled limit-increase campaign for young customers and how consumer credit limit recommendation decisions reach people, records and management responsibility.
-
-This is the point where a paper answer has to meet operating evidence. Trace one risk from identification to treatment option, selected control, owner and implementation evidence. For the line "Risk treatment begins after assessment, not before it", Samira O'Neill should turn "Risk treatment begins after assessment, not before it" into different questions for credit risk owner, model operations lead, supplier manager. Their answers should meet around one model update release and a sampled limit-increase campaign for young customers, not remain separate.
-
-Evidence for the line "Risk treatment begins after assessment, not before it" starts with risk treatment plan, SoA rationale, model update notice. If the answer sounds rehearsed in the "Risk treatment begins after assessment, not before it" trail, extend the review to residual-risk approval, campaign monitoring record and ask whether those records tell the Risk treatment begins after assessment, not before it story about LimitWise Credit Advisor.
-
-Practical takeaway: For LimitWise, supplier change and manual overrides should appear in the treatment logic. Use this line to test whether one model update release and a sampled limit-increase campaign for young customers connects to control, review and management responsibility.

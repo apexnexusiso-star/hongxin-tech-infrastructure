@@ -1,9 +1,0 @@
-Context explains why the AIMS has the shape it has
-
-Clause 4 thinking begins with organizational realities: business model, AI use, sectors served, data dependency, external obligations and affected parties. In HelioBank's PreScore Credit Navigator case, this point is not abstract. The line "Context explains why the AIMS has the shape it has" shapes how the auditor reads a rejected small-business loan pre-assessment where the applicant received an automated next-step message and how retail banking loan pre-assessment decisions reach people, records and management responsibility.
-
-The audit becomes stronger when the story moves from a claim to a decision. Ask why this AIMS boundary makes sense for this organization and not for any organization. For the line "Context explains why the AIMS has the shape it has", Jonas Reed should turn "Context explains why the AIMS has the shape it has" into different questions for loan product owner, vendor manager, data protection lead. Their answers should meet around a rejected small-business loan pre-assessment where the applicant received an automated next-step message, not remain separate.
-
-Evidence for the line "Context explains why the AIMS has the shape it has" starts with responsibility matrix, supplier contract schedule, threshold approval minute. If the answer sounds rehearsed in the "Context explains why the AIMS has the shape it has" trail, extend the review to customer journey map, complaint file and ask whether those records tell the Context explains why the AIMS has the shape it has story about PreScore Credit Navigator.
-
-Practical takeaway: HelioBank's lending role, customer channel and supplier dependence all affect the scope. Use this line to test whether a rejected small-business loan pre-assessment where the applicant received an automated next-step message connects to control, review and management responsibility.

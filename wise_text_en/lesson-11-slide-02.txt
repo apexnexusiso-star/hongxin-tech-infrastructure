@@ -1,9 +1,0 @@
-Intended use is the lifecycle anchor
-
-Before data, models and controls can be judged, the organization must define what the system is intended to do and what it is not intended to do. In SafeHire Labs's CandidateFlow Screening case, this point is not abstract. The line "Intended use is the lifecycle anchor" shapes how the auditor reads one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons and how recruitment screening design and launch decisions reach people, records and management responsibility.
-
-The useful question is not abstract; it belongs to the sampled system. Ask whether the intended-use statement still describes the system that will actually be launched. For the line "Intended use is the lifecycle anchor", Oliver Grant should turn "Intended use is the lifecycle anchor" into different questions for product owner, data scientist, HR pilot lead. Their answers should meet around one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons, not remain separate.
-
-Evidence for the line "Intended use is the lifecycle anchor" starts with intended-use statement, requirements trace, validation report. If the answer sounds rehearsed in the "Intended use is the lifecycle anchor" trail, extend the review to pilot feedback, launch approval checklist and ask whether those records tell the Intended use is the lifecycle anchor story about CandidateFlow Screening.
-
-Practical takeaway: The confidence-band addition changes recruiter behavior, so SafeHire needs more than the original statement. Use this line to test whether one pre-launch pilot for graduate hiring where recruiters receive ranking bands and summary reasons connects to control, review and management responsibility.

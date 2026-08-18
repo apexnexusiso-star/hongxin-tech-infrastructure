@@ -1,9 +1,0 @@
-Requirement meaning comes before document requests
-
-A requirement is not audited by asking for a file name. The auditor first decides what the requirement is intended to control in the sampled AI use. In NovaHire Technologies's NovaHire Rank case, this point is not abstract. The line "Requirement meaning comes before document requests" shapes how the auditor reads one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step and how HR screening platform decisions reach people, records and management responsibility.
-
-Bring the learner back to one record before adding more concepts. Turn the requirement into a criterion, then decide which records, interviews or observations could prove implementation. For the line "Requirement meaning comes before document requests", Priya Menon should turn "Requirement meaning comes before document requests" into different questions for HR process owner, recruiter, model product manager. Their answers should meet around one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step, not remain separate.
-
-Evidence for the line "Requirement meaning comes before document requests" starts with procedure revision history, validation report, campaign ranking export. If the answer sounds rehearsed in the "Requirement meaning comes before document requests" trail, extend the review to human-review checklist, exception log and ask whether those records tell the Requirement meaning comes before document requests story about NovaHire Rank.
-
-Practical takeaway: For NovaHire, the criterion is not simply procedure issued; it includes human review before ranking affects interview selection. Use this line to test whether one recruitment campaign where the top-ranked candidates were accepted without the documented human-review step connects to control, review and management responsibility.
