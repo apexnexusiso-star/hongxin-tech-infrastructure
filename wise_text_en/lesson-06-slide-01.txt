@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 6 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If an organization is certified to ISO/IEC 42001, can it assume that AI regulatory timing is automatically covered?
+
+Instructor: No. The management system can help the organization identify obligations, but the organization still needs to know which obligations apply, where they apply and when they become effective.
+
+We are continuing from Lesson 5, and today the audit lens moves into a new part of the AIMS. Our focus is obligation timing ledger. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to audit legal and regulatory obligations as context inputs to the AIMS; teach the EU AI Act timeline as one jurisdiction-specific example; avoid making an international standard sound EU-only; and test whether the organization tracks applicability and effective dates for its own AI uses.
+
+Lesson Positioning
+
+Our textbook boundary is 3.3-3.4; 3.3.1. Keep that boundary clear for EduSpark Global: this lesson teaches a route for TutorPath Adaptive AI when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is EduSpark Global: TutorPath Adaptive AI. I use it because EduSpark Global gives us concrete people, TutorPath Adaptive AI gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for obligation timing ledger. In the story of TutorPath Adaptive AI, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to EduSpark Global, not to a generic checklist.

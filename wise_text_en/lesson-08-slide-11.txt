@@ -1,0 +1,13 @@
+Learner Practice Check
+
+Pause the narration, choose an evidence path, then reveal the coaching note.
+
+In Meridian Imaging Solutions - ClearView Chest Assist, which evidence would you sample first to test risk-impact split screen?
+
+Option 1: Sample path. Start from ClearView version 3.2 and one post-market complaint about a missed prompt, then connect it to risk register, impact assessment, validation plan.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
+
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is risk-impact split screen.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

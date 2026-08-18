@@ -1,0 +1,13 @@
+Closing Bridge
+
+This page belongs to Lesson 08: AI Risk Assessment and AI System Impact Assessment.
+
+The anchor case is Meridian Imaging Solutions and ClearView Chest Assist.
+
+The audit handle is risk-impact split screen.
+
+Use this page to connect the slide purpose, Closing bridge to the next lesson, with sampled evidence such as risk register, impact assessment, validation plan, customer training material.
+
+The comfortable answer hides this issue: AI prompts can still change attention, priority, trust, workflow and patient communication.
+
+Keep the professional boundary in view: The organization did not include patient impact and physician over-reliance in the impact assessment for the sampled high-caution system.

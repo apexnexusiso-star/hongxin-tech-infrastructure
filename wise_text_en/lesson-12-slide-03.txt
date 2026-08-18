@@ -1,0 +1,9 @@
+Change control should notice operational changes
+
+AI change is not limited to model code. Data sources, lighting, user instructions, thresholds and supplier components can all change system behavior. In ForgeWorks Industrial's DefectLens Vision Monitor case, this point is not abstract. The line "Change control should notice operational changes" shapes how the auditor reads the Lesson 12 Change control should notice operational changes sample and how manufacturing visual inspection operation decisions reach people, records and management responsibility.
+
+The audit becomes stronger when the story moves from a claim to a decision. Walk from one operational change to the decision on whether AI review was required. For the line "Change control should notice operational changes", Tomas Iversen should turn "Change control should notice operational changes" into different questions for line supervisor, quality engineer, model operations engineer. Their answers should meet around the Lesson 12 Change control should notice operational changes sample, not remain separate.
+
+Evidence for the line "Change control should notice operational changes" starts with monitoring dashboard, override log, change-control record. If the answer sounds rehearsed in the "Change control should notice operational changes" trail, extend the review to incident record, rollback plan and ask whether those records tell the Change control should notice operational changes story about DefectLens Vision Monitor.
+
+Practical takeaway: The lighting installation should have triggered a question about validation or monitoring. Use this line to test whether the Lesson 12 Change control should notice operational changes sample connects to control, review and management responsibility.

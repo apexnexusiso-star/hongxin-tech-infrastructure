@@ -1,0 +1,29 @@
+Workpaper Coaching Notes
+
+A clean workpaper for Lesson 19 would not copy the textbook table. It would name CreditMedEdu Audit Lab, state the criterion for Apex Tri-Sector Exercise, describe three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute, list the evidence reviewed and explain why the evidence was or was not sufficient.
+
+The workpaper should also record the boundary of judgement. For Apex Tri-Sector Exercise, Daniel Okafor can judge whether the AIMS handled the issue shown by the CreditMedEdu Audit Lab sample through defined responsibilities and records. The auditor should not invent technical requirements outside the Lesson 19 criteria.
+
+If the evidence is incomplete, the workpaper should show the next sampling decision. One path might be another record from lead auditor. Another path might be a demonstration by case team. A third path might be a complaint, log or management review note linked to a conflict between interview evidence and records in each sector.
+
+This is how a lesson becomes usable for oral delivery. Learners hear the concept, watch it enter CreditMedEdu Audit Lab, see the evidence trail, and practice turning a weak phrase into a professional audit statement.
+
+A final coaching prompt helps close the loop: ask what Apex Tri-Sector Exercise would need to change tomorrow if Daniel Okafor's concern proved valid. The answer should point to ownership, records and review, not only to a nicer paragraph in the AIMS manual.
+
+Case Setup: The Comfortable but Dangerous Answer
+
+Let us make the lesson concrete. The organization is Apex Tri-Sector Exercise, working in multi-industry classroom simulation. The sampled system is CreditMedEdu Audit Lab. Apex runs a classroom simulation with three organizations: a bank credit model, a hospital diagnostic assistant and an education learning-analytics platform.
+
+The lead auditor is Daniel Okafor. Instead of beginning with a full-document request, Daniel asks the auditee to open three parallel samples: one rejected credit-limit increase, one imaging prompt complaint and one learning-path recommendation dispute. That choice matters because it gives the audit a real anchor before people start explaining the management system in general terms.
+
+Then comes the comfortable but dangerous answer: A generic ISO/IEC 42001 checklist can be reused across all three because the standard is the same. It sounds efficient and reassuring. It also hides the weakness that the lesson is designed to expose.
+
+The hidden issue is this: The standard is the same, but audit sampling, evidence routes, competence needs, impact paths and finding language differ sharply across industries. Once CreditMedEdu Audit Lab makes that issue visible, the audit stops floating above the organization. It asks whether Apex Tri-Sector Exercise's governance reaches this use, this decision and this evidence trail.
+
+Daniel maps the roles before asking for more files. In the route, the auditor has to understand lead auditor; sector technical expert; case team; process owner; affected-party representative. The point is not to make the chart impressive; it is to know who can explain, approve, challenge or correct the AI-related decision.
+
+The evidence objects are equally practical: case comparison grid; audit plan; evidence conflict note; sample records; draft finding. For CreditMedEdu Audit Lab, none of these records is magic by itself. Their value appears when they fit together and explain what happened in the sample.
+
+In Apex Tri-Sector Exercise, comfort and evidence pull in different directions. The comfortable answer lowers the pressure in the room. Evidence for CreditMedEdu Audit Lab restores the useful pressure by asking where the answer operates, who relies on it and which record would reveal a break.
+
+By the end of this case, the teaching point is not that Apex Tri-Sector Exercise is careless. The point is more useful: CreditMedEdu Audit Lab can make a plausible management answer too thin when its real use creates a sharper evidence route.

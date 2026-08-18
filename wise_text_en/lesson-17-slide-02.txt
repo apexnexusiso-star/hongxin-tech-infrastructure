@@ -1,0 +1,9 @@
+Document review opens the route
+
+A document tells the auditor what should happen. It rarely proves what did happen in a sampled AI decision. In PayWise Payments's ShieldScore Fraud Monitor case, this point is not abstract. The line "Document review opens the route" shapes how the auditor reads one disputed transaction that was blocked after a high fraud score and later reversed and how payment fraud detection decisions reach people, records and management responsibility.
+
+This is the point where a paper answer has to meet operating evidence. Start with the procedure, then move to a transaction or output that should have followed it. For the line "Document review opens the route", Victor Hale should turn "Document review opens the route" into different questions for fraud analyst, model operations lead, payments product owner. Their answers should meet around one disputed transaction that was blocked after a high fraud score and later reversed, not remain separate.
+
+Evidence for the line "Document review opens the route" starts with procedure, dashboard, transaction log. If the answer sounds rehearsed in the "Document review opens the route" trail, extend the review to analyst case note, customer dispute record and ask whether those records tell the Document review opens the route story about ShieldScore Fraud Monitor.
+
+Practical takeaway: The fraud-review procedure gives Victor a criterion for the disputed transaction. Use this line to test whether one disputed transaction that was blocked after a high fraud score and later reversed connects to control, review and management responsibility.

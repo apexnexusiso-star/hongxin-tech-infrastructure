@@ -1,0 +1,13 @@
+Learner Practice Check
+
+Pause the narration, choose an evidence path, then reveal the coaching note.
+
+In CityHelp Authority - CivicAnswer AI Desk, which evidence would you sample first to test version-aware support evidence?
+
+Option 1: Sample path. Start from one benefits inquiry where the AI assistant suggested an outdated eligibility explanation, then connect it to competence matrix, training scenario results, knowledge-base version log.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
+
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is version-aware support evidence.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

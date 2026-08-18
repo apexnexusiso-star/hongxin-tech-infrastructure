@@ -1,0 +1,19 @@
+User workarounds are evidence
+
+Operators often adapt faster than the formal system. Their overrides, notes and informal rules can reveal control weaknesses before formal metrics do. In ForgeWorks Industrial's DefectLens Vision Monitor case, this point is not abstract. The line "User workarounds are evidence" shapes how the auditor reads the Lesson 12 User workarounds are evidence sample and how manufacturing visual inspection operation decisions reach people, records and management responsibility.
+
+This is also where professional restraint matters. Interview users about what they do when the AI answer feels wrong. For the line "User workarounds are evidence", Tomas Iversen should turn "User workarounds are evidence" into different questions for line supervisor, quality engineer, model operations engineer. Their answers should meet around the Lesson 12 User workarounds are evidence sample, not remain separate.
+
+Evidence for the line "User workarounds are evidence" starts with monitoring dashboard, override log, change-control record. If the answer sounds rehearsed in the "User workarounds are evidence" trail, extend the review to incident record, rollback plan and ask whether those records tell the User workarounds are evidence story about DefectLens Vision Monitor.
+
+Practical takeaway: Repeated manual overrides on one line are not noise; they are a management-system signal. Use this line to test whether the Lesson 12 User workarounds are evidence sample connects to control, review and management responsibility.
+
+Suspension, rollback and retirement need criteria
+
+A mature lifecycle process states when the organization will pause, restrict, roll back or retire an AI system or version. In ForgeWorks Industrial's DefectLens Vision Monitor case, this point is not abstract. The line "Suspension, rollback and retirement need criteria" shapes how the auditor reads the Lesson 12 Suspension, rollback and retirement need criteria sample and how manufacturing visual inspection operation decisions reach people, records and management responsibility.
+
+Now place that idea in the audit room. Ask what conditions would stop the system from being used in the sampled process. For the line "Suspension, rollback and retirement need criteria", Tomas Iversen should turn "Suspension, rollback and retirement need criteria" into different questions for line supervisor, quality engineer, model operations engineer. Their answers should meet around the Lesson 12 Suspension, rollback and retirement need criteria sample, not remain separate.
+
+Evidence for the line "Suspension, rollback and retirement need criteria" starts with monitoring dashboard, override log, change-control record. If the answer sounds rehearsed in the "Suspension, rollback and retirement need criteria" trail, extend the review to incident record, rollback plan and ask whether those records tell the Suspension, rollback and retirement need criteria story about DefectLens Vision Monitor.
+
+Practical takeaway: If nobody can name the stop condition, operation may depend on optimism rather than governance. Use this line to test whether the Lesson 12 Suspension, rollback and retirement need criteria sample connects to control, review and management responsibility.

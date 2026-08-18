@@ -5,7 +5,7 @@
 *.webp binary
 *.pdf binary
 *.docx binary
+*.mp3 binary
 *.html text eol=lf
 *.css text eol=lf
 *.js text eol=lf
-audio_en/*.wav filter=lfs diff=lfs merge=lfs -text

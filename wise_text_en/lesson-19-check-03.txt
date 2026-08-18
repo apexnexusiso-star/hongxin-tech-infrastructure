@@ -1,0 +1,13 @@
+Learning Check: Keep the Audit Boundary
+
+Pause after Slide 09 and choose wording that stays evidence-based.
+
+Which conclusion style is strongest for a training audit discussion?
+
+Option 1: Bounded wording. For the integrated exercise, the audit team should use common ISO/IEC 42001 criteria while adapting samples, evidence and competence to credit, medical and education impact pathways.
+Option 2: Broad judgement. The AI system is unsafe and the organization is not ready for certification.
+Option 3: No issue. No issue exists because the organization gives a comfortable explanation.
+
+Coaching note: Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: The standard is the same, but audit sampling, evidence routes, competence needs, impact paths and finding language differ sharply across industries.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

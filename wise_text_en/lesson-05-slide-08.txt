@@ -1,0 +1,15 @@
+Audit Forward and Audit Backward
+
+Use audit forward from a policy change that changes the eligibility threshold for microbusiness applicants. For HelioBank, follow that change into scope, then into the risk or impact record, then into the selected control for PreScore Credit Navigator. Only after that should the route reach operating instruction, monitoring and management review.
+
+Use audit backward from a complaint alleging that the online journey discouraged a customer from applying formally. Start with the record, complaint, log or outcome in a rejected small-business loan pre-assessment where the applicant received an automated next-step message, then walk back to the requirement that should have governed it. This movement keeps Jonas from accepting a general explanation for a specific sample.
+
+For PreScore Credit Navigator, maintenance means HelioBank can show that documents exist and have been updated. For the a rejected small-business loan pre-assessment where the applicant received an automated next-step message sample, effectiveness means those documents influenced the AI use when evidence became inconvenient for the auditee. That distinction keeps Lesson 5 practical.
+
+Finding Language and Professional Boundary
+
+Professional boundary matters. The weak report phrase would be: Because the supplier built the model, HelioBank's scope can exclude the AI decision route. That sentence may be tempting because it sounds decisive, but it reaches beyond what many audits can prove.
+
+A stronger audit phrase for PreScore Credit Navigator is: For the sampled PreScore use, HelioBank did not define deployment responsibilities for threshold approval, customer communication and monitoring of applicant impact in the AIMS scope. This wording names the sample, the management-system weakness and the reason it matters without turning Jonas Reed into the system designer, regulator or sector specialist.
+
+When learners practice with PreScore Credit Navigator, ask them to underline the criterion in their sentence, circle the sampled use from a rejected small-business loan pre-assessment where the applicant received an automated next-step message, and mark the evidence gap. If those parts are missing, the finding is still classroom draft material.

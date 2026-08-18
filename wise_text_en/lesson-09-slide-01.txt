@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 9 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If all Annex A controls are listed in the Statement of Applicability, has the organization treated AI risk?
+
+Instructor: Not yet. The SoA is a bridge from assessed risk and impact to selected controls and residual-risk decisions. A long SoA can still fail if it does not match the live system.
+
+We are continuing from Lesson 8, and today the audit lens moves into a new part of the AIMS. Our focus is SoA reality test. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to connect risk treatment with Annex A control selection; audit the Statement of Applicability as a living bridge rather than a checklist; judge residual-risk acceptance as a management decision; and identify review triggers for risk and impact assessments.
+
+Lesson Positioning
+
+Our textbook boundary is 5.4-5.12. Keep that boundary clear for CrediBridge Finance: this lesson teaches a route for LimitWise Credit Advisor when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is CrediBridge Finance: LimitWise Credit Advisor. I use it because CrediBridge Finance gives us concrete people, LimitWise Credit Advisor gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for SoA reality test. In the story of LimitWise Credit Advisor, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to CrediBridge Finance, not to a generic checklist.

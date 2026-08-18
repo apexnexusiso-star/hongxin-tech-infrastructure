@@ -1,0 +1,13 @@
+Misunderstandings to Remove
+
+This page belongs to Lesson 03: Harmonized Structure and PDCA Logic in ISO/IEC 42001.
+
+The anchor case is Orion Retail Group and Orion Retail Copilot.
+
+The audit handle is living-loop audit.
+
+Use this page to connect the slide purpose, Misunderstandings to remove, with sampled evidence such as PDCA process map, change request, claim review record, Annex A control selection note.
+
+The comfortable answer hides this issue: The clause shell may look complete, but the AIMS loop has not shown that it detects new AI uses, reassesses impact or updates controls when merchandising practice changes.
+
+Keep the professional boundary in view: For the sampled retail copilot change, the organization maintained a clause-aligned manual but did not demonstrate that the PDCA loop captured AI-assisted product claims, related interested-party needs and updated controls.

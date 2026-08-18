@@ -1,0 +1,9 @@
+Lifecycle control includes external service use
+
+When an organization buys an AI service, it may not develop the model, but it still approves use, configures settings, trains users and decides when to stop using it. In AtlasCloud Commerce's ReplyForge Customer Engine case, this point is not abstract. The line "Lifecycle control includes external service use" shapes how the auditor reads one merchant dispute where an AI-drafted response cited an outdated fee rule and how external LLM customer-response platform decisions reach people, records and management responsibility.
+
+This is also where professional restraint matters. Ask how the service moved from trial to approved operation. For the line "Lifecycle control includes external service use", Mateo Silva should turn "Lifecycle control includes external service use" into different questions for merchant operations lead, procurement owner, data protection officer. Their answers should meet around one merchant dispute where an AI-drafted response cited an outdated fee rule, not remain separate.
+
+Evidence for the line "Lifecycle control includes external service use" starts with supplier terms, approved-use list, data input rule. If the answer sounds rehearsed in the "Lifecycle control includes external service use" trail, extend the review to output review checklist, supplier change notice and ask whether those records tell the Lifecycle control includes external service use story about ReplyForge Customer Engine.
+
+Practical takeaway: ReplyForge should have a route for supplier updates and business-use changes. Use this line to test whether one merchant dispute where an AI-drafted response cited an outdated fee rule connects to control, review and management responsibility.

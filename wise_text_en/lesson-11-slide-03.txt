@@ -1,0 +1,19 @@
+Requirements should be traceable
+
+Lifecycle control becomes auditable when requirements can be followed into design decisions, tests, user instructions and approval criteria. In SafeHire Labs's CandidateFlow Screening case, this point is not abstract. The line "Requirements should be traceable" shapes how the auditor reads the Lesson 11 Requirements should be traceable sample and how recruitment screening design and launch decisions reach people, records and management responsibility.
+
+Bring the learner back to one record before adding more concepts. Select one requirement and follow it forward until it affects a release decision. For the line "Requirements should be traceable", Oliver Grant should turn "Requirements should be traceable" into different questions for product owner, data scientist, HR pilot lead. Their answers should meet around the Lesson 11 Requirements should be traceable sample, not remain separate.
+
+Evidence for the line "Requirements should be traceable" starts with intended-use statement, requirements trace, validation report. If the answer sounds rehearsed in the "Requirements should be traceable" trail, extend the review to pilot feedback, launch approval checklist and ask whether those records tell the Requirements should be traceable story about CandidateFlow Screening.
+
+Practical takeaway: Fair and transparent should lead to concrete ranking explanations, review steps and user guidance. Use this line to test whether the Lesson 11 Requirements should be traceable sample connects to control, review and management responsibility.
+
+Validation evidence needs context
+
+Metrics are valuable, but they do not explain everything. The auditor asks whether validation reflects intended use, data assumptions, affected parties and known limitations. In SafeHire Labs's CandidateFlow Screening case, this point is not abstract. The line "Validation evidence needs context" shapes how the auditor reads the Lesson 11 Validation evidence needs context sample and how recruitment screening design and launch decisions reach people, records and management responsibility.
+
+The audit becomes stronger when the story moves from a claim to a decision. Check whether pilot feedback contradicted design assumptions. For the line "Validation evidence needs context", Oliver Grant should turn "Validation evidence needs context" into different questions for product owner, data scientist, HR pilot lead. Their answers should meet around the Lesson 11 Validation evidence needs context sample, not remain separate.
+
+Evidence for the line "Validation evidence needs context" starts with intended-use statement, requirements trace, validation report. If the answer sounds rehearsed in the "Validation evidence needs context" trail, extend the review to pilot feedback, launch approval checklist and ask whether those records tell the Validation evidence needs context story about CandidateFlow Screening.
+
+Practical takeaway: If recruiters treat a ranking band as pre-approval, the human-review control may not work as designed. Use this line to test whether the Lesson 11 Validation evidence needs context sample connects to control, review and management responsibility.

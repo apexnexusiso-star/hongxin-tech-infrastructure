@@ -1,0 +1,11 @@
+Workpaper Coaching Notes
+
+A clean workpaper for Lesson 12 would not copy the textbook table. It would name DefectLens Vision Monitor, state the criterion for ForgeWorks Industrial, describe one production line where lighting changed and operators began overriding defect alerts manually, list the evidence reviewed and explain why the evidence was or was not sufficient.
+
+The workpaper should also record the boundary of judgement. For ForgeWorks Industrial, Tomas Iversen can judge whether the AIMS handled the issue shown by the DefectLens Vision Monitor sample through defined responsibilities and records. The auditor should not invent technical requirements outside the Lesson 12 criteria.
+
+If the evidence is incomplete, the workpaper should show the next sampling decision. One path might be another record from line supervisor. Another path might be a demonstration by model operations engineer. A third path might be a complaint, log or management review note linked to a customer return linked to defects from the same line.
+
+This is how a lesson becomes usable for oral delivery. Learners hear the concept, watch it enter DefectLens Vision Monitor, see the evidence trail, and practice turning a weak phrase into a professional audit statement.
+
+A final coaching prompt helps close the loop: ask what ForgeWorks Industrial would need to change tomorrow if Tomas Iversen's concern proved valid. The answer should point to ownership, records and review, not only to a nicer paragraph in the AIMS manual.

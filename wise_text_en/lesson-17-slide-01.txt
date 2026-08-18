@@ -1,0 +1,19 @@
+Opening Dialogue
+
+Instructor: Hello everyone, and welcome back to Lesson 17 of the ISO/IEC 42001 Audit Competence course.
+
+Learner: If the interview answer is clear and the dashboard looks green, can the auditor stop there?
+
+Instructor: No. AI audits need cross-verification across documents, interviews, demonstrations, logs, records and sometimes conflicting evidence.
+
+We are continuing from Lesson 16, and today the audit lens moves into a new part of the AIMS. Our focus is triangulation ladder. The lesson is not a reading of the textbook; it is a guided way to turn the textbook into audit movement.
+
+By the end, you should be able to use interviews, record tracing, demonstrations and observation in AI audits; cross-verify evidence in technically complex scenarios; handle evidence conflict without overstepping audit boundaries; and collect prompts, logs and output samples responsibly.
+
+Lesson Positioning
+
+Our textbook boundary is 10.1-10.11; 12.9. Keep that boundary clear for PayWise Payments: this lesson teaches a route for ShieldScore Fraud Monitor when the topic appears in a real AIMS audit, not every appendix tool at once.
+
+The anchor case is PayWise Payments: ShieldScore Fraud Monitor. I use it because PayWise Payments gives us concrete people, ShieldScore Fraud Monitor gives us concrete records, and the answer sounds reasonable before the evidence is tested.
+
+Listen for triangulation ladder. In the story of ShieldScore Fraud Monitor, that phrase is a practical handle. Use it to plan the first sample, shape sharper interviews and write a conclusion that belongs to PayWise Payments, not to a generic checklist.

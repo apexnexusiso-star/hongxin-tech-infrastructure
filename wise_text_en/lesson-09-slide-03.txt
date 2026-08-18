@@ -1,0 +1,9 @@
+The SoA explains why controls are applicable
+
+A good Statement of Applicability does not simply mark controls as yes or no. It explains why a control fits the AIMS scope, AI roles, risk level and use scenario. In CrediBridge Finance's LimitWise Credit Advisor case, this point is not abstract. The line "The SoA explains why controls are applicable" shapes how the auditor reads the Lesson 9 The SoA explains why controls are applicable sample and how consumer credit limit recommendation decisions reach people, records and management responsibility.
+
+For spoken teaching, slow down here and make the route visible. Ask the owner to explain one applicable control and one exclusion against the sampled system. For the line "The SoA explains why controls are applicable", Samira O'Neill should turn "The SoA explains why controls are applicable" into different questions for credit risk owner, model operations lead, supplier manager. Their answers should meet around the Lesson 9 The SoA explains why controls are applicable sample, not remain separate.
+
+Evidence for the line "The SoA explains why controls are applicable" starts with risk treatment plan, SoA rationale, model update notice. If the answer sounds rehearsed in the "The SoA explains why controls are applicable" trail, extend the review to residual-risk approval, campaign monitoring record and ask whether those records tell the The SoA explains why controls are applicable story about LimitWise Credit Advisor.
+
+Practical takeaway: If the rationale could apply to any organization, it is probably not enough for this one. Use this line to test whether the Lesson 9 The SoA explains why controls are applicable sample connects to control, review and management responsibility.

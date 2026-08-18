@@ -1,0 +1,19 @@
+Misunderstandings to Remove
+
+Remove this misunderstanding: AIMS is an ethics poster. Ethics matters, but the audit has to see objectives, roles, risk treatment, monitoring and improvement in operation.
+
+Remove this misunderstanding: Human approval removes AI responsibility. Human approval changes the control design; it does not remove the need to govern the AI suggestion that shaped the human action.
+
+Remove this misunderstanding: General-purpose AI means no system boundary. The boundary may include configuration, prompts, use rules, data input, output review and supplier dependence even when the model is external.
+
+Practical Task, Reading Guidance, and Closing Dialogue
+
+Now transfer the method without copying the story. A municipal call-center bot that suggests answers to benefit applicants; the question is not model ownership, but whether official communication is controlled. The same teaching move should work, but the evidence route must change with the industry, affected party and AI use.
+
+Here is the learner task for Lesson 1. Use BrightReply Support AI as the model, then choose a second AI use near your own work and compare it with BrightDesk Services's case. Write the second case's comfortable answer, hidden issue, first sample request and phrase to avoid. Rework that phrase in management-system language.
+
+After this lesson, Read textbook sections 1.1 to 1.4 and the introductory customer-service case in 1.7. Read with a pencil beside you. Mark the point where the textbook becomes an audit question rather than only a concept.
+
+Learner: So the practical skill is not memorizing all examples. It is recognizing the audit pattern inside a new AI use.
+
+Instructor: Exactly. We keep the ISO/IEC 42001 framework stable, but we let the sample, evidence and professional boundary change with the real system. In Lesson 2, we move from why an AIMS is needed to what ISO/IEC 42001 is and what competence the auditor must bring.

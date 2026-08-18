@@ -1,0 +1,13 @@
+Misunderstandings to Remove
+
+This page belongs to Lesson 05: Organizational Context, Interested Parties, and AI Role Boundaries.
+
+The anchor case is HelioBank and PreScore Credit Navigator.
+
+The audit handle is role-boundary map.
+
+Use this page to connect the slide purpose, Misunderstandings to remove, with sampled evidence such as responsibility matrix, supplier contract schedule, threshold approval minute, customer journey map.
+
+The comfortable answer hides this issue: Supplier provision does not remove HelioBank's responsibility for deployment, customer communication, threshold decisions, monitoring and complaint handling in its own loan process.
+
+Keep the professional boundary in view: For the sampled PreScore use, HelioBank did not define deployment responsibilities for threshold approval, customer communication and monitoring of applicant impact in the AIMS scope.

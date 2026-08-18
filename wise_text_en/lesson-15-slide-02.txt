@@ -1,0 +1,19 @@
+The Case Setup
+
+The organization is LumenBridge Advisory, a fictional consulting services firm. It has approved an enterprise generative AI office platform called NexaOffice AI Suite. Employees use it to draft meeting summaries, polish emails, translate materials, search internal knowledge notes, and prepare first drafts of client deliverables. The tool is in the AIMS scope. It is rated medium risk because it touches client work, employee behavior, supplier dependence, confidential information, and output review.
+
+The lead auditor is Amira Cole. On the first morning, LumenBridge gives her a polished SoA. The SoA marks controls on data use, information for users, AI system use, and third-party services as implemented. The compliance manager also shows screenshots: a policy page in the intranet, a training completion dashboard, a supplier security certificate, and a console page showing that the approved tool is available only to company accounts.
+
+Then comes the comfortable but dangerous answer. The compliance manager says: The SoA shows implemented, and the screenshots prove the controls are in place. It is a calm answer. It is also where the audit begins. Implemented on the SoA does not automatically mean operating effectively for the sampled AI use. A screenshot may prove a setting existed on one day. It does not prove employees understood the rule, used the tool within boundaries, reviewed outputs, or escalated exceptions during the audit period.
+
+The Control-To-Finding Drill
+
+Amira chooses one control route instead of trying to audit every Annex A theme at once. She selects the use-control route for NexaOffice. The control purpose is simple: employees should use AI only within approved boundaries, should not input restricted information, and should review AI output before it affects customer work. That purpose gives the audit direction.
+
+From there, she writes the drill on her workpaper. Criterion: the organization's AI Usage Rules, SoA rationale, and documented use-control procedure. Sample: one active consulting project where NexaOffice was used to prepare client materials. Evidence: training records, scenario test results, permission settings, available logs or metadata, project deliverable review records, interviews with users and managers, abnormality reports, and any monitoring shown to management.
+
+Notice what happened. Annex A did not disappear, but it became auditable. The lesson is not that every audit must use the same evidence list. The lesson is that the auditor must turn a selected control into a sample route. Without that route, the audit may collect impressive files and still fail to test whether the control worked.
+
+This is also why control purpose comes before evidence requests. If the purpose is to prevent restricted information from entering an AI tool, a training attendance sheet is only partial evidence. It may show that people were exposed to the rule. It does not show whether the rule was understandable in consulting work, whether users can recognize borderline information, whether managers review AI-assisted output, or whether repeated weak signals reach management. The purpose tells us what evidence must be able to prove.
+
+For learners, this is the most important discipline in Annex A auditing. Do not begin by asking, do you have a procedure for this control? Begin by asking, what weakness is this control supposed to prevent in this AI system? Then ask what would convince a reasonable auditor that the weakness is being controlled during real operation. That single shift turns a table into an audit method.

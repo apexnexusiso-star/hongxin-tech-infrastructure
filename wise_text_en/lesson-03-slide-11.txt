@@ -1,0 +1,13 @@
+Learner Practice Check
+
+Pause the narration, choose an evidence path, then reveal the coaching note.
+
+In Orion Retail Group - Orion Retail Copilot, which evidence would you sample first to test living-loop audit?
+
+Option 1: Sample path. Start from one seasonal campaign where the copilot began generating sustainability claims for private-label products, then connect it to PDCA process map, change request, claim review record.
+Option 2: Training only. Check the latest training record and conclude whether people were aware of the policy.
+Option 3: Supplier only. Ask the supplier or technical team to confirm that the AI system is acceptable.
+
+Coaching note: A good answer forms one chain: sample, affected use, evidence object, responsible role, decision record and improvement trigger. In this lesson, the memory hook is living-loop audit.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

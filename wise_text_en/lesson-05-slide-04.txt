@@ -1,0 +1,9 @@
+Interested-party needs must be tied to AI use
+
+Interested-party analysis becomes weak when it lists regulators, customers and employees without explaining how AI affects them. In HelioBank's PreScore Credit Navigator case, this point is not abstract. The line "Interested-party needs must be tied to AI use" shapes how the auditor reads the Lesson 5 Interested-party needs must be tied to AI use sample and how retail banking loan pre-assessment decisions reach people, records and management responsibility.
+
+Now place that idea in the audit room. Take one AI output and ask who depends on it, who can be harmed by it, who must understand it and who must respond when it fails. For the line "Interested-party needs must be tied to AI use", Jonas Reed should turn "Interested-party needs must be tied to AI use" into different questions for loan product owner, vendor manager, data protection lead. Their answers should meet around the Lesson 5 Interested-party needs must be tied to AI use sample, not remain separate.
+
+Evidence for the line "Interested-party needs must be tied to AI use" starts with responsibility matrix, supplier contract schedule, threshold approval minute. If the answer sounds rehearsed in the "Interested-party needs must be tied to AI use" trail, extend the review to customer journey map, complaint file and ask whether those records tell the Interested-party needs must be tied to AI use story about PreScore Credit Navigator.
+
+Practical takeaway: The rejected applicant, branch advisor and complaint officer each see a different part of the PreScore consequence path. Use this line to test whether the Lesson 5 Interested-party needs must be tied to AI use sample connects to control, review and management responsibility.

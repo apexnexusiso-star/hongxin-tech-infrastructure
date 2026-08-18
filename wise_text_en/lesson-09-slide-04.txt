@@ -1,0 +1,19 @@
+Residual risk requires authority
+
+After controls are selected, some risk usually remains. The organization must know who can accept it and on what basis. In CrediBridge Finance's LimitWise Credit Advisor case, this point is not abstract. The line "Residual risk requires authority" shapes how the auditor reads the Lesson 9 Residual risk requires authority sample and how consumer credit limit recommendation decisions reach people, records and management responsibility.
+
+The useful question is not abstract; it belongs to the sampled system. Look for a named decision, current evidence and a link to the actual system version. For the line "Residual risk requires authority", Samira O'Neill should turn "Residual risk requires authority" into different questions for credit risk owner, model operations lead, supplier manager. Their answers should meet around the Lesson 9 Residual risk requires authority sample, not remain separate.
+
+Evidence for the line "Residual risk requires authority" starts with risk treatment plan, SoA rationale, model update notice. If the answer sounds rehearsed in the "Residual risk requires authority" trail, extend the review to residual-risk approval, campaign monitoring record and ask whether those records tell the Residual risk requires authority story about LimitWise Credit Advisor.
+
+Practical takeaway: A stale acceptance record from the old scorecard does not carry the new campaign automatically. Use this line to test whether the Lesson 9 Residual risk requires authority sample connects to control, review and management responsibility.
+
+Review triggers protect the AIMS from becoming stale
+
+AI systems change through model updates, data drift, business expansion, user workarounds, incidents and regulatory updates. In CrediBridge Finance's LimitWise Credit Advisor case, this point is not abstract. The line "Review triggers protect the AIMS from becoming stale" shapes how the auditor reads the Lesson 9 Review triggers protect the AIMS from becoming stale sample and how consumer credit limit recommendation decisions reach people, records and management responsibility.
+
+Bring the learner back to one record before adding more concepts. Ask what would force the organization to reopen risk treatment before the next scheduled review. For the line "Review triggers protect the AIMS from becoming stale", Samira O'Neill should turn "Review triggers protect the AIMS from becoming stale" into different questions for credit risk owner, model operations lead, supplier manager. Their answers should meet around the Lesson 9 Review triggers protect the AIMS from becoming stale sample, not remain separate.
+
+Evidence for the line "Review triggers protect the AIMS from becoming stale" starts with risk treatment plan, SoA rationale, model update notice. If the answer sounds rehearsed in the "Review triggers protect the AIMS from becoming stale" trail, extend the review to residual-risk approval, campaign monitoring record and ask whether those records tell the Review triggers protect the AIMS from becoming stale story about LimitWise Credit Advisor.
+
+Practical takeaway: If no trigger is connected to supplier change, the SoA is probably maintained but not managed. Use this line to test whether the Lesson 9 Review triggers protect the AIMS from becoming stale sample connects to control, review and management responsibility.

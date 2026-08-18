@@ -1,0 +1,19 @@
+Misunderstandings to Remove
+
+Remove this misunderstanding: Lifecycle controls belong only to internal development. Lifecycle controls also apply to selection, configuration, deployment, monitoring and withdrawal of external AI services.
+
+Remove this misunderstanding: Data controls are solved by supplier security. The organization still controls what its users input and whether data rules are understood.
+
+Remove this misunderstanding: Third-party controls stop at procurement. Supplier management continues through changes, incidents, performance signals and use decisions.
+
+Practical Task, Reading Guidance, and Closing Dialogue
+
+Now transfer the method without copying the story. A law firm's research assistant where supplier opacity does not remove duties to verify citations, restrict client data and inform users. The same teaching move should work, but the evidence route must change with the industry, affected party and AI use.
+
+Here is the learner task for Lesson 14. Use ReplyForge Customer Engine as the model, then choose a second AI use near your own work and compare it with AtlasCloud Commerce's case. Write the second case's comfortable answer, hidden issue, first sample request and phrase to avoid. Rework that phrase in management-system language.
+
+After this lesson, Read sections 8.6 to 8.10. Use Appendix B to map each control theme to evidence within the organization's control. Read with a pencil beside you. Mark the point where the textbook becomes an audit question rather than only a concept.
+
+Learner: So the practical skill is not memorizing all examples. It is recognizing the audit pattern inside a new AI use.
+
+Instructor: Exactly. We keep the ISO/IEC 42001 framework stable, but we let the sample, evidence and professional boundary change with the real system. Lesson 15 will turn Annex A controls into a practical control-to-finding audit drill.

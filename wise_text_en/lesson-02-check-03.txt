@@ -1,0 +1,13 @@
+Learning Check: Keep the Audit Boundary
+
+Pause after Slide 09 and choose wording that stays evidence-based.
+
+Which conclusion style is strongest for a training audit discussion?
+
+Option 1: Bounded wording. For the sampled audit assignment, the certification body did not demonstrate that the audit team competence matched the AI systems, impact pathways and technical boundaries in the client scope.
+Option 2: Broad judgement. The AI system is unsafe and the organization is not ready for certification.
+Option 3: No issue. No issue exists because the organization gives a comfortable explanation.
+
+Coaching note: Good finding language is narrow enough to be fair and specific enough to be useful. The hidden audit issue here is: Information security competence helps, but it does not automatically cover AI impact assessment, model change, data drift, human oversight or third-party AI service evidence.
+
+This is a learning pause, not a formal examination. Use it to test the direction of your audit reasoning before moving on.

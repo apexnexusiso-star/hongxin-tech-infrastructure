@@ -1,0 +1,15 @@
+Audit Forward and Audit Backward
+
+Use audit forward from an update to grant eligibility rules before the application deadline. For GovAssist Agency, follow that change into scope, then into the risk or impact record, then into the selected control for PolicyGuide Public Bot. Only after that should the route reach operating instruction, monitoring and management review.
+
+Use audit backward from a complaint that the chatbot answer discouraged an eligible applicant. Start with the record, complaint, log or outcome in one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply, then walk back to the requirement that should have governed it. This movement keeps Imani from accepting a general explanation for a specific sample.
+
+For PolicyGuide Public Bot, maintenance means GovAssist Agency can show that documents exist and have been updated. For the one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply sample, effectiveness means those documents influenced the AI use when evidence became inconvenient for the auditee. That distinction keeps Lesson 13 practical.
+
+Finding Language and Professional Boundary
+
+Professional boundary matters. The weak report phrase would be: A corporate AI policy is enough for all Annex A governance controls. That sentence may be tempting because it sounds decisive, but it reaches beyond what many audits can prove.
+
+A stronger audit phrase for PolicyGuide Public Bot is: For the sampled PolicyGuide bot, the organization had a central AI policy but did not demonstrate system-specific responsibilities, resources and impact-assessment controls for grant eligibility consultations. This wording names the sample, the management-system weakness and the reason it matters without turning Imani Brooks into the system designer, regulator or sector specialist.
+
+When learners practice with PolicyGuide Public Bot, ask them to underline the criterion in their sentence, circle the sampled use from one grant consultation where the bot gave a simplified answer about eligibility and the citizen did not apply, and mark the evidence gap. If those parts are missing, the finding is still classroom draft material.
